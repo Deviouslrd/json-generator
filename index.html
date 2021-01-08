@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    @font-face {
+        font-family: minecraft;
+        src: url(Minecraft.ttf);
+    }
+
+    .button {
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        font-size: 13px;
+        font-family: minecraft;
+    }
+
+    .button:hover {
+        background-color: rgb(151, 151, 151);
+        color: black;
+    }
+
+    .tooltip {
+        position: relative;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        display: inline-block;
+        border-radius: 30%;
+        font-family: minecraft;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 300px;
+        height: 90px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        opacity: 0;
+        transition: opacity 500ms;
+        font-family: minecraft; 
+
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        bottom: 105%;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .text {
+        font-family: minecraft;
+        kerning: 100px;
+    }
+
+    .textbold {
+        font-family: minecraft;
+        letter-spacing: 1px;
+    }
+
+</style>
+</head>
+<body style="background: rgb(71, 71, 71);">
+    <h1 style="font-family: minecraft; color:rgb(0, 0, 0);">Minecraft Mod JSON Creation Tool</h1>
+    <p id="body" style="font-family: minecraft; font-size: 18px; color:rgb(255, 255, 255);">
+        This program currently does nothing, however it is now being properly developed.
+    </p>
+    <button id="button1" class="button button" onclick="modify()">Colour change!</button>
+    <form id="test">
+        <div name="Main Inputs">
+            <label for="modName" class="textbold">Mod Name:</label>
+            <input type="text" id="modName" name="blockName" required="true" style="font-family: minecraft;"><br>
+            <label for="blockName" class="textbold">Block Name:</label>
+            <div class="tooltip">?
+                <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory.</span>
+            </div>
+            <input type="text" id="blockName" name="blockName" required="true" style="font-family: minecraft;"><br>
+        </div>
+        <div>
+            <label for="textureFiles" class="textbold" required="true">Texture Files:</label>
+            <div class="tooltip">?
+                <span class="tooltiptext">Input the texture name as you find it in minecraft, i.e. birch_logs.png</span>
+            </div>
+            <input type="text" style="font-family: minecraft;">
+        </div>
+        <div>
+            <input type="radio" id="textureSides" name="textureSwitch" required="true">
+            <label for="textureSides" class="text" style="color:rgb(104, 104, 104);">Same texture on all sides</label><br>
+            <input type="radio" id="textureDiff" name="textureSwitch" required="true">
+            <label for="textureDiff" class="text" style="color:rgb(104, 104, 104)">Different texture on top and bottom</label>
+        </div>
+        <div name="bottomButtons">
+            <input type="submit" value="Submit" class="button button">
+            <input type="reset" value="Reset All" class="button button">
+        </div>
+    </form>
+    <p id="status" style="font-family: minecraft; color:red">Status: Incomplete</p>
+
+    
+    <script type="text/javascript" src="functions.js"></script>
+    
+</body>
+</html>
