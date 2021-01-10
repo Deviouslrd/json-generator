@@ -1,4 +1,4 @@
-const { app, BrowserWindow, /*Menu, MenuItem */} = require('electron');
+const { app, BrowserWindow, dialog, Menu, MenuItem } = require('electron');
 
 function createWindow () {
     const win = new BrowserWindow({
@@ -9,8 +9,10 @@ function createWindow () {
         }
     });
 
-    win.loadFile('index.html');
+    win.loadFile('pages/main.html');
 }
+
+
 
 app.whenReady().then(createWindow);
 
@@ -26,26 +28,45 @@ app.on('activate', () => {
     }
 });
 
-/*const menu = new Menu();
+const menu = new Menu();
 menu.append(new MenuItem({
     label: 'File',
     submenu: [
         {
-            role: 'exit',
-            accelerator: process.platform === 'darwin' ? 'Esc' : 'Esc',
+            label: 'Exit',
+            accelerator: process.platform === 'darwin' ? 'esc' : 'esc',
             click: () => { app.quit(); }
-        }
+        },
+        /*{
+            label: 'Save Dialog',
+            accelerator: process.platform === 'darwin' ? 'cmd+s' : 'ctrl+s',
+            click: () => {
+                dialog.showOpenDialog( { properties: ['openDirectory'] } ).then(data => {
+                    console.log(data.filePaths);
+                    module.exports.filePath = data.filePaths;
+                });
 
+            }
+        }*/
     ]
 }));
 
 menu.append(new MenuItem({
-    label: 'Electron',
-    submenu: [{
-        role: 'help',
-        accelerator: process.platform === 'darwin' ? 'Alt+Cmd+I' : 'Alt+Shift+I',
-        click: () => { console.log('woot woot!'); }
-    }]
+    label: 'Dev Tools',
+    submenu: [
+        {
+            role: 'toggleDevTools',
+            accelerator: process.platform === 'darwin' ? 'cmd+shift+i' : 'ctrl+shift+i',
+            click: () => {
+                openDevTools();
+            }
+        },
+        {
+            role: 'reload',
+            accelerator: process.platform === 'darwin' ? 'cmd+r' : 'ctrl+r',
+            click: () => { app.relaunch(); }
+        }
+    ]
 }));
 
-Menu.setApplicationMenu(menu);*/
+Menu.setApplicationMenu(menu);

@@ -1,0 +1,75 @@
+@font-face {
+    font-family: minecraft;
+    src: url(./minecraft.otf);
+}
+
+.button {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 18px;
+    font-family: minecraft;
+    padding: 3px;
+    text-decoration: none;
+}
+
+.buttonh:hover {
+    background-color: rgb(151, 151, 151);
+    color: black;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    display: inline-block;
+    border-radius: 30%;
+    font-family: minecraft;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    height: 90px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    opacity: 0;
+    transition: opacity 500ms;
+    font-family: minecraft; 
+
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    bottom: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.text {
+    font-family: minecraft;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.textbold {
+    font-family: minecraft;
+}
+
+.textinput {
+    font-family: minecraft;
+    
+}
+
+.header1 {
+    font-family: minecraft;
+    color:black;
+    text-align: center;
+}
