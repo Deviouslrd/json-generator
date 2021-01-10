@@ -2,14 +2,18 @@ const { app, BrowserWindow, dialog, Menu, MenuItem } = require('electron');
 
 function createWindow () {
     const win = new BrowserWindow({
-        width: 800,
+        width: 820,
         height: 600,
         webPreferences: {
             nodeIntegration: true
         }
     });
-
+    
     win.loadFile('pages/main.html');
+
+    win.once('ready-to-show', () => {
+        win.show();
+    });
 }
 
 

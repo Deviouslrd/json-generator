@@ -18,6 +18,17 @@
     color: black;
 }
 
+.buttondisabled {
+    color:gray;
+    background-color: darkgray;
+    font-family: minecraft;
+    padding: 3px;
+    text-decoration: none;
+    font-size: 18px;
+    pointer-events: none;
+    cursor: default;
+}
+
 .tooltip {
     position: relative;
     cursor: pointer;

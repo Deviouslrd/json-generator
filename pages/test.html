@@ -5,9 +5,11 @@
 </head>
 <body style="background: rgb(71, 71, 71);">
     <div style="text-align: center;">
+        <a class="button buttonh" href="./main.html">Home Page</a>
         <a class="button buttonh" href="./block_models.html">Block Models</a>
+        <a class="button buttonh" href="./item_models.html">Item Models</a>
         <a class="button buttonh" href="./blockstates.html">Blockstates</a>
-        <a class="button buttonh" href="./advancement.html">Advancments</a>
+        <a class="button buttonh" href="./advancement.html">Advancements</a>
         <a class="button buttonh" href="./loot_tables.html">Loot Tables</a>
         <a class="button buttonh" href="./recipes.html">Recipes</a>
     </div>
@@ -59,13 +61,14 @@
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
         <input type="text" id="saveLocation" class="textinput">
-        <input type="image" class="button buttonh" src='../assets/open_folder.png' onclick="saveLocation()" style="top: -10%">
+        <input type="image" class="button buttonh" src='../assets/open_folder.png' onclick="setSaveLocation()" style="top: -10%">
     </div>
 
     <p id="status" style="font-family: minecraft; color:red">Status: Incomplete</p>
     
-    <script type="text/javascript" src="functions.js"></script>
-    <script type="text/javascript" src="functions/item_models.js"></script>
-    <script type="text/javascript" src="save.js"></script>
+    <script type="text/javascript" src="../functions.js"></script>
+    <script type="text/javascript" src="../functions/item_models.js"></script>
+    <script type="text/javascript" src="../save.js"></script>
+    <script type="text/javascript" src="../main.js"></script>
 </body>
 </html>
