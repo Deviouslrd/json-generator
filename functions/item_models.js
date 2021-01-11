@@ -54,7 +54,8 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
     if (document.getElementById("isWall").checked === true) {
         const jsonProduct = {
-            parent: `${nameOfMod}:block/${nameOfBlock}`
+            parent: `minecraft:block/wall_inventory`,
+            textures: { wall: `${nameOfMod}:block/${nameOfBlock}`}
         };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -73,7 +74,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             });
         }
 
-        fs.writeFileSync(`C${filepath}\\model\\item\\${nameOfBlock}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\model\\item\\${nameOfBlock}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
 
