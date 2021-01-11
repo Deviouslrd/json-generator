@@ -60,15 +60,14 @@
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="text" id="saveLocation" class="textinput">
-        <input type="image" class="button buttonh" src='../assets/open_folder.png' onclick="setSaveLocation()" style="top: -10%">
+        <input type="image" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
     <p id="status" style="font-family: minecraft; color:red">Status: Incomplete</p>
     
     <script type="text/javascript" src="../functions.js"></script>
     <script type="text/javascript" src="../functions/item_models.js"></script>
-    <script type="text/javascript" src="../save.js"></script>
-    <script type="text/javascript" src="../main.js"></script>
+    <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

@@ -2,10 +2,12 @@ const { app, BrowserWindow, dialog, Menu, MenuItem } = require('electron');
 
 function createWindow () {
     const win = new BrowserWindow({
+        show: false,
         width: 820,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true
         }
     });
     
@@ -15,8 +17,6 @@ function createWindow () {
         win.show();
     });
 }
-
-
 
 app.whenReady().then(createWindow);
 

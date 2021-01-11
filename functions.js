@@ -1,7 +1,7 @@
 let value = 0;
 //const fs = require('fs');
 
-/*test.onsubmit = form => {
+/*itemModel.onsubmit = form => {
     form.preventDefault();
     const status = document.getElementById("status");
     status.style.color = "green";

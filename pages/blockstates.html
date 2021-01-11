@@ -35,13 +35,6 @@
             </div>
         </div>
 
-        <div>
-            <input type="radio" id="textureSides" name="textureSwitch" required="true">
-            <label for="textureSides" class="textbold" style="color:rgb(104, 104, 104);">Same texture on all sides</label><br>
-            <input type="radio" id="textureDiff" name="textureSwitch" required="true">
-            <label for="textureDiff" class="textbold" style="color:rgb(104, 104, 104)">Different texture on top and bottom</label>
-        </div>
-        
         <div name="bottomButtons">
             <input type="submit" value="Generate!" class="button buttonh">
             <input type="reset" value="Reset All" class="button buttonh">
@@ -50,15 +43,12 @@
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="text" id="saveLocation" class="textinput">
-        <input type="image" class="button buttonh" src='../assets/open_folder.png' onclick="saveLocation()" style="top: -10%">
+        <input type="image" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div><br>
-
-
-
     
-    <script type="text/javascript" src="functions.js"></script>
-    <script type="text/javascript" src="functions/item_models.js"></script>
-    <script type="text/javascript" src="save.js"></script>
+    <script type="text/javascript" src="../functions.js"></script>
+    <script type="text/javascript" src="../functions/item_models.js"></script>
+    <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

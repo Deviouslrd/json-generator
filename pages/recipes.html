@@ -5,7 +5,7 @@
 </head>
 <body style="background: rgb(71, 71, 71);">
     <div style="text-align: center;">
-        <a class="button buttonh" href="./main.html">Home Page</a>
+        <a class="button buttonh" href="./main.html" onclick="">Home Page</a>
         <a class="button buttonh" href="./block_models.html">Block Models</a>
         <a class="button buttonh" href="./item_models.html">Item Models</a>
         <a class="button buttonh" href="./blockstates.html">Blockstates</a>
@@ -43,13 +43,13 @@
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="text" id="saveLocation" class="textinput">
-        <input type="image" class="button buttonh" src='../assets/open_folder.png' onclick="saveLocation()" style="top: -10%">
+        <input type="image" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
 
-    <script type="text/javascript" src="functions.js"></script>
-    <script type="text/javascript" src="functions/item_models.js"></script>
-    <script type="text/javascript" src="save.js"></script>
+    <script type="text/javascript" src="../functions.js"></script>
+    <script type="text/javascript" src="../functions/item_models.js"></script>
+    <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

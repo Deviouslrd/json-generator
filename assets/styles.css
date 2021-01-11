@@ -67,20 +67,31 @@
     font-family: minecraft;
     color: white;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .textbold {
     font-family: minecraft;
+    font-size: 16px;
 }
 
 .textinput {
     font-family: minecraft;
-    
+    font-size: 16px;
 }
 
 .header1 {
     font-family: minecraft;
     color:black;
     text-align: center;
+}
+
+.savelocation {
+    font-family: minecraft;
+    color: black;
+    width: 400px;
+    font-size: 16px;
+    background-color: white;
+    border-color: darkgray;
+
 }
