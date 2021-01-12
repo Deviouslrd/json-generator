@@ -95,3 +95,8 @@
     border-color: darkgray;
 
 }
+
+.error {
+    color: rgb(255, 31, 31);
+    font-family: minecraft;
+}

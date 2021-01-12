@@ -6,12 +6,12 @@
 <body style="background: rgb(71, 71, 71);" onload="onLoad()">
     <div style="text-align: center;">
         <a class="button buttonh" href="./main.html">Home Page</a>
-        <a class="button buttonh" href="./block_models.html">Block Models</a>
-        <a class="buttondisabled" href="./item_models.html">Item Models</a>
-        <a class="button buttonh" href="./blockstates.html">Blockstates</a>
-        <a class="button buttonh" href="./advancement.html">Advancements</a>
-        <a class="button buttonh" href="./loot_tables.html">Loot Tables</a>
-        <a class="button buttonh" href="./recipes.html">Recipes</a>
+        <a class="button buttonh" href="./block_models.html" id="menuButton">Block Models</a>
+        <a class="buttondisabled" href="./item_models.html" id="menuButton">Item Models</a>
+        <a class="button buttonh" href="./blockstates.html" id="menuButton">Blockstates</a>
+        <a class="button buttonh" href="./advancement.html" id="menuButton">Advancements</a>
+        <a class="button buttonh" href="./loot_tables.html" id="menuButton">Loot Tables</a>
+        <a class="button buttonh" href="./recipes.html" id="menuButton">Recipes</a>
     </div>
     
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
@@ -46,6 +46,8 @@
             <input type="submit" value="Generate!" id="generateBtn" class="button buttonh">
             <input type="reset" value="Reset All" class="button buttonh">
         </div>
+
+        <p id="errorholder" class="error"></p>
     </form>
 
     <div>
