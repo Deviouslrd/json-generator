@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body style="background: rgb(71, 71, 71);">
+<body style="background: rgb(71, 71, 71);" onload="onLoad()">
     <div style="text-align: center;">
         <a class="button buttonh" href="./main.html">Home Page</a>
         <a class="button buttonh" href="./block_models.html">Block Models</a>
@@ -19,7 +19,7 @@
         Create blockstates for the new blocks! [COMING SOON]
     </p>
 
-    <form id="test">
+    <form id="blockstateForm">
         <div name="Main Inputs">
             <div name="Mod Name">
                 <label for="modName" class="textbold">Mod Name:</label>
@@ -29,26 +29,38 @@
             <div name="Block Name">
                 <label for="blockName" class="textbold">Block Name:</label>
                 <div class="tooltip">?
-                    <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs</span>
+                    <span class="tooltiptext" style="height: 150px;">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary. <br>Keep the block name as the main block would be, since any additional bits such as _pillar and _post will be added automatically.</span>
                 </div>
                 <input type="text" id="blockName" required="true" class="textinput"><br>
             </div>
         </div>
 
+        <div>
+            <input type="checkbox" id="block">
+            <label for="block" class="textbold">Blocks</label><br>
+            <input type="checkbox" id="slab">
+            <label for="slab" class="textbold">Slabs</label><br>
+            <input type="checkbox" id="stairs">
+            <label for="stairs" class="textbold">Stairs</label><br>
+            <input type="checkbox" id="wall">
+            <label for="wall" class="textbold">Walls</label><br>
+            <input type="checkbox" id="pillar">
+            <label for="pillar" class="textbold">Pillars</label>
+        </div>
+
         <div name="bottomButtons">
-            <input type="submit" value="Generate!" class="button buttonh">
+            <input type="submit" value="Generate!" id="generateBtn" class="button buttonh">
             <input type="reset" value="Reset All" class="button buttonh">
         </div>
     </form>
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="image" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input type="image" id="savebutton" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div><br>
-    
-    <script type="text/javascript" src="../functions.js"></script>
-    <script type="text/javascript" src="../functions/item_models.js"></script>
+
+    <script type="text/javascript" src="../functions/blockstates.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

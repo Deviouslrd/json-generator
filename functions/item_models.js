@@ -1,19 +1,20 @@
 const fs = require('fs');
 
-
-
 document.getElementById("itemModelForm").onsubmit = form => {
     form.preventDefault();
 
     const filepath = localStorage.path;
 
-    if (!filepath) {
+    var nameOfBlock = document.getElementById("blockName").value;
+    var nameOfMod = document.getElementById("modName").value;
+
+    localStorage.modName = nameOfMod;
+    localStorage.blockName = nameOfBlock;
+    
+    if (!filepath || localStorage.path === undefined) {
         return console.log('No filepath.');
     } 
 
-    var nameOfBlock = document.getElementById("blockName").value;
-    var nameOfMod = document.getElementById("modName").value;
-    
     nameOfBlock = nameOfBlock.toLowerCase().split(/ +/).join('_');
     nameOfMod = nameOfMod.toLowerCase().split(/ +/).join('_');
 

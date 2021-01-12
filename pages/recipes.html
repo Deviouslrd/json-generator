@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css" onload="onLoad()">
 </head>
 <body style="background: rgb(71, 71, 71);">
     <div style="text-align: center;">
@@ -36,14 +36,14 @@
         </div>
 
         <div name="bottomButtons">
-            <input type="submit" value="Generate!" class="button buttonh">
+            <input type="submit" value="Generate!" id="generateBtn" class="button buttonh">
             <input type="reset" value="Reset All" class="button buttonh">
         </div>
     </form>
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="image" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input type="image"  id="savebutton" class="button buttonh" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
