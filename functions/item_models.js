@@ -5,23 +5,23 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
     const filepath = localStorage.path;
 
-    var nameOfBlock = document.getElementById("blockName").value;
-    var nameOfMod = document.getElementById("modName").value;
+    var blockName = document.getElementById("blockName").value;
+    var modName = document.getElementById("modName").value;
 
-    localStorage.modName = nameOfMod;
-    localStorage.blockName = nameOfBlock;
+    localStorage.modName = modName;
+    localStorage.blockName = blockName;
     
     if (!filepath || localStorage.path === undefined) {
         return console.log('No filepath.');
     } 
 
-    nameOfBlock = nameOfBlock.toLowerCase().split(/ +/).join('_');
-    nameOfMod = nameOfMod.toLowerCase().split(/ +/).join('_');
+    blockName = blockName.toLowerCase().split(/ +/).join('_');
+    modName = modName.toLowerCase().split(/ +/).join('_');
 
     if (document.getElementById("nonWall").checked === true) {
 
         const jsonProduct = {
-            parent: `${nameOfMod}:block/${nameOfBlock}`
+            parent: `${modName}:block/${blockName}`
         };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -40,7 +40,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             });
         }
 
-        fs.writeFile(`${filepath}\\model\\item\\${nameOfBlock}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\model\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
 
@@ -56,7 +56,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
     if (document.getElementById("isWall").checked === true) {
         const jsonProduct = {
             parent: `minecraft:block/wall_inventory`,
-            textures: { wall: `${nameOfMod}:block/${nameOfBlock}`}
+            textures: { wall: `${modName}:block/${blockName}`}
         };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -75,7 +75,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             });
         }
 
-        fs.writeFileSync(`${filepath}\\model\\item\\${nameOfBlock}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\model\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
 

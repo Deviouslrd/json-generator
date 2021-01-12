@@ -11,12 +11,12 @@ document.getElementById("blockstateForm").onsubmit = form => {
     localStorage.modName = modName;
     localStorage.blockName = blockName;
     
-    if (!filepath || localStorage.path === undefined) {
+    if (!filepath || localStorage.path === undefined) { // In progress still. Try to get this functioning later.
         return console.log('No filepath.');
     } 
 
-    blockName = blockName.toLowerCase().split(/ +/).join('_');
-    modName = modName.toLowerCase().split(/ +/).join('_');
+    blockName = blockName.toLowerCase().split(/ +/).join('_'); // Turns the input into minecraft's block id format
+    modName = modName.toLowerCase().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
 
     // Block Creator
     if (document.getElementById("block").checked === true) {
