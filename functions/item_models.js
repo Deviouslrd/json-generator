@@ -18,6 +18,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
 
+    // Everything but walls
     if (document.getElementById("nonWall").checked === true) {
 
         const jsonProduct = {
@@ -53,6 +54,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         }, 1000);
     }
 
+    // Wall Model Creator
     if (document.getElementById("isWall").checked === true) {
         const jsonProduct = {
             parent: `minecraft:block/wall_inventory`,
@@ -87,4 +89,9 @@ document.getElementById("itemModelForm").onsubmit = form => {
             document.getElementById("generateBtn").value ="Generate!";
         }, 1000 );
     }
+
+    if (document.getElementById("nonWall").checked === false &&
+        document.getElementById("isWall").checked === false) {
+            document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+        }
 };

@@ -8,21 +8,24 @@ document.getElementById("savebutton").addEventListener('click', async () => {
 function onLoad() {
     document.getElementById("blockName").value = localStorage.blockName;
     document.getElementById("modName").value = localStorage.modName;
+    document.getElementById("saveLocation").value = localStorage.path;
 }
 
 const jsonObject = {
     ModName: document.getElementById("modName").value,
     BlockName: document.getElementById("blockName").value
-}
+};
 
 const jsonProduct = JSON.stringify(jsonObject, null, 4);
 
 function switchPage() {
-    fs.writeFile('values.json', jsonProduct, (err) => {
+    fs.writeFile('../values.json', jsonProduct, (err) => {
         if (err) throw err;
-    })
+    });
 }
 
-document.getElementById("menuButton").addEventListener('click', function() {
-
+document.getElementById("generateBtn").addEventListener('click', () => {
+    fs.writeFile('../values.json', jsonProduct, (err) => {
+        if (err) throw err;
+    });
 });
