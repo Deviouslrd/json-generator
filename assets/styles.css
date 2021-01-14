@@ -9,7 +9,7 @@
     color: black;
     font-size: 18px;
     font-family: minecraft;
-    padding: 5px;
+    padding: 2px;
     text-decoration: none;
     border-color: darkgrey;
     border-width: 2px;
@@ -96,6 +96,18 @@
     background-color: white;
     border-color: darkgray;
 
+}
+
+.savebutton {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 18px;
+    font-family: minecraft;
+    padding: 3px;
+    text-decoration: none;
+    border-color: darkgrey;
+    border-width: 3px;
 }
 
 .error {
