@@ -9,8 +9,10 @@
     color: black;
     font-size: 18px;
     font-family: minecraft;
-    padding: 3px;
+    padding: 5px;
     text-decoration: none;
+    border-color: darkgrey;
+    border-width: 2px;
 }
 
 .button:hover {
@@ -131,6 +133,7 @@
     text-decoration: none;
     display: block;
     font-size: 18px;
+    padding: 3px
 }
 
 .dropdown-content a:hover {
