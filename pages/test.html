@@ -5,13 +5,20 @@
 </head>
 <body style="background: rgb(71, 71, 71);">
     <div style="text-align: center;">
-        <a class="button buttonh" href="./main.html">Home Page</a>
-        <a class="button buttonh" id="menuButton" onclick="return switchPage()">Block Models</a>
-        <a class="button buttonh" id="menuButton" onclick="return switchPage()">Item Models</a>
-        <a class="button buttonh" id="menuButton" onclick="return switchPage()">Blockstates</a>
-        <a class="button buttonh" id="menuButton" onclick="return switchPage()">Advancements</a>
-        <a class="button buttonh" id="menuButton" onclick="return switchPage()">Loot Tables</a>
-        <a class="button buttonh" id="menuButton" onclick="return switchPage()">Recipes</a>
+        <a class="button" href="./main.html">Home Page</a>
+        <a class="button" id="menuButton" onclick="return switchPage()">Block Models</a>
+        <a class="button" id="menuButton" onclick="return switchPage()">Item Models</a>
+        <a class="button" id="menuButton" onclick="return switchPage()">Blockstates</a>
+        <a class="button" id="menuButton" onclick="return switchPage()">Advancements</a>
+        <a class="button" id="menuButton" onclick="return switchPage()">Loot Tables</a>
+        <div class="dropdown">
+            <buttonclass="dropbtn" id="dropbtn">Recipes</button>
+            <div class="dropdown-content">
+                <a href="recipe_cutter.html">Stonecutter</a>
+                <a href="recipe_furnace.html">Furnace</a>
+                <a href="recipe_table.html">Crafting Table</a>
+            </div>
+        </div>
     </div>
 
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
@@ -19,7 +26,7 @@
         This program currently does nothing, however it is now being properly developed.
     </p>
 
-    <button id="button1" class="button buttonh" onclick="modify()">Colour change!</button>
+    <buttonid="button1" class="button" onclick="modify()">Colour change!</button>
 
     <form id="test">
         <div name="Main Inputs">
@@ -53,14 +60,14 @@
         </div>
         
         <div name="bottomButtons">
-            <input type="submit" value="Generate!" class="button buttonh">
-            <input type="reset" value="Reset All" class="button buttonh">
+            <input type="submit" value="Generate!" class="button">
+            <input type="reset" value="Reset All" class="button">
         </div>
     </form>
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="image" class="button buttonh" src='../assets/folder.png' id="savebutton" onclick="saveLocation()" style="vertical-align: bottom;">
+        <input type="image" class="button" src='../assets/folder.png' id="savebutton" onclick="saveLocation()" style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 

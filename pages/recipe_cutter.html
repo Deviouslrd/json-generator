@@ -10,42 +10,47 @@
         <a class="button" href="./item_models.html" id="menuButton">Item Models</a>
         <a class="button" href="./blockstates.html" id="menuButton">Blockstates</a>
         <a class="button" href="./advancement.html" id="menuButton">Advancements</a>
-        <a class="buttondisabled" href="./loot_tables.html" id="menuButton">Loot Tables</a>
+        <a class="button" href="./loot_tables.html" id="menuButton">Loot Tables</a>
         <a class="button" href="./recipes.html" id="menuButton">Recipes</a>
     </div>
-
+    
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
     <p id="body" class="text">
-        Create loot tables for the new additions! [COMING SOON]
+        Create recipes for the new items you've added! [COMING SOON]
     </p>
 
-    <form id="lootTableForm">
+    <form id="recipeForm">
         <div name="Main Inputs">
             <div name="Mod Name">
                 <label for="modName" class="textbold">Mod Name:</label>
                 <input type="text" id="modName" required="true" class="textinput"><br>
             </div>
 
-            <div name="Block Name">
+            <div name="Ingredient Name">
                 <label for="blockName" class="textbold">Block Name:</label>
                 <div class="tooltip">?
                     <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
                 </div>
                 <input type="text" id="blockName" required="true" class="textinput"><br>
             </div>
-        </div>
 
-        <div>
-            <input type="checkbox" id="block">
-            <label for="block" class="textbold">Blocks</label><br>
-            <input type="checkbox" id="slab">
-            <label for="slab" class="textbold">Slabs</label><br>
-            <input type="checkbox" id="stairs">
-            <label for="stairs" class="textbold">Stairs</label><br>
-            <input type="checkbox" id="wall">
-            <label for="wall" class="textbold">Walls</label><br>
-            <input type="checkbox" id="pillar">
-            <label for="pillar" class="textbold">Pillars</label>
+            <div>
+                <label for="result" class="textbold">Result:</label>
+                <input type="text" id="result" required="true" class="textinput">
+            </div>
+
+            <div>
+                <label for="xpAmount" class="textbold">Experience for completion:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">For reference, smelting ores gives 1 xp (ancient debris gives 2), food gives 0.35, and regular blocks give 0.1</span>
+                </div>
+                <input type="number" id="xpAmount" required="true" class="textinput">
+            </div>
+
+            <div>
+                <label for="cookTime" class="textbold">Cooking Time:</label>
+                <input type="number" id="cookTime" required="true" value="200" class="textinput">
+            </div>
         </div>
         
         <div name="bottomButtons">
@@ -58,11 +63,11 @@
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="image" id="savebutton" class="button" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input type="image"  id="savebutton" class="button" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
-    <script type="text/javascript" src="../functions/item_models.js"></script>
+    <script type="text/javascript" src="../functions/recipes.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

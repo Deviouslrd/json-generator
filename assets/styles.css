@@ -13,7 +13,7 @@
     text-decoration: none;
 }
 
-.buttonh:hover {
+.button:hover {
     background-color: rgb(151, 151, 151);
     color: black;
 }
@@ -42,7 +42,7 @@
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 300px;
-    height: 90px;
+    height: fit-content;
     background-color: black;
     color: white;
     text-align: center;
@@ -100,4 +100,47 @@
     color: rgb(255, 31, 31);
     font-family: minecraft;
     font-size: 16px;
+}
+
+.dropbtn {
+    color:rgb(0, 0, 0);
+    background-color: white;
+    font-family: minecraft;
+    padding: 3px;
+    text-decoration: none;
+    font-size: 18px;
+    pointer-events: none;
+    cursor: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    font-family: minecraft;
+    min-width: 160px;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.dropdown-content a:hover {
+    background-color: grey;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;    
+}
+
+.dropdown:hover .dropbtn {
+    background-color: grey;
 }
