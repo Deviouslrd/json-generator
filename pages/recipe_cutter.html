@@ -43,23 +43,11 @@
 
             <div>
                 <label for="result" class="textbold">Result:</label>
-                <input type="text" id="result" required="true" class="textinput">
+                <input type="text" id="result" required="true" class="textinput"><br>
+                <label for="resultCount" class="textbold">Count:</label>
+                <input type="number" id="resultCount" required="true" class="textinput" style="width: 50px">
             </div>
 
-            <div>
-                <label for="xpAmount" class="textbold">Experience for completion:</label>
-                <div class="tooltip">?
-                    <span class="tooltiptext">For reference, smelting ores gives 1 xp (ancient debris gives 2), food gives 0.35, and regular blocks give 0.1</span>
-                </div>
-                <input type="number" id="xpAmount" required="true" class="textinput">
-            </div>
-
-            <div>
-                <label for="cookTime" class="textbold">Cooking Time:</label>
-                <input type="number" id="cookTime" required="true" value="200" class="textinput">
-            </div>
-        </div>
-        
         <div name="bottomButtons">
             <input type="submit" value="Generate!" id="generateBtn" class="button">
             <input type="reset" value="Reset All" class="button">
