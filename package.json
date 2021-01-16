@@ -6,7 +6,7 @@
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "build": "electron-packager ./ \"Minecraft JSON Generator\" --executable-name=minecraftjsongenerator --appname=\"Minecraft JSON Generator\" --app-version=1.0 --ignore=/node_modules --ignore=.gitignore --ignore=README.md --ignore=.eslintrc.json --icon=icon.ico"
+        "build": "electron-packager ./ \"Minecraft JSON Generator\" --out=builds --executable-name=minecraftjsongenerator --appname=\"Minecraft JSON Generator\" --app-version=1.2 --ignore=/builds --ignore=/node_modules --ignore=.gitignore --ignore=README.md --ignore=.eslintrc.json --icon=icon.ico"
     },
     "devDependencies": {
         "electron": "^11.1.1",

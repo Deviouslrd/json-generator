@@ -37,14 +37,21 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\loot_tables`)) {
-            fs.mkdir(`${filepath}\\loot_tables`, (err) => {
+        if (!fs.existsSync(`${filepath}\\loot_tables\\`)) {
+            fs.mkdir(`${filepath}\\loot_tables\\`, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\loot_tables\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        if (!fs.existsSync(`${filepath}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\loot_tables\\blocks`, (err) => {
+                if (err) throw err;
+                console.log('Made the loot tables folder.');
+            });
+        }
+
+        fs.writeFile(`${filepath}\\loot_tables\\blocks\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -69,14 +76,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\loot_tables`)) {
-            fs.mkdir(`${filepath}\\loot_tables`, (err) => {
+        if (!fs.existsSync(`${filepath}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\loot_tables\\blocks`, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\loot_tables\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\loot_tables\\blocks\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -101,14 +108,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\loot_tables`)) {
-            fs.mkdir(`${filepath}\\loot_tables`, (err) => {
+        if (!fs.existsSync(`${filepath}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\loot_tables\\blocks`, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\loot_tables\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\loot_tables\\blocks\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -133,14 +140,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\loot_tables`)) {
-            fs.mkdir(`${filepath}\\loot_tables`, (err) => {
+        if (!fs.existsSync(`${filepath}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\loot_tables\\blocks`, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\loot_tables\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\loot_tables\\blocks\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -165,14 +172,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\loot_tables`)) {
-            fs.mkdir(`${filepath}\\loot_tables`, (err) => {
+        if (!fs.existsSync(`${filepath}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\loot_tables\\blocks`, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\loot_tables\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\loot_tables\\blocks\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
