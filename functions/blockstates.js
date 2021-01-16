@@ -51,13 +51,13 @@ document.getElementById("blockstateForm").onsubmit = form => {
         const jsonProduct = {
             variants: {
                 "type=bottom": {
-                    model: `${modName}:block/${blockName}`
+                    model: `${modName}:block/${blockName}_slab`
                 },
                 "type=double": {
                     model: `${modName}:block/${blockName}`
                 },
                 "type=top": {
-                    model: `${modName}:block/${blockName}`
+                    model: `${modName}:block/${blockName}_slab_top`
                 }
             }
         };
