@@ -27,21 +27,21 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\model`)) {
-            fs.mkdir(`${filepath}\\model`, (err) => {
+        if (!fs.existsSync(`${filepath}\\models`)) {
+            fs.mkdir(`${filepath}\\models`, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\model\\item`)) {
-            fs.mkdir(`${filepath}\\model\\item`, (err) => {
+        if (!fs.existsSync(`${filepath}\\models\\item`)) {
+            fs.mkdir(`${filepath}\\models\\item`, (err) => {
                 if (err) throw err;
-                console.log('Made the model/item/ folder.');
+                console.log('Made the models/item/ folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\model\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\models\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
 
@@ -63,21 +63,21 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\model`)) {
-            fs.mkdir(`${filepath}\\model`, (err) => {
+        if (!fs.existsSync(`${filepath}\\models`)) {
+            fs.mkdir(`${filepath}\\models`, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\model\\item`)) {
-            fs.mkdir(`${filepath}\\model\\item`, (err) => {
+        if (!fs.existsSync(`${filepath}\\models\\item`)) {
+            fs.mkdir(`${filepath}\\models\\item`, (err) => {
                 if (err) throw err;
                 console.log('Made the model/item/ folder.');
             });
         }
 
-        fs.writeFileSync(`${filepath}\\model\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\models\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
 

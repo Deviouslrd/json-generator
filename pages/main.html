@@ -26,6 +26,14 @@
             </div>
         </div>
         <a class="buttondisabled" style="background-color: darkgrey;color:grey" href="./test.html">Testing</a>
-    </div>
+    </div><br>
+    <label class="textbold" style="font-size: 20px; vertical-align: 10px;">Github Link:</label>
+    <input type="image" src="../assets/github.png" onclick="gitLink()" alt="https://github.com/Deviouslrd/json-generator">
+
+    <script>
+        function gitLink () {
+            require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator");
+        }
+    </script>
 </body>
 </html>

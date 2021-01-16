@@ -45,4 +45,4 @@ document.getElementById("recipeForm").onsubmit = form => {
             document.getElementById("generateBtn").value ="Generate!";
         }, 1000);
     }
-}
+};
