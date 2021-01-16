@@ -22,8 +22,8 @@
 }
 
 .buttondisabled {
-    color:gray;
-    background-color: darkgray;
+    color:rgb(0, 0, 0);
+    background-color: rgb(255, 136, 0);
     font-family: minecraft;
     padding: 2px;
     text-decoration: none;
