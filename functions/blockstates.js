@@ -247,4 +247,12 @@ document.getElementById("blockstateForm").onsubmit = form => {
             document.getElementById("generateBtn").value ="Generate!";
         }, 1000 );
     }
+
+    if (document.getElementById("block").checked === false &&
+    document.getElementById("slab").checked === false &&
+    document.getElementById("stairs").checked === false &&
+    document.getElementById("wall").checked === false &&
+    document.getElementById("pillar").checked === false) {
+        document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+    }
 };

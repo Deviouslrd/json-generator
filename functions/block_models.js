@@ -28,21 +28,21 @@ document.getElementById("blockModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\models`)) {
-            fs.mkdir(`${filepath}\\models`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\models\\block`)) {
-            fs.mkdir(`${filepath}\\models\\block`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model/block/ folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made block file');
         });
@@ -78,27 +78,27 @@ document.getElementById("blockModelForm").onsubmit = form => {
         const jsonContent1 = JSON.stringify(jsonProduct1, null, 4);
         const jsonContent2 = JSON.stringify(jsonProduct2, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\models`)) {
-            fs.mkdir(`${filepath}\\models`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\models\\block`)) {
-            fs.mkdir(`${filepath}\\models\\block`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model/block/ folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_slab.json`, jsonContent1, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_slab.json`, jsonContent1, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made slab file.');
 
         });
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_slab_top.json`, jsonContent2, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_slab_top.json`, jsonContent2, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made slab_top file.');
         });
@@ -144,31 +144,31 @@ document.getElementById("blockModelForm").onsubmit = form => {
         const jsonContent2 = JSON.stringify(jsonProduct2, null, 4);
         const jsonContent3 = JSON.stringify(jsonProduct3, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\models`)) {
-            fs.mkdir(`${filepath}\\models`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\models\\block`)) {
-            fs.mkdir(`${filepath}\\models\\block`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model/block/ folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_stairs.json`, jsonContent1, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_stairs.json`, jsonContent1, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made stairs file.');
         });
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_stairs_inner.json`, jsonContent2, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_stairs_inner.json`, jsonContent2, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made inner stairs file.');
         });
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_stairs_outer.json`, jsonContent3, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_stairs_outer.json`, jsonContent3, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made outer stairs file.');
         });
@@ -208,31 +208,31 @@ document.getElementById("blockModelForm").onsubmit = form => {
         const jsonContent2 = JSON.stringify(jsonProduct2, null, 4);
         const jsonContent3 = JSON.stringify(jsonProduct3, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\models`)) {
-            fs.mkdir(`${filepath}\\models`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\models\\block`)) {
-            fs.mkdir(`${filepath}\\models\\block`, (err) => {
+        if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model/block/ folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_wall_post.json`, jsonContent1, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_wall_post.json`, jsonContent1, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the wall post file.');
         });
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_wall_side.json`, jsonContent2, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_wall_side.json`, jsonContent2, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the wall side file.');
         });
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_wall_side_tall.json`, jsonContent3, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_wall_side_tall.json`, jsonContent3, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the wall side top file.');
         });
@@ -267,25 +267,25 @@ document.getElementById("blockModelForm").onsubmit = form => {
         const jsonContent2 = JSON.stringify(jsonProduct2, null, 4);
 
         if (!fs.existsSync(`${filepath}\\models`)) {
-            fs.mkdir(`${filepath}\\models`, (err) => {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model folder.');
             });
         }
 
         if (!fs.existsSync(`${filepath}\\models\\block`)) {
-            fs.mkdir(`${filepath}\\models\\block`, (err) => {
+            fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {
                 if (err) throw err;
                 console.log('Made the model/block/ folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_pillar.json`, jsonContent1, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_pillar.json`, jsonContent1, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made pillar file.');
         });
 
-        fs.writeFile(`${filepath}\\models\\block\\${blockName}_pillar_horizontal.json`, jsonContent2, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_pillar_horizontal.json`, jsonContent2, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made pillar horizontal file.');
         });
