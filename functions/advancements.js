@@ -14,6 +14,7 @@ document.getElementById("advanceForm").onsubmit = form => {
     } 
 
     var blockName = document.getElementById("blockName").value;
+    var modName = document.getElementById("modName").value;
 
     localStorage.blockName = blockName;
 
@@ -23,18 +24,19 @@ document.getElementById("advanceForm").onsubmit = form => {
         parent: `minecraft:recipes/root`,
         rewards: {
             recipes: [
-                "ModName:BlockName_slab",
-                "ModName:BlockName_stairs",
-                "ModName:BlockName_wall"
+                `${modName}:${blockName}_slab`,
+                `${modName}:${blockName}_stairs`,
+                `${modName}:${blockName}_pillar`,
+                `${modName}:${blockName}_wall`
             ]
         },
         criteria: {
-            has_stone: {
+            has_item: {
                 trigger: `minecraft:inventory_changed`,
                 conditions: {
                     items: [
                         {
-                            item: "ModName:BlockName"
+                            item: `${modName}:${blockName}`
                         }
                     ]
                 }
@@ -44,16 +46,16 @@ document.getElementById("advanceForm").onsubmit = form => {
     
     const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-    if (!fs.existsSync(`${filepath}\\advancements`)) {
-        fs.mkdir(`${filepath}\\advancements`, (err) => {
+    if (!fs.existsSync(`${filepath}\\data\\advancements`)) {
+        fs.mkdir(`${filepath}\\data\\advancements`, { recursive: true }, (err) => {
             if (err) throw err;
             console.log('Made the advancements folder.');
         });
     }
 
-    fs.writeFile(`${filepath}\\advancements\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+    fs.writeFile(`${filepath}\\data\\advancements\\${blockName}.json`, jsonContent, 'utf8', (err) => {
         if (err) throw err;
-        console.log('made file');
+        console.log('Made advancement file.');
 
     });
     
