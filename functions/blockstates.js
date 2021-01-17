@@ -18,6 +18,13 @@ document.getElementById("blockstateForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_'); // Turns the input into minecraft's block id format
     modName = modName.toLowerCase().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
 
+    if (!fs.existsSync(`${filepath}\\assets\\${modName}\\blockstates`)) {
+        fs.mkdir(`${filepath}\\assets\\${modName}\\blockstates`, { recursive: true}, (err) => {
+            if (err) throw err;
+            console.log('Made the blockstates folder.');
+        });
+    }
+
     // Block Creator
     if (document.getElementById("block").checked === true) {
 
@@ -27,14 +34,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\blockstates`)) {
-            fs.mkdir(`${filepath}\\blockstates`, (err) => {
-                if (err) throw err;
-                console.log('Made the blockstate folder.');
-            });
-        }
-
-        fs.writeFile(`${filepath}\\blockstates\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made file');
         });
@@ -64,14 +64,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\blockstates`)) {
-            fs.mkdir(`${filepath}\\blockstates`, (err) => {
-                if (err) throw err;
-                console.log('Made the blockstates folder.');
-            });
-        }
-
-        fs.writeFileSync(`${filepath}\\blockstates\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made file');
         });
@@ -171,14 +164,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\blockstates`)) {
-            fs.mkdir(`${filepath}\\blockstates`, (err) => {
-                if (err) throw err;
-                console.log('Made the blockstates folder.');
-            });
-        }
-
-        fs.writeFileSync(`${filepath}\\blockstates\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made file');
         });
@@ -217,14 +203,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\blockstates`)) {
-            fs.mkdir(`${filepath}\\blockstates`, (err) => {
-                if (err) throw err;
-                console.log('Made the blockstate folder.');
-            });
-        }
-
-        fs.writeFile(`${filepath}\\blockstates\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made file');
         });
@@ -257,14 +236,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\blockstates`)) {
-            fs.mkdir(`${filepath}\\blockstates`, (err) => {
-                if (err) throw err;
-                console.log('Made the blockstates folder.');
-            });
-        }
-
-        fs.writeFileSync(`${filepath}\\blockstates\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made file');
         });
