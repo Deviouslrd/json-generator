@@ -78,7 +78,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
     if (document.getElementById("stairs").checked === true) {
 
         const jsonProduct = {
-            parent: `${modName}:block/${blockName}`
+            parent: `${modName}:block/${blockName}_stairs`
         };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -99,7 +99,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
     if (document.getElementById("pillar").checked === true) {
 
         const jsonProduct = {
-            parent: `${modName}:block/${blockName}`
+            parent: `${modName}:block/${blockName}_pillar`
         };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
