@@ -28,7 +28,12 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}`
+                            name: `${modName}:${blockName}`,
+                            functions: [
+                                            {
+                                                function: "minecraft:explosion_decay"
+                                            }
+                                     ]
                         }
                     ]
                 }
@@ -117,7 +122,12 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}_stairs`
+                            name: `${modName}:${blockName}_stairs`,
+                            functions: [
+                                            {
+                                                function: "minecraft:explosion_decay"
+                                            }
+                                     ]
                         }
                     ]
                 }
@@ -149,7 +159,12 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}_wall`
+                            name: `${modName}:${blockName}_wall`,
+                            functions: [
+                                            {
+                                                function: "minecraft:explosion_decay"
+                                            }
+                                     ]
                         }
                     ]
                 }
@@ -181,7 +196,12 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}_pillar`
+                            name: `${modName}:${blockName}_pillar`,
+                            functions: [
+                                            {
+                                                function: "minecraft:explosion_decay"
+                                            }
+                                     ]
                         }
                     ]
                 }
