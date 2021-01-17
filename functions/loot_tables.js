@@ -37,21 +37,21 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\data\\loot_tables\\`)) {
-            fs.mkdir(`${filepath}\\data\\loot_tables\\`, { recursive: true }, (err) => {
+        if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\`)) {
+            fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\`, { recursive: true }, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        if (!fs.existsSync(`${filepath}\\data\\loot_tables\\blocks`)) {
-            fs.mkdir(`${filepath}\\data\\loot_tables\\blocks`, { recursive: true }, (err) => {
+        if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\blocks`, { recursive: true }, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\data\\loot_tables\\blocks\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -94,14 +94,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\data\\loot_tables\\blocks`)) {
-            fs.mkdir(`${filepath}\\data\\loot_tables\\blocks`, { recursive: true }, (err) => {
+        if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\blocks`, { recursive: true }, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\data\\loot_tables\\blocks\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -126,14 +126,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\data\\loot_tables\\blocks`)) {
-            fs.mkdir(`${filepath}\\data\\loot_tables\\blocks`, { recursive: true }, (err) => {
+        if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\blocks`, { recursive: true }, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\data\\loot_tables\\blocks\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -158,14 +158,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\data\\loot_tables\\blocks`)) {
-            fs.mkdir(`${filepath}\\data\\loot_tables\\blocks`, { recursive: true }, (err) => {
+        if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\blocks`, { recursive: true }, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\data\\loot_tables\\blocks\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
@@ -190,14 +190,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        if (!fs.existsSync(`${filepath}\\data\\loot_tables\\blocks`)) {
-            fs.mkdir(`${filepath}\\data\\loot_tables\\blocks`, { recursive: true }, (err) => {
+        if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
+            fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\blocks`, { recursive: true }, (err) => {
                 if (err) throw err;
                 console.log('Made the loot tables folder.');
             });
         }
 
-        fs.writeFile(`${filepath}\\data\\loot_tables\\blocks\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made the loot table file');
         });
