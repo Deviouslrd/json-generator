@@ -19,14 +19,14 @@ document.getElementById("itemModelForm").onsubmit = form => {
     modName = modName.toLowerCase().split(/ +/).join('_');
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models`)) {
-        fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true} (err) => {
+        fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true}, (err) => {
             if (err) throw err;
             console.log('Made the model folder.');
         });
     }
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
-        fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true} (err) => {
+        fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true}, (err) => {
             if (err) throw err;
             console.log('Made the models/item/ folder.');
         });
