@@ -26,6 +26,8 @@ document.getElementById("").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
+        // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
+        
         if (!fs.existsSync(`${filepath}\\`)) {
             fs.mkdir(`${filepath}\\`, (err) => {
                 if (err) throw err;

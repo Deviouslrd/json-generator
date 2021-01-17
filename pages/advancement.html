@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
 <link rel="stylesheet" href="../assets/styles.css" onload="onLoad()">
 </head>
 <body style="background: rgb(71, 71, 71);">
     <div style="text-align: center;">
-        <a class="button" href="./main.html" >Home Page</a>
-        <a class="button" href="./block_models.html"  onclick="return switchPage()">Block Models</a>
-        <a class="button" href="./item_models.html"  onclick="return switchPage()">Item Models</a>
-        <a class="button" href="./blockstates.html"  onclick="return switchPage()">Blockstates</a>
-        <a class="buttondisabled" href="./advancement.html"  onclick="return switchPage()">Advancements</a>
-        <a class="button" href="./loot_tables.html"  onclick="return switchPage()">Loot Tables</a>
+        <a class="button" href="./main.html">Home Page</a>
+        <a class="button" href="./block_models.html" onclick="return switchPage()">Block Models</a>
+        <a class="button" href="./item_models.html" onclick="return switchPage()">Item Models</a>
+        <a class="button" href="./blockstates.html" onclick="return switchPage()">Blockstates</a>
+        <a class="buttondisabled" href="./advancement.html" onclick="return switchPage()">Advancements</a>
+        <a class="button" href="./loot_tables.html" onclick="return switchPage()">Loot Tables</a>
         <div class="dropdown">
             <button class="dropbtn" id="dropBtn">Recipes</button>
             <div class="dropdown-content">
@@ -36,6 +36,15 @@
             <input type="text" id="blockName" required="true" class="textinput"><br>
         </div>
 
+
+    <div name="Mod Name">
+            <label for="modName" class="textbold">Mod Name:</label>
+            <div class="tooltip">?
+                <span class="tooltiptext">Input your mod id. Capitals are not necessary.</span>
+            </div>
+            <input type="text" id="modName" required="true" class="textinput"><br>
+        </div>
+
         <div name="bottomButtons">
             <input type="submit" value="Generate!" id="generateBtn" class="button">
             <input type="reset" value="Reset All" class="button">
@@ -46,11 +55,12 @@
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="image" id="savebutton" class="button" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
-        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
+        <input type="image" id="savebutton" class="button" src="../assets/folder.png" onclick="saveLocation()" style="vertical-align: bottom;">
+        <input disabled="" type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
     <script type="text/javascript" src="../functions/advancements.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
+
 </body>
 </html>
