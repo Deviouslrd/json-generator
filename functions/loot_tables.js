@@ -60,19 +60,37 @@ document.getElementById("lootTableForm").onsubmit = form => {
     // Slab Creator
     if (document.getElementById("slab").checked === true) {
         const jsonProduct = {
-            type: "minecraft:block",
-            pools: [
+        "type": "minecraft:block",
+        "pools": [
+          {
+            "rolls": 1,
+            "entries": [
+              {
+                type: "minecraft:item",
+                name: `${modName}:${blockName}_slab`,
+                functions: [
                 {
-                    rolls: 1,
-                    entries: [
-                        {
-                            type: "minecraft:item",
-                            name: `${modName}:${blockName}`
-                        }
-                    ]
+                    function: "minecraft:explosion_decay"
+                },
+                {
+              function: "minecraft:set_count",
+              count: 2,
+              conditions: [
+                {
+                  condition: "minecraft:block_state_property",
+                  block: `${modName}:${blockName}_slab`,
+                  properties: {
+                    type: "double"
+                  }
                 }
-            ]
-        };
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
@@ -99,7 +117,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}`
+                            name: `${modName}:${blockName}_stairs`
                         }
                     ]
                 }
@@ -131,7 +149,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}`
+                            name: `${modName}:${blockName}_wall`
                         }
                     ]
                 }
@@ -163,7 +181,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     entries: [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}`
+                            name: `${modName}:${blockName}_pillar`
                         }
                     ]
                 }
