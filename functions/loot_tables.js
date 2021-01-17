@@ -90,7 +90,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
       ]
     }
   ]
-}
+};
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
