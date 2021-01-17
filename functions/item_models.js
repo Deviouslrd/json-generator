@@ -18,15 +18,15 @@ document.getElementById("itemModelForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
 
-    if (!fs.existsSync(`${filepath}\\models`)) {
-        fs.mkdir(`${filepath}\\models`, (err) => {
+    if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models`)) {
+        fs.mkdir(`${filepath}\\assets\\${modName}\\models`, {recursive: true} (err) => {
             if (err) throw err;
             console.log('Made the model folder.');
         });
     }
 
-    if (!fs.existsSync(`${filepath}\\models\\item`)) {
-        fs.mkdir(`${filepath}\\models\\item`, (err) => {
+    if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
+        fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true} (err) => {
             if (err) throw err;
             console.log('Made the models/item/ folder.');
         });
@@ -41,7 +41,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\models\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
         });
@@ -62,7 +62,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\models\\item\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
         });
@@ -83,7 +83,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\models\\item\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
         });
@@ -104,7 +104,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\models\\item\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
         });
@@ -125,7 +125,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFileSync(`${filepath}\\models\\item\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFileSync(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
         });
