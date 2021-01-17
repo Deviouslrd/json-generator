@@ -46,14 +46,14 @@ document.getElementById("advanceForm").onsubmit = form => {
     
     const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-    if (!fs.existsSync(`${filepath}\\data\\advancements`)) {
-        fs.mkdir(`${filepath}\\data\\advancements`, { recursive: true }, (err) => {
+    if (!fs.existsSync(`${filepath}\\data\\${modName}\\advancements`)) {
+        fs.mkdir(`${filepath}\\data\\${modName}\\advancements`, { recursive: true }, (err) => {
             if (err) throw err;
             console.log('Made the advancements folder.');
         });
     }
 
-    fs.writeFile(`${filepath}\\data\\advancements\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+    fs.writeFile(`${filepath}\\data\\${modName}\\advancements\\${blockName}.json`, jsonContent, 'utf8', (err) => {
         if (err) throw err;
         console.log('Made advancement file.');
 
