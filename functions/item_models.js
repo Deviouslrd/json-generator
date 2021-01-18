@@ -11,9 +11,9 @@ document.getElementById("itemModelForm").onsubmit = form => {
     localStorage.modName = modName;
     localStorage.blockName = blockName;
     
-    if (!filepath || localStorage.path === undefined) {
-        return console.log('No filepath.');
-    } 
+    if (document.getElementById("saveLocation").value === 'No Location') {
+        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    }
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
@@ -133,6 +133,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             document.getElementById("wall").checked === false &&
             document.getElementById("pillar").checked === false) {
                 document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
-            }
+        }
+
     }, 10);
 };

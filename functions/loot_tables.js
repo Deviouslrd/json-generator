@@ -62,35 +62,35 @@ document.getElementById("lootTableForm").onsubmit = form => {
         const jsonProduct = {
         "type": "minecraft:block",
         "pools": [
-          {
-            "rolls": 1,
-            "entries": [
-              {
-                type: "minecraft:item",
-                name: `${modName}:${blockName}_slab`,
-                functions: [
-                {
-                    function: "minecraft:explosion_decay"
-                },
-                {
-              function: "minecraft:set_count",
-              count: 2,
-              conditions: [
-                {
-                  condition: "minecraft:block_state_property",
-                  block: `${modName}:${blockName}_slab`,
-                  properties: {
-                    type: "double"
-                  }
-                }
-              ]
+            {
+                "rolls": 1,
+                "entries": [
+                    {
+                        type: "minecraft:item",
+                        name: `${modName}:${blockName}_slab`,
+                        functions: [
+                            {
+                                function: "minecraft:explosion_decay"
+                            },
+                            {
+                                function: "minecraft:set_count",
+                                count: 2,
+                                conditions: [
+                                    {
+                                        condition: "minecraft:block_state_property",
+                                        block: `${modName}:${blockName}_slab`,
+                                        properties: {
+                                            type: "double"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
-          ]
-        }
-      ]
-    }
-  ]
-}
+        ]
+    };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
