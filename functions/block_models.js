@@ -173,7 +173,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 parent: "minecraft:block/cube_column",
                 textures: {
                 end: `${modName}:block/${blockName}_pillar_top`,
-                side: `${modName}"block/${blockName}_pillar`
+                side: `${modName}:block/${blockName}_pillar`
                 }
             };
 
