@@ -11,9 +11,9 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.modName = modName;
     localStorage.blockName = blockName;
     
-    if (!filepath || localStorage.path === undefined) {
-        return console.log('No filepath.');
-    } 
+    if (document.getElementById("saveLocation").value === 'No location') {
+        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    }
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
@@ -40,6 +40,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         });
         
         document.getElementById("generateBtn").value = "Generated!";
+        document.getElementById("errorholder").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";

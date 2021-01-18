@@ -38,12 +38,6 @@ document.getElementById("itemModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the block file');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Slab Creator
@@ -58,12 +52,6 @@ document.getElementById("itemModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the slab file');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Stairs Creator
@@ -78,12 +66,6 @@ document.getElementById("itemModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the stairs file.');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Pillar Creator
@@ -98,12 +80,6 @@ document.getElementById("itemModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the pillar file');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Wall Creator
@@ -119,12 +95,6 @@ document.getElementById("itemModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the wall file');
             });
-
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000 );
         }
 
         if (document.getElementById("block").checked === false &&
@@ -132,8 +102,15 @@ document.getElementById("itemModelForm").onsubmit = form => {
             document.getElementById("stairs").checked === false &&
             document.getElementById("wall").checked === false &&
             document.getElementById("pillar").checked === false) {
-                document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+                return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
         }
+        
+        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("generateBtn").value = "Generated!";
+
+        setTimeout(() => {
+            document.getElementById("generateBtn").value ="Generate!";
+        }, 1000 );
 
     }, 10);
 };

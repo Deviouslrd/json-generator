@@ -39,12 +39,15 @@ document.getElementById("").onsubmit = form => {
                 console.log('made file');
 
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
 
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
+            
+        document.getElementById("generateBtn").value = "Generated!";
+        document.getElementById("errorholder").innerHTML = "";
+
+        setTimeout(() => {
+            document.getElementById("generateBtn").value ="Generate!";
+        }, 1000);
+
     }, 10);
 };

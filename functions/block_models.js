@@ -12,9 +12,9 @@ document.getElementById("blockModelForm").onsubmit = form => {
     localStorage.modName = modName;
     localStorage.blockName = blockName;
     
-    if (!filepath || localStorage.path === undefined) {
-        return console.log('No filepath.');
-    } 
+    if (document.getElementById("saveLocation").value === 'No location') {
+        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    }
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
@@ -29,7 +29,6 @@ document.getElementById("blockModelForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
-
             const jsonProduct = {
                 parent: `minecraft:block/cube_all`, textures: { all: `${modName}:block/${blockName}`}  
             };
@@ -40,17 +39,10 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made block file');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
-
             const jsonProduct1 = {
                 parent: `minecraft:block/slab`,
                 textures: {
@@ -75,24 +67,16 @@ document.getElementById("blockModelForm").onsubmit = form => {
             fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_slab.json`, jsonContent1, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made slab file.');
-
             });
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_slab_top.json`, jsonContent2, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made slab_top file.');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Stair Creator
         if (document.getElementById("stairs").checked === true) {
-
             const jsonProduct1 = {
                 parent: "minecraft:block/stairs",
                 textures: {
@@ -138,17 +122,10 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made outer stairs file.');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
         
         // Wall Creator
         if (document.getElementById("wall").checked === true) {
-
             const jsonProduct1 = {
                 parent: `minecraft:block/template_wall_post`,
                 textures: {
@@ -188,17 +165,10 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the wall side top file.');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Pillar Creator
         if (document.getElementById("pillar").checked === true) {
-
             const jsonProduct1 = {
                 parent: "minecraft:block/cube_column",
                 textures: {
@@ -227,12 +197,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made pillar horizontal file.');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
 
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         if (document.getElementById("block").checked === false &&
@@ -240,8 +205,15 @@ document.getElementById("blockModelForm").onsubmit = form => {
             document.getElementById("stairs").checked === false &&
             document.getElementById("wall").checked === false &&
             document.getElementById("pillar").checked === false) {
-                document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+                return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
         }  
-        
+                    
+        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("generateBtn").value = "Generated!";
+
+        setTimeout(() => {
+            document.getElementById("generateBtn").value ="Generate!";
+        }, 1000);
+
     }, 10);
 };

@@ -28,7 +28,6 @@ document.getElementById("blockstateForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
-
             const jsonProduct = {
                 variants: { "": { model: `${modName}:block/${blockName}` }}
             };
@@ -39,12 +38,6 @@ document.getElementById("blockstateForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made file');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Slab Creator
@@ -69,12 +62,6 @@ document.getElementById("blockstateForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made file');
             });
-
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000 );
         }
 
         // Stairs Creator
@@ -169,17 +156,10 @@ document.getElementById("blockstateForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made file');
             });
-
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000 );
         }
 
         // Wall Creator
         if (document.getElementById("wall").checked === true) {
-
             const jsonProduct = {
                 "multipart": [
                     { when: { up: true }, apply: { model: `${modName}:block/${blockName}_wall_post` } },
@@ -208,12 +188,6 @@ document.getElementById("blockstateForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made file');
             });
-            
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000);
         }
 
         // Pillar creator
@@ -241,12 +215,6 @@ document.getElementById("blockstateForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made file');
             });
-
-            document.getElementById("generateBtn").value = "Generated!";
-
-            setTimeout(() => {
-                document.getElementById("generateBtn").value ="Generate!";
-            }, 1000 );
         }
 
         if (document.getElementById("block").checked === false &&
@@ -254,8 +222,15 @@ document.getElementById("blockstateForm").onsubmit = form => {
             document.getElementById("stairs").checked === false &&
             document.getElementById("wall").checked === false &&
             document.getElementById("pillar").checked === false) {
-            document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+                return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
         }
+            
+        document.getElementById("generateBtn").value = "Generated!";
+        document.getElementById("errorholder").innerHTML = "";
+
+        setTimeout(() => {
+            document.getElementById("generateBtn").value ="Generate!";
+        }, 1000);
 
     }, 10);
 };

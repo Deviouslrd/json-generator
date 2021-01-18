@@ -60,6 +60,7 @@ document.getElementById("advanceForm").onsubmit = form => {
     });
     
     document.getElementById("generateBtn").value = "Generated!";
+    document.getElementById("errorholder").innerHTML = "";
 
     setTimeout(() => {
         document.getElementById("generateBtn").value ="Generate!";
