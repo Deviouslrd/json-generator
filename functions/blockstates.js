@@ -172,13 +172,13 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
                     { when: { west: "low" }, apply: { model: `${modName}:block/${blockName}_wall_side`, y: 270, uvlock: true} },
 
-                    { when: { north: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_tall`, uvlock: true } },
+                    { when: { north: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, uvlock: true } },
 
-                    { when: { east: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_tall`, y: 90, uvlock: true } },
+                    { when: { east: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, y: 90, uvlock: true } },
 
-                    { when: { south: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_tall`, y: 180, uvlock: true } },
+                    { when: { south: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, y: 180, uvlock: true } },
 
-                    { when: { west: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_tall`, y: 270, uvlock: true } },
+                    { when: { west: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, y: 270, uvlock: true } },
                 ]
             };
             
