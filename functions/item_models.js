@@ -17,7 +17,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
     localStorage.textureNamespace = textureNamespace;
 
     
-    if (document.getElementById("saveLocation").value === 'No location') {
+    if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
