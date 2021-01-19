@@ -8,9 +8,15 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    if (document.getElementById("textureNamespace").value === ``) {
+       var textureNamespace = document.getElementById("modName").value;
+        } else var textureNamespace = document.getElementById("textureNamespace").value;
+    
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
+    localStorage.textureNamespace = textureNamespace;
+
     
     if (document.getElementById("saveLocation").value === 'No location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
@@ -18,6 +24,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
+    textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
+
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
         fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {
@@ -30,7 +38,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
             const jsonProduct = {
-                parent: `minecraft:block/cube_all`, textures: { all: `${modName}:block/${blockName}`}  
+                parent: `minecraft:block/cube_all`, textures: { all: `${textureNamespace}:block/${blockName}`}  
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -46,18 +54,18 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: `minecraft:block/slab`,
                 textures: {
-                    bottom: `${modName}:block/${blockName}`,
-                    top: `${modName}:block/${blockName}`,
-                    side: `${modName}:block/${blockName}`
+                    bottom: `${textureNamespace}:block/${blockName}`,
+                    top: `${textureNamespace}:block/${blockName}`,
+                    side: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct2 = {
                 parent: `minecraft:block/slab_top`,
                 textures: {
-                    bottom: `${modName}:block/${blockName}`,
-                    top: `${modName}:block/${blockName}`,
-                    side: `${modName}:block/${blockName}`
+                    bottom: `${textureNamespace}:block/${blockName}`,
+                    top: `${textureNamespace}:block/${blockName}`,
+                    side: `${textureNamespace}:block/${blockName}`
                 }
             };
             
@@ -80,27 +88,27 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: "minecraft:block/stairs",
                 textures: {
-                bottom: `${modName}:block/${blockName}`,
-                top: `${modName}:block/${blockName}`,
-                side: `${modName}:block/${blockName}`
+                bottom: `${textureNamespace}:block/${blockName}`,
+                top: `${textureNamespace}:block/${blockName}`,
+                side: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct2 = {
                 parent: "minecraft:block/inner_stairs",
                 textures: {
-                bottom: `${modName}:block/${blockName}`,
-                top: `${modName}:block/${blockName}`,
-                side: `${modName}:block/${blockName}`
+                bottom: `${textureNamespace}:block/${blockName}`,
+                top: `${textureNamespace}:block/${blockName}`,
+                side: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct3 = {
                 parent: "minecraft:block/outer_stairs",
                 textures: {
-                bottom: `${modName}:block/${blockName}`,
-                top: `${modName}:block/${blockName}`,
-                side: `${modName}:block/${blockName}`
+                bottom: `${textureNamespace}:block/${blockName}`,
+                top: `${textureNamespace}:block/${blockName}`,
+                side: `${textureNamespace}:block/${blockName}`
                 }
             };
             
@@ -129,21 +137,21 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: `minecraft:block/template_wall_post`,
                 textures: {
-                    wall: `${modName}:block/${blockName}`
+                    wall: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct2 = {
                 parent: `minecraft:block/template_wall_side`,
                 textures: {
-                    wall: `${modName}:block/${blockName}`
+                    wall: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct3 = {
                 parent: `minecraft:block/template_wall_side_tall`,
                 textures: {
-                    wall: `${modName}:block/${blockName}`
+                    wall: `${textureNamespace}:block/${blockName}`
                 }
             };
             
@@ -172,16 +180,16 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: "minecraft:block/cube_column",
                 textures: {
-                end: `${modName}:block/${blockName}_pillar_top`,
-                side: `${modName}:block/${blockName}_pillar`
+                end: `${textureNamespace}:block/${blockName}_pillar_top`,
+                side: `${textureNamespace}"block/${blockName}_pillar`
                 }
             };
 
             const jsonProduct2 = {
                 parent: "minecraft:block/cube_column_horizontal",
                 textures: {
-                end: `${modName}:block/${blockName}_pillar_top`,
-                side: `${modName}:block/${blockName}_pillar`
+                end: `${textureNamespace}:block/${blockName}_pillar_top`,
+                side: `${textureNamespace }:block/${blockName}_pillar`
                 }
             };
             
