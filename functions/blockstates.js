@@ -2,19 +2,27 @@ const fs = require('fs');
 
 document.getElementById("blockstateForm").onsubmit = form => {
     form.preventDefault();
-
     const filepath = localStorage.path;
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    if (document.getElementById("textureNamespace").value === ``) {
+       var textureNamespace = document.getElementById("modName").value;
+        } else var textureNamespace = document.getElementById("textureNamespace").value;
+    
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
+    localStorage.textureNamespace = textureNamespace;
 
-    if (document.getElementById("saveLocation").value === 'No location') {
+    
+    if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
+    blockName = blockName.toLowerCase().split(/ +/).join('_');
+    modName = modName.toLowerCase().split(/ +/).join('_');
+    textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
     blockName = blockName.toLowerCase().split(/ +/).join('_'); // Turns the input into minecraft's block id format
     modName = modName.toLowerCase().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
 
@@ -48,7 +56,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
                         model: `${modName}:block/${blockName}_slab`
                     },
                     "type=double": {
-                        model: `${modName}:block/${blockName}`
+                        model: `${textureNamespace}:block/${blockName}`
                     },
                     "type=top": {
                         model: `${modName}:block/${blockName}_slab_top`
