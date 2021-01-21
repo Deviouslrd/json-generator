@@ -23,7 +23,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
-    textureNamespace =  textureNamespace.toLowerCase.split(/ +/).join('_');
+    textureNamespace =  textureNamespace.toLowerCase().split(/ +/).join('_');
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
         fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true}, (err) => {
