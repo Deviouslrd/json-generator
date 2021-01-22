@@ -7,9 +7,15 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    if (document.getElementById("textureNamespace").value === ``) {
+       var textureNamespace = document.getElementById("modName").value;
+        } else var textureNamespace = document.getElementById("textureNamespace").value;
+    
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
+    localStorage.textureNamespace = textureNamespace;
+
     
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
@@ -17,6 +23,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
+    textureNamespace =  textureNamespace.toLowerCase().split(/ +/).join('_');
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
         fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true}, (err) => {
@@ -86,7 +93,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         if (document.getElementById("wall").checked === true) {
             const jsonProduct = {
                 parent: `minecraft:block/wall_inventory`,
-                textures: { wall: `${modName}:block/${blockName}`}
+                textures: { wall: `${textureNamespace}:block/${blockName}`}
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);

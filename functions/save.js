@@ -9,9 +9,15 @@ function onLoad() {
     if (localStorage.blockName) {
         document.getElementById("blockName").value = localStorage.blockName;
     }
+    
     if (localStorage.modName) {
         document.getElementById("modName").value = localStorage.modName;
     }
+        
+    if (localStorage.textureNamespace) {
+        document.getElementById("textureNamespace").value = localStorage.textureNamespace;
+    }
+    
     if (localStorage.path) {
         document.getElementById("saveLocation").value = localStorage.path;
     }
@@ -20,5 +26,6 @@ function onLoad() {
 document.getElementById("generateBtn").addEventListener('click', () => {
     localStorage.blockName = document.getElementById("blockName").value;
     localStorage.modName = document.getElementById("modName").value;
+    localStorage.textureNamespace = document.getElementById("textureNamespace").value;
     localStorage.path = document.getElementById("saveLocation").value; 
 });
