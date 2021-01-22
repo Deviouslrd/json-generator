@@ -18,12 +18,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
 
-    const blockLength = blockName.length;
-    const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
-    
-    if (blockSubStr === 'bricks') {
-        var finalBlock = blockName.substring(0, blockName.length - 1);
+    function brickSlice () {
+        const blockLength = blockName.length;
+        const blockLengthStart = blockLength - 6;
+        const blockSubStr = blockName.substring(blockLengthStart);
+        
+        if (blockSubStr === 'bricks') {
+            var finalBlock = blockName.substring(0, blockName.length - 1);
+        }
     }
 
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
@@ -36,6 +38,8 @@ document.getElementById("lootTableForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 type: "minecraft:block",
                 pools: [
@@ -61,6 +65,8 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
             "type": "minecraft:block",
             "pools": [
@@ -104,6 +110,8 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
         // Stair Creator
         if (document.getElementById("stairs").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 type: "minecraft:block",
                 pools: [
@@ -129,6 +137,8 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
         // Wall Creator
         if (document.getElementById("wall").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 type: "minecraft:block",
                 pools: [
@@ -154,6 +164,8 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
         // Pillar Creator
         if (document.getElementById("pillar").checked === true) {
+            brickSlice();
+            
             const jsonProduct = {
                 type: "minecraft:block",
                 pools: [

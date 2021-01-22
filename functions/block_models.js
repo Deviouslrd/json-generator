@@ -29,12 +29,14 @@ document.getElementById("blockModelForm").onsubmit = form => {
     modName = modName.toLowerCase().split(/ +/).join('_');
     textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
 
-    const blockLength = blockName.length;
-    const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
-    
-    if (blockSubStr === 'bricks') {
-        blockName = blockName.substring(0, blockName.length - 1);
+    function brickSlice () {
+        const blockLength = blockName.length;
+        const blockLengthStart = blockLength - 6;
+        const blockSubStr = blockName.substring(blockLengthStart);
+        
+        if (blockSubStr === 'bricks') {
+            blockName = blockName.substring(0, blockName.length - 1);
+        }
     }
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
@@ -61,6 +63,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
+            brickSlice();
+
             const jsonProduct1 = {
                 parent: `minecraft:block/slab`,
                 textures: {
@@ -95,6 +99,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Stair Creator
         if (document.getElementById("stairs").checked === true) {
+            brickSlice();
+
             const jsonProduct1 = {
                 parent: "minecraft:block/stairs",
                 textures: {
@@ -144,6 +150,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
         
         // Wall Creator
         if (document.getElementById("wall").checked === true) {
+            brickSlice();
+
             const jsonProduct1 = {
                 parent: `minecraft:block/template_wall_post`,
                 textures: {
@@ -187,6 +195,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Pillar Creator
         if (document.getElementById("pillar").checked === true) {
+            brickSlice();
+            
             const jsonProduct1 = {
                 parent: "minecraft:block/cube_column",
                 textures: {

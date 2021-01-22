@@ -27,12 +27,14 @@ document.getElementById("itemModelForm").onsubmit = form => {
     modName = modName.toLowerCase().split(/ +/).join('_');
     textureNamespace =  textureNamespace.toLowerCase().split(/ +/).join('_');
 
-    const blockLength = blockName.length;
-    const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
-    
-    if (blockSubStr === 'bricks') {
-        var finalBlock = blockName.substring(0, blockName.length - 1);
+    function brickSlice () {
+        const blockLength = blockName.length;
+        const blockLengthStart = blockLength - 6;
+        const blockSubStr = blockName.substring(blockLengthStart);
+        
+        if (blockSubStr === 'bricks') {
+            var finalBlock = blockName.substring(0, blockName.length - 1);
+        }
     }
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
@@ -45,6 +47,8 @@ document.getElementById("itemModelForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 parent: `${modName}:block/${blockName}`
             };
@@ -59,6 +63,8 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 parent: `${modName}:block/${blockName}_slab`
             };
@@ -73,6 +79,8 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
         // Stairs Creator
         if (document.getElementById("stairs").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 parent: `${modName}:block/${blockName}_stairs`
             };
@@ -87,6 +95,8 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
         // Pillar Creator
         if (document.getElementById("pillar").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 parent: `${modName}:block/${blockName}_pillar`
             };
@@ -101,6 +111,8 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
         // Wall Creator
         if (document.getElementById("wall").checked === true) {
+            brickSlice();
+            
             const jsonProduct = {
                 parent: `minecraft:block/wall_inventory`,
                 textures: { wall: `${textureNamespace}:block/${blockName}`}

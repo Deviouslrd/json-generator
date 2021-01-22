@@ -28,12 +28,14 @@ document.getElementById("blockstateForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_'); // Turns the input into minecraft's block id format
     modName = modName.toLowerCase().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
 
-    const blockLength = blockName.length;
-    const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
-    
-    if (blockSubStr === 'bricks') {
-        var finalBlock = blockName.substring(0, blockName.length - 1);
+    function brickSlice () {
+        const blockLength = blockName.length;
+        const blockLengthStart = blockLength - 6;
+        const blockSubStr = blockName.substring(blockLengthStart);
+        
+        if (blockSubStr === 'bricks') {
+            var finalBlock = blockName.substring(0, blockName.length - 1);
+        }
     }
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\blockstates`)) {
@@ -46,6 +48,8 @@ document.getElementById("blockstateForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 variants: { "": { model: `${modName}:block/${blockName}` }}
             };
@@ -60,6 +64,8 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 variants: {
                     "type=bottom": {
@@ -84,6 +90,8 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
         // Stairs Creator
         if (document.getElementById("stairs").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 variants: {
                     "facing=east,half=bottom,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, y: 270, uvlock: true },
@@ -178,6 +186,8 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
         // Wall Creator
         if (document.getElementById("wall").checked === true) {
+            brickSlice();
+
             const jsonProduct = {
                 "multipart": [
                     { when: { up: true }, apply: { model: `${modName}:block/${blockName}_wall_post` } },
@@ -210,6 +220,8 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
         // Pillar creator
         if (document.getElementById("pillar").checked === true) {
+            brickSlice();
+            
             const jsonProduct = {
                 variants: {
                     "axis=x": {
