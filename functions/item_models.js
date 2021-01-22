@@ -4,13 +4,15 @@ document.getElementById("itemModelForm").onsubmit = form => {
     form.preventDefault();
 
     const filepath = localStorage.path;
+    var textureNamespace;
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     if (document.getElementById("textureNamespace").value === ``) {
-       var textureNamespace = document.getElementById("modName").value;
-        } else var textureNamespace = document.getElementById("textureNamespace").value;
-    
+        textureNamespace = document.getElementById("modName").value;
+    } else {
+        textureNamespace = document.getElementById("textureNamespace").value;
+    }
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
