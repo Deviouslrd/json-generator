@@ -18,6 +18,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
 
+    const blockLength = blockName.length;
+    const blockLengthStart = blockLength - 6;
+    const blockSubStr = blockName.substring(blockLengthStart);
+    
+    if (blockSubStr === 'bricks') {
+        var finalBlock = blockName.substring(0, blockName.length - 1);
+    }
+
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\loot_tables\\blocks`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\loot_tables\\blocks`, { recursive: true }, (err) => {
             if (err) throw err;

@@ -9,6 +9,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
     var textureNamespace;
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+
     if (document.getElementById("textureNamespace").value === ``) {
         textureNamespace = document.getElementById("modName").value;
     } else {
@@ -28,6 +29,13 @@ document.getElementById("blockModelForm").onsubmit = form => {
     modName = modName.toLowerCase().split(/ +/).join('_');
     textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
 
+    const blockLength = blockName.length;
+    const blockLengthStart = blockLength - 6;
+    const blockSubStr = blockName.substring(blockLengthStart);
+    
+    if (blockSubStr === 'bricks') {
+        blockName = blockName.substring(0, blockName.length - 1);
+    }
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\block`)) {
         fs.mkdir(`${filepath}\\assets\\${modName}\\models\\block`, {recursive: true}, (err) => {

@@ -27,6 +27,14 @@ document.getElementById("itemModelForm").onsubmit = form => {
     modName = modName.toLowerCase().split(/ +/).join('_');
     textureNamespace =  textureNamespace.toLowerCase().split(/ +/).join('_');
 
+    const blockLength = blockName.length;
+    const blockLengthStart = blockLength - 6;
+    const blockSubStr = blockName.substring(blockLengthStart);
+    
+    if (blockSubStr === 'bricks') {
+        var finalBlock = blockName.substring(0, blockName.length - 1);
+    }
+
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
         fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true}, (err) => {
             if (err) throw err;

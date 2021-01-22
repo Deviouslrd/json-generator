@@ -6,15 +6,15 @@ document.getElementById("savebutton").addEventListener('click', async () => {
 });
 
 function onLoad() {
-    if (localStorage.blockName) {
+    if (localStorage.blockName && document.getElementById("blockName")) {
         document.getElementById("blockName").value = localStorage.blockName;
     }
     
-    if (localStorage.modName) {
+    if (localStorage.modName && document.getElementById("modName")) {
         document.getElementById("modName").value = localStorage.modName;
     }
         
-    if (localStorage.textureNamespace) {
+    if (localStorage.textureNamespace && document.getElementById("textureNamespace")) {
         document.getElementById("textureNamespace").value = localStorage.textureNamespace;
     }
     
