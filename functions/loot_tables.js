@@ -38,8 +38,6 @@ document.getElementById("lootTableForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
-            brickSlice();
-
             const jsonProduct = {
                 type: "minecraft:block",
                 pools: [

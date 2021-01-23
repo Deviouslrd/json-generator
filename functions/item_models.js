@@ -47,8 +47,6 @@ document.getElementById("itemModelForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
-            brickSlice();
-
             const jsonProduct = {
                 parent: `${modName}:block/${blockName}`
             };

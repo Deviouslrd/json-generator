@@ -5,12 +5,11 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     const filepath = localStorage.path;
 
-    var ingredient = document.getElementById("blockName").value;
+    var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
-    var xp = document.getElementById("xpAmount").value;
-    var cookTime = document.getElementById("cookTime").value;
     var textureNamespace = document.getElementById("textureNamespace").value;
+    var count = document.getElementById("count").value;
 
     if (document.getElementById("textureNamespace").value === ``) {
         textureNamespace = document.getElementById("modName").value;
@@ -19,20 +18,19 @@ document.getElementById("recipeForm").onsubmit = form => {
     }
 
     localStorage.modName = modName;
-    localStorage.blockName = ingredient;
+    localStorage.blockName = blockName;
     localStorage.result = result;
-    localStorage.xp = xp;
-    localStorage.cookTime = cookTime;
     localStorage.textureNamespace = textureNamespace;
+    localStorage.count = count;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    ingredient = ingredient.toLowerCase().split(/ +/).join('_');
+    blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
     result = result.toLowerCase().split(/ +/).join('_');
-    textureNamespace = result.toLowerCase().split(/ +/).join('_');
+    textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
 
     const blockLength = blockName.length;
     const blockLengthStart = blockLength - 6;
@@ -45,28 +43,28 @@ document.getElementById("recipeForm").onsubmit = form => {
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
             if (err) throw err;
-            console.log('Made the furnace folder structure.');
+            console.log('Made the stonecutting folder structure.');
         });
     }
 
     setTimeout(() => {
-        const jsonProduct = {
-                type: "minecraft:smelting",
-                ingredient: {
-                    item: `${textureNamespace}:${ingredient}`
+            const jsonProduct = {
+                type: "minecraft:stonecutting",
+                blockName: {
+                  item: `${textureNamespace}:${blockName}`
                 },
                 result: `${textureNamespace}:${result}`,
-                experience: xp,
-                cooking_time: cookTime
-        };
-        
-        const jsonContent = JSON.stringify(jsonProduct, null, 4);
+                count: count
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${blockName}_furnace.json`, jsonContent, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('made file');
-        });
+            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stonecutter.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made stonecutter recipe file');
+
+            });
             
         document.getElementById("generateBtn").value = "Generated!";
         document.getElementById("errorholder").innerHTML = "";

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../assets/styles.css" onload="onLoad()">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body style="background: rgb(71, 71, 71);">
+<body style="background: rgb(71, 71, 71);" onload="onLoad()">
     <div style="text-align: center;">
         <a class="button" href="./main.html" id="menuButton">Home Page</a>
         <a class="button" href="./block_models.html" id="menuButton">Block Models</a>
@@ -33,8 +33,13 @@
                 <input type="text" id="modName" required="true" class="textinput"><br>
             </div>
 
+            <div name="Texture Namespace">
+                <label for="textureNamespace" class="textbold">Texture Namespace:</label>
+                <input type="text" id="textureNamespace" class="textinput"><br>
+            </div>
+
             <div name="Ingredient Name">
-                <label for="blockName" class="textbold">Block Name:</label>
+                <label for="blockName" class="textbold">Ingredient:</label>
                 <div class="tooltip">?
                     <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
                 </div>
@@ -44,8 +49,8 @@
             <div>
                 <label for="result" class="textbold">Result:</label>
                 <input type="text" id="result" required="true" class="textinput"><br>
-                <label for="resultCount" class="textbold">Count:</label>
-                <input type="number" id="resultCount" required="true" class="textinput" style="width: 50px">
+                <label for="count" class="textbold">Count:</label>
+                <input type="number" id="count" required="true" class="textinput" style="width: 50px">
             </div>
 
         <div name="bottomButtons">
@@ -61,8 +66,7 @@
         <input type="image"  id="savebutton" class="button" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
-
-    <script type="text/javascript" src="../functions/recipes.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
+    <script type="text/javascript" src="../functions/recipe_cutter.js"></script>
 </body>
 </html>
