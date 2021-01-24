@@ -2,7 +2,7 @@
 name: Bug report
 about: Report bugs with the generator
 title: "[BUG] Bug here"
-labels: ''
+labels: Bug
 assignees: ''
 
 ---
