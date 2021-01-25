@@ -8,8 +8,8 @@ document.getElementById("recipeForm").onsubmit = form => {
     var ingredient = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
-    var xp = document.getElementById("xpAmount").value;
-    var cookTime = document.getElementById("cookTime").value;
+    var xp = parseInt(document.getElementById("xpAmount").value);
+    var cookTime = parseInt(document.getElementById("cookTime").value);
     var textureNamespace = document.getElementById("textureNamespace").value;
 
     if (document.getElementById("textureNamespace").value === ``) {
@@ -34,12 +34,12 @@ document.getElementById("recipeForm").onsubmit = form => {
     result = result.toLowerCase().split(/ +/).join('_');
     textureNamespace = result.toLowerCase().split(/ +/).join('_');
 
-    const blockLength = blockName.length;
+    const blockLength = ingredient.length;
     const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
+    const blockSubStr = ingredient.substring(blockLengthStart);
     
     if (blockSubStr === 'bricks') {
-        blockName = blockName.substring(0, blockName.length - 1);
+        ingredient = ingredient.substring(0, ingredient.length - 1);
     }
 
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
@@ -55,7 +55,7 @@ document.getElementById("recipeForm").onsubmit = form => {
                 ingredient: {
                     item: `${textureNamespace}:${ingredient}`
                 },
-                result: `${textureNamespace}:${result}`,
+                result: `${modName}:${result}`,
                 experience: xp,
                 cooking_time: cookTime
         };
@@ -63,7 +63,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
         // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${blockName}_furnace.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_furnace.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('made file');
         });

@@ -7,6 +7,7 @@ document.getElementById("savebutton").addEventListener('click', async () => {
 
 function onLoad() {
     setTimeout(() => {
+        // Input boxes present on nearly all pages
         if (localStorage.blockName && document.getElementById("blockName")) {
             document.getElementById("blockName").value = localStorage.blockName;
         }
@@ -23,6 +24,7 @@ function onLoad() {
             document.getElementById("saveLocation").value = localStorage.path;
         }
 
+        // Recipe specific boxes
         if (localStorage.result && document.getElementById("result")) {
             document.getElementById("result").value = localStorage.result;
         }
@@ -38,7 +40,28 @@ function onLoad() {
         if (localStorage.cookTime && document.getElementById("cookTime")) {
             document.getElementById("cookTime").value = localStorage.cookTime;
         }
-    }, 75);
+
+        // Checkbox loaders
+        if (localStorage.checkBlock === "true" && document.getElementById("block")) {
+            document.getElementById("block").checked = true;
+        }
+
+        if (localStorage.checkSlab === "true" && document.getElementById("slab")) {
+            document.getElementById("slab").checked = true;
+        }
+
+        if (localStorage.checkStairs === "true" && document.getElementById("stairs")) {
+            document.getElementById("stairs").checked = true;
+        }
+
+        if (localStorage.checkWall === "true" && document.getElementById("wall")) {
+            document.getElementById("wall").checked = true;
+        }
+
+        if (localStorage.checkPillar === "true" && document.getElementById("pillar")) {
+            document.getElementById("pillar").checked = true;
+        }
+    }, 25);
 
 }
 

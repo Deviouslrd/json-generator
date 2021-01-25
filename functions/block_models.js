@@ -20,6 +20,11 @@ document.getElementById("blockModelForm").onsubmit = form => {
     localStorage.blockName = blockName;
     localStorage.textureNamespace = textureNamespace;
 
+    localStorage.checkBlock = document.getElementById("block").checked;
+    localStorage.checkSlab = document.getElementById("slab").checked;
+    localStorage.checkStairs = document.getElementById("stairs").checked;
+    localStorage.checkWall = document.getElementById("wall").checked;
+    localStorage.checkPillar = document.getElementById("pillar").checked;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
@@ -242,6 +247,6 @@ document.getElementById("blockModelForm").onsubmit = form => {
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";
         }, 1000);
-
+        
     }, 10);
 };

@@ -10,6 +10,12 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
+
+    localStorage.checkBlock = document.getElementById("block").checked;
+    localStorage.checkSlab = document.getElementById("slab").checked;
+    localStorage.checkStairs = document.getElementById("stairs").checked;
+    localStorage.checkWall = document.getElementById("wall").checked;
+    localStorage.checkPillar = document.getElementById("pillar").checked;
     
     if (document.getElementById("saveLocation").value === 'No location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;

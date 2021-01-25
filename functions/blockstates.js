@@ -19,6 +19,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
     localStorage.blockName = blockName;
     localStorage.textureNamespace = textureNamespace;
 
+    localStorage.checkBlock = document.getElementById("block").checked;
+    localStorage.checkSlab = document.getElementById("slab").checked;
+    localStorage.checkStairs = document.getElementById("stairs").checked;
+    localStorage.checkWall = document.getElementById("wall").checked;
+    localStorage.checkPillar = document.getElementById("pillar").checked;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
@@ -56,7 +61,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made file');
+                console.log('Made block blockstate file');
             });
         }
 
@@ -82,7 +87,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made file');
+                console.log('Made slab blockstate file');
             });
         }
 
@@ -178,7 +183,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made file');
+                console.log('Made Stairs blockstate file');
             });
         }
 
@@ -212,7 +217,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made file');
+                console.log('Made wall blockstate file');
             });
         }
 
@@ -241,7 +246,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made file');
+                console.log('Made wall blockstate file');
             });
         }
 
