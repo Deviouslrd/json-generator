@@ -9,7 +9,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
     var textureNamespace = document.getElementById("textureNamespace").value;
-    var count = document.getElementById("count").value;
+    var count = parseInt(document.getElementById("count").value);
 
     if (document.getElementById("textureNamespace").value === ``) {
         textureNamespace = document.getElementById("modName").value;
@@ -50,10 +50,10 @@ document.getElementById("recipeForm").onsubmit = form => {
     setTimeout(() => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
-                blockName: {
+                ingredient: {
                   item: `${textureNamespace}:${blockName}`
                 },
-                result: `${textureNamespace}:${result}`,
+                result: `${modName}:${result}`,
                 count: count
             };
             
@@ -63,7 +63,6 @@ document.getElementById("recipeForm").onsubmit = form => {
             fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stonecutter.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made stonecutter recipe file');
-
             });
             
         document.getElementById("generateBtn").value = "Generated!";

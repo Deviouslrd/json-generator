@@ -9,9 +9,9 @@ document.getElementById("advanceForm").onsubmit = form => {
 
     const filepath = localStorage.path;
 
-    if (!filepath || localStorage.path === undefined) {
-        return console.log('No filepath.');
-    } 
+    if (document.getElementById("saveLocation").value === 'No Location') {
+        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    }
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
@@ -20,6 +20,7 @@ document.getElementById("advanceForm").onsubmit = form => {
     localStorage.modName = modName;
 
     blockName = blockName.toLowerCase().split(/ +/).join('_');
+    modName = modName.toLowerCase().split(/ +/).join('_');
 
     const jsonProduct = {
         parent: `minecraft:recipes/root`,
