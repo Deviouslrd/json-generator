@@ -33,17 +33,17 @@ document.getElementById("blockstateForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_'); // Turns the input into minecraft's block id format
     modName = modName.toLowerCase().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
 
-  function brickSlice () {
+    function brickSlice () {
         const blockLength = blockName.length;
         const blockLengthStart = blockLength - 6;
         const blockSubStr = blockName.substring(blockLengthStart);
         
         if (blockSubStr === 'bricks') {
-            var finalBlock = blockName.substring(0, blockName.length - 1);
+            finalBlock = blockName.substring(0, blockName.length - 1);
            
         }
         else {
-        var finalBlock = document.getElementById("finalBlock").value;
+            finalBlock = blockName.substring(0, blockName.length - 0);
         }
     }
 
