@@ -24,13 +24,14 @@ document.getElementById("lootTableForm").onsubmit = form => {
     blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
 
+    let finalBlock = blockName;
+
     function brickSlice () {
-        const blockLength = blockName.length;
-        const blockLengthStart = blockLength - 6;
-        const blockSubStr = blockName.substring(blockLengthStart);
-        
+        const blockLength = blockName.length - 6;
+        const blockSubStr = blockName.substring(blockLength);
+  
         if (blockSubStr === 'bricks') {
-            var finalBlock = blockName.substring(0, blockName.length - 1);
+            finalBlock = blockName.substring(0, blockName.length - 1);
         }
     }
 
@@ -52,7 +53,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                         entries: [
                             {
                                 type: "minecraft:item",
-                                name: `${modName}:${blockName}`
+                                name: `${modName}:${finalBlock}`
                             }
                         ]
                     }
@@ -61,7 +62,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the block loot table file');
             });
@@ -79,7 +80,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                     "entries": [
                         {
                             type: "minecraft:item",
-                            name: `${modName}:${blockName}_slab`,
+                            name: `${modName}:${finalBlock}_slab`,
                             functions: [
                                 {
                                     function: "minecraft:explosion_decay"
@@ -90,7 +91,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                                     conditions: [
                                         {
                                             condition: "minecraft:block_state_property",
-                                            block: `${modName}:${blockName}_slab`,
+                                            block: `${modName}:${finalBlock}_slab`,
                                             properties: {
                                                 type: "double"
                                             }
@@ -106,7 +107,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${finalBlock}_slab.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the slab loot table file');
             });
@@ -124,7 +125,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                         entries: [
                             {
                                 type: "minecraft:item",
-                                name: `${modName}:${blockName}_stairs`
+                                name: `${modName}:${finalBlock}_stairs`
                             }
                         ]
                     }
@@ -133,7 +134,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${finalBlock}_stairs.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the stairs loot table file');
             });
@@ -151,7 +152,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                         entries: [
                             {
                                 type: "minecraft:item",
-                                name: `${modName}:${blockName}_wall`
+                                name: `${modName}:${finalBlock}_wall`
                             }
                         ]
                     }
@@ -160,7 +161,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${finalBlock}_wall.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the wall loot table file');
             });
@@ -178,7 +179,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                         entries: [
                             {
                                 type: "minecraft:item",
-                                name: `${modName}:${blockName}_pillar`
+                                name: `${modName}:${finalBlock}_pillar`
                             }
                         ]
                     }
@@ -187,7 +188,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\${finalBlock}_pillar.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the pillar loot table file');
             });

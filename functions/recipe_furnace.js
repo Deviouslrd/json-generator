@@ -29,10 +29,10 @@ document.getElementById("recipeForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    ingredient = ingredient.toLowerCase().split(/ +/).join('_');
-    modName = modName.toLowerCase().split(/ +/).join('_');
-    result = result.toLowerCase().split(/ +/).join('_');
-    textureNamespace = result.toLowerCase().split(/ +/).join('_');
+    ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
+    modName = modName.toLowerCase().trim().split(/ +/).join('_');
+    result = result.toLowerCase().trim().split(/ +/).join('_');
+    textureNamespace = result.toLowerCase().trim().split(/ +/).join('_');
 
     const blockLength = ingredient.length;
     const blockLengthStart = blockLength - 6;

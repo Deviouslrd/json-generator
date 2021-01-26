@@ -15,8 +15,8 @@ document.getElementById("").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    blockName = blockName.toLowerCase().split(/ +/).join('_');
-    modName = modName.toLowerCase().split(/ +/).join('_');
+    blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
+    modName = modName.toLowerCase().trim().split(/ +/).join('_');
 
     const blockLength = blockName.length;
     const blockLengthStart = blockLength - 6;

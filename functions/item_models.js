@@ -28,17 +28,18 @@ document.getElementById("itemModelForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    blockName = blockName.toLowerCase().split(/ +/).join('_');
-    modName = modName.toLowerCase().split(/ +/).join('_');
-    textureNamespace =  textureNamespace.toLowerCase().split(/ +/).join('_');
+    blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
+    modName = modName.toLowerCase().trim().split(/ +/).join('_');
+    textureNamespace =  textureNamespace.toLowerCase().trim().split(/ +/).join('_');
+
+    let finalBlock = blockName;
 
     function brickSlice () {
-        const blockLength = blockName.length;
-        const blockLengthStart = blockLength - 6;
-        const blockSubStr = blockName.substring(blockLengthStart);
-        
+        const blockLength = blockName.length - 6;
+        const blockSubStr = blockName.substring(blockLength);
+  
         if (blockSubStr === 'bricks') {
-            var finalBlock = blockName.substring(0, blockName.length - 1);
+            finalBlock = blockName.substring(0, blockName.length - 1);
         }
     }
 
@@ -53,12 +54,12 @@ document.getElementById("itemModelForm").onsubmit = form => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
             const jsonProduct = {
-                parent: `${modName}:block/${blockName}`
+                parent: `${modName}:block/${finalBlock}`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the block file');
             });
@@ -69,12 +70,12 @@ document.getElementById("itemModelForm").onsubmit = form => {
             brickSlice();
 
             const jsonProduct = {
-                parent: `${modName}:block/${blockName}_slab`
+                parent: `${modName}:block/${finalBlock}_slab`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${finalBlock}_slab.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the slab file');
             });
@@ -85,12 +86,12 @@ document.getElementById("itemModelForm").onsubmit = form => {
             brickSlice();
 
             const jsonProduct = {
-                parent: `${modName}:block/${blockName}_stairs`
+                parent: `${modName}:block/${finalBlock}_stairs`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${finalBlock}_stairs.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the stairs file.');
             });
@@ -101,12 +102,12 @@ document.getElementById("itemModelForm").onsubmit = form => {
             brickSlice();
 
             const jsonProduct = {
-                parent: `${modName}:block/${blockName}_pillar`
+                parent: `${modName}:block/${finalBlock}_pillar`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${finalBlock}_pillar.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the pillar file');
             });
@@ -118,12 +119,12 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonProduct = {
                 parent: `minecraft:block/wall_inventory`,
-                textures: { wall: `${textureNamespace}:block/${blockName}`}
+                textures: { wall: `${textureNamespace}:block/${finalBlock}`}
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFileSync(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFileSync(`${filepath}\\assets\\${modName}\\models\\item\\${finalBlock}_wall.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the wall file');
             });

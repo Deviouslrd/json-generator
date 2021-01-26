@@ -61,6 +61,12 @@ function onLoad() {
         if (localStorage.checkPillar === "true" && document.getElementById("pillar")) {
             document.getElementById("pillar").checked = true;
         }
+
+        // Other Boxes
+        if (localStorage.triggerName && document.getElementById("triggerName")) {
+            document.getElementById("triggerName").value = localStorage.triggerName;
+        }
+        
     }, 25);
 
 }

@@ -29,17 +29,18 @@ document.getElementById("blockstateForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_'); // Turns the texture namespace input into block id format
-    blockName = blockName.toLowerCase().split(/ +/).join('_'); // Turns the input into minecraft's block id format
-    modName = modName.toLowerCase().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
+    textureNamespace = textureNamespace.toLowerCase().trim().split(/ +/).join('_'); // Turns the texture namespace input into block id format
+    blockName = blockName.toLowerCase().trim().split(/ +/).join('_'); // Turns the input into minecraft's block id format
+    modName = modName.toLowerCase().trim().split(/ +/).join('_'); // Turns the mod into mincraft's block id format
+
+    let finalBlock = blockName;
 
     function brickSlice () {
-        const blockLength = blockName.length;
-        const blockLengthStart = blockLength - 6;
-        const blockSubStr = blockName.substring(blockLengthStart);
-        
+        const blockLength = blockName.length - 6;
+        const blockSubStr = blockName.substring(blockLength);
+  
         if (blockSubStr === 'bricks') {
-            var finalBlock = blockName.substring(0, blockName.length - 1);
+            finalBlock = blockName.substring(0, blockName.length - 1);
         }
     }
 
@@ -54,12 +55,12 @@ document.getElementById("blockstateForm").onsubmit = form => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
             const jsonProduct = {
-                variants: { "": { model: `${modName}:block/${blockName}` }}
+                variants: { "": { model: `${modName}:block/${finalBlock}` }}
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made block blockstate file');
             });
@@ -72,20 +73,20 @@ document.getElementById("blockstateForm").onsubmit = form => {
             const jsonProduct = {
                 variants: {
                     "type=bottom": {
-                        model: `${modName}:block/${blockName}_slab`
+                        model: `${modName}:block/${finalBlock}_slab`
                     },
                     "type=double": {
-                        model: `${textureNamespace}:block/${blockName}`
+                        model: `${textureNamespace}:block/${finalBlock}`
                     },
                     "type=top": {
-                        model: `${modName}:block/${blockName}_slab_top`
+                        model: `${modName}:block/${finalBlock}_slab_top`
                     }
                 }
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${finalBlock}_slab.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made slab blockstate file');
             });
@@ -97,93 +98,93 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             const jsonProduct = {
                 variants: {
-                    "facing=east,half=bottom,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, y: 270, uvlock: true },
+                    "facing=east,half=bottom,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, y: 270, uvlock: true },
 
-                    "facing=east,half=bottom,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner` },
+                    "facing=east,half=bottom,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner` },
 
-                    "facing=east,half=bottom,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, y: 270, uvlock: true },
+                    "facing=east,half=bottom,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, y: 270, uvlock: true },
 
-                    "facing=east,half=bottom,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer` },
+                    "facing=east,half=bottom,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer` },
 
-                    "facing=east,half=bottom,shape=straight": { model: `${modName}:block/${blockName}_stairs` },
+                    "facing=east,half=bottom,shape=straight": { model: `${modName}:block/${finalBlock}_stairs` },
 
-                    "facing=east,half=top,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, uvlock: true },
+                    "facing=east,half=top,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, uvlock: true },
 
-                    "facing=east,half=top,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, y: 90, uvlock: true },
+                    "facing=east,half=top,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, y: 90, uvlock: true },
 
-                    "facing=east,half=top,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, uvlock: true },
+                    "facing=east,half=top,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, uvlock: true },
 
-                    "facing=east,half=top,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, y: 90, uvlock: true },
+                    "facing=east,half=top,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, y: 90, uvlock: true },
 
-                    "facing=east,half=top,shape=straight": { model: `${modName}:block/${blockName}_stairs`, x: 180, uvlock: true },
+                    "facing=east,half=top,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, x: 180, uvlock: true },
 
-                    "facing=north,half=bottom,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, y: 180, uvlock: true },
+                    "facing=north,half=bottom,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, y: 180, uvlock: true },
 
-                    "facing=north,half=bottom,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, y: 270, uvlock: true },
+                    "facing=north,half=bottom,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, y: 270, uvlock: true },
 
-                    "facing=north,half=bottom,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, y: 180, uvlock: true },
+                    "facing=north,half=bottom,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, y: 180, uvlock: true },
 
-                    "facing=north,half=bottom,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, y: 270, uvlock: true },
+                    "facing=north,half=bottom,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, y: 270, uvlock: true },
 
-                    "facing=north,half=bottom,shape=straight": { model: `${modName}:block/${blockName}_stairs`, y: 270, uvlock: true },
+                    "facing=north,half=bottom,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, y: 270, uvlock: true },
 
-                    "facing=north,half=top,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, y: 270, uvlock: true },
+                    "facing=north,half=top,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, y: 270, uvlock: true },
 
-                    "facing=north,half=top,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, uvlock: true },
+                    "facing=north,half=top,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, uvlock: true },
 
-                    "facing=north,half=top,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, y: 270, uvlock: true },
+                    "facing=north,half=top,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, y: 270, uvlock: true },
 
-                    "facing=north,half=top,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, uvlock: true },
+                    "facing=north,half=top,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, uvlock: true },
 
-                    "facing=north,half=top,shape=straight": { model: `${modName}:block/${blockName}_stairs`, x: 180, y: 270, uvlock: true },
+                    "facing=north,half=top,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, x: 180, y: 270, uvlock: true },
 
-                    "facing=south,half=bottom,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner` },
+                    "facing=south,half=bottom,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner` },
 
-                    "facing=south,half=bottom,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, y: 90, uvlock: true },
+                    "facing=south,half=bottom,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, y: 90, uvlock: true },
 
-                    "facing=south,half=bottom,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer` },
+                    "facing=south,half=bottom,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer` },
 
-                    "facing=south,half=bottom,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, y: 90, uvlock: true },
+                    "facing=south,half=bottom,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, y: 90, uvlock: true },
 
-                    "facing=south,half=bottom,shape=straight": { model: `${modName}:block/${blockName}_stairs`, y: 90, uvlock: true },
+                    "facing=south,half=bottom,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, y: 90, uvlock: true },
 
-                    "facing=south,half=top,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, y: 90, uvlock: true },
+                    "facing=south,half=top,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, y: 90, uvlock: true },
 
-                    "facing=south,half=top,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, y: 180, uvlock: true },
+                    "facing=south,half=top,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, y: 180, uvlock: true },
 
-                    "facing=south,half=top,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, y: 90, uvlock: true },
+                    "facing=south,half=top,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, y: 90, uvlock: true },
 
-                    "facing=south,half=top,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, y: 180, uvlock: true },
+                    "facing=south,half=top,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, y: 180, uvlock: true },
 
-                    "facing=south,half=top,shape=straight": { model: `${modName}:block/${blockName}_stairs`, x: 180, y: 90, uvlock: true },
+                    "facing=south,half=top,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, x: 180, y: 90, uvlock: true },
 
-                    "facing=west,half=bottom,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, y: 90, uvlock: true },
+                    "facing=west,half=bottom,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, y: 90, uvlock: true },
 
-                    "facing=west,half=bottom,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, y: 180, uvlock: true },
+                    "facing=west,half=bottom,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, y: 180, uvlock: true },
 
-                    "facing=west,half=bottom,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, y: 90, uvlock: true },
+                    "facing=west,half=bottom,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, y: 90, uvlock: true },
 
-                    "facing=west,half=bottom,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, y: 180, uvlock: true },
+                    "facing=west,half=bottom,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, y: 180, uvlock: true },
 
-                    "facing=west,half=bottom,shape=straight": { model: `${modName}:block/${blockName}_stairs`, y: 180, uvlock: true },
+                    "facing=west,half=bottom,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, y: 180, uvlock: true },
 
-                    "facing=west,half=top,shape=inner_left": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, y: 180, uvlock: true },
+                    "facing=west,half=top,shape=inner_left": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, y: 180, uvlock: true },
 
-                    "facing=west,half=top,shape=inner_right": { model: `${modName}:block/${blockName}_stairs_inner`, x: 180, y: 270, uvlock: true },
+                    "facing=west,half=top,shape=inner_right": { model: `${modName}:block/${finalBlock}_stairs_inner`, x: 180, y: 270, uvlock: true },
 
-                    "facing=west,half=top,shape=outer_left": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, y: 180, uvlock: true },
+                    "facing=west,half=top,shape=outer_left": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, y: 180, uvlock: true },
 
-                    "facing=west,half=top,shape=outer_right": { model: `${modName}:block/${blockName}_stairs_outer`, x: 180, y: 270, uvlock: true },
+                    "facing=west,half=top,shape=outer_right": { model: `${modName}:block/${finalBlock}_stairs_outer`, x: 180, y: 270, uvlock: true },
 
-                    "facing=west,half=top,shape=straight": { model: `${modName}:block/${blockName}_stairs`, x: 180, y: 180, uvlock: true }
+                    "facing=west,half=top,shape=straight": { model: `${modName}:block/${finalBlock}_stairs`, x: 180, y: 180, uvlock: true }
                 }
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${finalBlock}_stairs.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made Stairs blockstate file');
+                console.log('Made stairs blockstate file');
             });
         }
 
@@ -193,29 +194,29 @@ document.getElementById("blockstateForm").onsubmit = form => {
 
             const jsonProduct = {
                 "multipart": [
-                    { when: { up: true }, apply: { model: `${modName}:block/${blockName}_wall_post` } },
+                    { when: { up: true }, apply: { model: `${modName}:block/${finalBlock}_wall_post` } },
 
-                    { when: { north: "low" }, apply: { model: `${modName}:block/${blockName}_wall_side`, uvlock: true} },
+                    { when: { north: "low" }, apply: { model: `${modName}:block/${finalBlock}_wall_side`, uvlock: true} },
 
-                    { when: { east: "low" }, apply: { model: `${modName}:block/${blockName}_wall_side`, y: 90, uvlock: true} },
+                    { when: { east: "low" }, apply: { model: `${modName}:block/${finalBlock}_wall_side`, y: 90, uvlock: true} },
 
-                    { when: { south: "low" }, apply: { model: `${modName}:block/${blockName}_wall_side`, y: 180, uvlock: true } },
+                    { when: { south: "low" }, apply: { model: `${modName}:block/${finalBlock}_wall_side`, y: 180, uvlock: true } },
 
-                    { when: { west: "low" }, apply: { model: `${modName}:block/${blockName}_wall_side`, y: 270, uvlock: true} },
+                    { when: { west: "low" }, apply: { model: `${modName}:block/${finalBlock}_wall_side`, y: 270, uvlock: true} },
 
-                    { when: { north: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, uvlock: true } },
+                    { when: { north: "tall" }, apply: { model: `${modName}:block/${finalBlock}_wall_side_tall`, uvlock: true } },
 
-                    { when: { east: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, y: 90, uvlock: true } },
+                    { when: { east: "tall" }, apply: { model: `${modName}:block/${finalBlock}_wall_side_tall`, y: 90, uvlock: true } },
 
-                    { when: { south: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, y: 180, uvlock: true } },
+                    { when: { south: "tall" }, apply: { model: `${modName}:block/${finalBlock}_wall_side_tall`, y: 180, uvlock: true } },
 
-                    { when: { west: "tall" }, apply: { model: `${modName}:block/${blockName}_wall_side_tall`, y: 270, uvlock: true } },
+                    { when: { west: "tall" }, apply: { model: `${modName}:block/${finalBlock}_wall_side_tall`, y: 270, uvlock: true } },
                 ]
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${finalBlock}_wall.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made wall blockstate file');
             });
@@ -228,15 +229,15 @@ document.getElementById("blockstateForm").onsubmit = form => {
             const jsonProduct = {
                 variants: {
                     "axis=x": {
-                        model: `${modName}:block/${blockName}_pillar_horizontal`,
+                        model: `${modName}:block/${finalBlock}_pillar_horizontal`,
                         x: 90,
                         y: 90
                     },
                     "axis=y": {
-                        model: `${modName}:block/${blockName}_pillar`
+                        model: `${modName}:block/${finalBlock}_pillar`
                     },
                     "axis=z": {
-                        model: `${modName}:block/${blockName}_pillar_horizontal`,
+                        model: `${modName}:block/${finalBlock}_pillar_horizontal`,
                         x: 90
                     }
                 }
@@ -244,7 +245,7 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${finalBlock}_pillar.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made wall blockstate file');
             });

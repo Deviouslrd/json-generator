@@ -15,21 +15,35 @@ document.getElementById("advanceForm").onsubmit = form => {
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    var triggerName = document.getElementById("triggerName").value;
 
     localStorage.blockName = blockName;
     localStorage.modName = modName;
+    localStorage.triggerName = triggerName;
 
-    blockName = blockName.toLowerCase().split(/ +/).join('_');
-    modName = modName.toLowerCase().split(/ +/).join('_');
+    blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
+    modName = modName.toLowerCase().trim().split(/ +/).join('_');
+    triggerName = triggerName.toLowerCase().trim().split(/ +/).join('_');
+    
+    let finalBlock = blockName;
+
+    function brickSlice () {
+        const blockLength = blockName.length - 6;
+        const blockSubStr = blockName.substring(blockLength);
+  
+        if (blockSubStr === 'bricks') {
+            finalBlock = blockName.substring(0, blockName.length - 1);
+        }
+    }
 
     const jsonProduct = {
         parent: `minecraft:recipes/root`,
         rewards: {
             recipes: [
-                `${modName}:${blockName}_slab`,
-                `${modName}:${blockName}_stairs`,
-                `${modName}:${blockName}_pillar`,
-                `${modName}:${blockName}_wall`
+                `${modName}:${finalBlock}_slab`,
+                `${modName}:${finalBlock}_stairs`,
+                `${modName}:${finalBlock}_pillar`,
+                `${modName}:${finalBlock}_wall`
             ]
         },
         criteria: {
@@ -38,7 +52,7 @@ document.getElementById("advanceForm").onsubmit = form => {
                 conditions: {
                     items: [
                         {
-                            item: `${modName}:${blockName}`
+                            item: `${modName}:${triggerName}`
                         }
                     ]
                 }
