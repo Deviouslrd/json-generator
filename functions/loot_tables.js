@@ -30,11 +30,11 @@ document.getElementById("lootTableForm").onsubmit = form => {
         const blockSubStr = blockName.substring(blockLengthStart);
         
         if (blockSubStr === 'bricks') {
-            var finalBlock = blockName.substring(0, blockName.length - 1);
+            finalBlock = blockName.substring(0, blockName.length - 1);
            
         }
         else {
-        var finalBlock = document.getElementById("finalBlock").value;
+            finalBlock = blockName.substring(0, blockName.length - 0);
         }
     }
 
