@@ -5,6 +5,6 @@ Currently in heavy development, only tab that doesn't work as of right now is re
 If you find any issues, report them on the github here, and Deviouslrd will attend to it!
 
 Credits: 
-- @Deviouslrd - Idea, making the app work, getting lots of progress on it.
-- @Siuolthepic - JSON help, code improvements
-- @HiItsDevin - Electron assistance
+- @Deviouslrd (https://github.com/Deviouslrd) - Primary programmer
+- @Siuolthepic (https://github.com/Siuolthepic) - JSON help, code improvements
+- @HiItsDevin (https://github.com/HiItsDevin) - Electron assistance
