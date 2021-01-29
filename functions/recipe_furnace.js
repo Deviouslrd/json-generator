@@ -45,7 +45,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
             if (err) throw err;
-            console.log('Made the furnace folder structure.');
+            console.log('Made the recipe folder structure.');
         });
     }
 
