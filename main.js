@@ -73,4 +73,19 @@ menu.append(new MenuItem({
     ]
 }));
 
+menu.append(new MenuItem({
+    label: 'Help',
+    submenu: [
+        {
+            role: 'help',
+            accelerator: process.platform === 'darwin' ? 'cmd+h' : 'ctrl+h',
+            click: () => {
+                const win = new BrowserWindow({ width: 850, height: 600 });
+
+                win.loadFile('./pages/help.html');
+            }
+        }
+    ]
+}));
+
 Menu.setApplicationMenu(menu);

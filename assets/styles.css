@@ -172,3 +172,35 @@
 .dropdown:hover .dropbtn {
     background-color: grey;
 }
+
+.helpheader {
+    text-align: left;
+    font-family: minecraft;
+    color:black;
+}
+
+.helptext {
+    text-align: left;
+    font-family: minecraft;
+    color:white;
+    font-size: 18px;
+}
+
+.helptable {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 18px;
+    font-family: minecraft;
+    padding: 2px;
+    text-decoration: none;
+    border-color: rgb(153, 153, 153);
+    border-width: 2px;
+    border-style: solid;
+    vertical-align: 6px;
+}
+
+.helptable:hover {
+    background-color: gray;
+    color: black;
+}
