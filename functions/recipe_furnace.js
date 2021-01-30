@@ -8,8 +8,8 @@ document.getElementById("recipeForm").onsubmit = form => {
     var ingredient = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
-    var xp = parseInt(document.getElementById("xpAmount").value);
-    var cookTime = parseInt(document.getElementById("cookTime").value);
+    var xp = parseFloat(document.getElementById("xpAmount").value);
+    var cookTime = parseFloat(document.getElementById("cookTime").value);
     var textureNamespace = document.getElementById("textureNamespace").value;
 
     if (document.getElementById("textureNamespace").value === ``) {
@@ -32,10 +32,9 @@ document.getElementById("recipeForm").onsubmit = form => {
     ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     result = result.toLowerCase().trim().split(/ +/).join('_');
-    textureNamespace = result.toLowerCase().trim().split(/ +/).join('_');
+    textureNamespace = textureNamespace.toLowerCase().trim().split(/ +/).join('_');
 
-    const blockLength = ingredient.length;
-    const blockLengthStart = blockLength - 6;
+    const blockLength = blockLength.length - 6;
     const blockSubStr = ingredient.substring(blockLengthStart);
     
     if (blockSubStr === 'bricks') {
@@ -51,13 +50,13 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     setTimeout(() => {
         const jsonProduct = {
-                type: "minecraft:smelting",
-                ingredient: {
-                    item: `${textureNamespace}:${ingredient}`
-                },
-                result: `${modName}:${result}`,
-                experience: xp,
-                cooking_time: cookTime
+            type: "minecraft:smelting",
+            ingredient: {
+                item: `${textureNamespace}:${ingredient}`
+            },
+            result: `${modName}:${result}`,
+            experience: xp,
+            cooking_time: cookTime
         };
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -65,7 +64,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
         fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_furnace.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
-            console.log('made file');
+            console.log('Made furnace recipe');
         });
             
         document.getElementById("generateBtn").value = "Generated!";

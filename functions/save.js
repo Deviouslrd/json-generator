@@ -33,8 +33,8 @@ function onLoad() {
             document.getElementById("count").value = localStorage.count;
         } 
 
-        if (localStorage.xp && document.getElementById("xp")) {
-            document.getElementById("xp").value = localStorage.xp;
+        if (localStorage.xp && document.getElementById("xpAmount")) {
+            document.getElementById("xpAmount").value = localStorage.xp;
         }
 
         if (localStorage.cookTime && document.getElementById("cookTime")) {

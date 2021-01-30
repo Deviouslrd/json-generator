@@ -2,6 +2,38 @@
 <html>
 <head>
 <link rel="stylesheet" href="../assets/styles.css">
+<style>
+    div.photo-container a {
+        text-decoration: none;
+        color: black;
+        cursor: default;
+        font-weight: normal;
+        background:white;
+        border-style: solid;
+        border-width: 2px;
+        border-color: green;
+        padding: 5px
+    }
+
+    div.photo-container a span {
+        visibility: hidden;
+        position: absolute;
+        width: 300px;
+        height: fit-content;
+        background: black;
+        color: white;
+        font-family: minecraft;
+        border-radius: 6px;
+        padding: 3px;
+        transition: opacity 500ms;
+        opacity: 0;
+    }
+
+    div.photo-container a:hover span {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
 </head>
 <body style="background: rgb(71, 71, 71);">
     <div style="text-align: center;">
@@ -69,6 +101,12 @@
         <label for="saveLocation" class="textbold">Save Location:</label>
         <input type="image" class="savebutton" src='../assets/folder.png' id="savebutton" onclick="saveLocation()" style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
+    </div>
+
+    <div class="photo-container">
+        <a/>
+        <img src="../assets/qmark.png" alt="Monarch" />
+            <span>Test</span>
     </div>
 
     <p id="status" style="font-family: minecraft; color:red">Status: Incomplete</p>

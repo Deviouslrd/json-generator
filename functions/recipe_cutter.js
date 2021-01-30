@@ -9,7 +9,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
     var textureNamespace = document.getElementById("textureNamespace").value;
-    var count = parseInt(document.getElementById("count").value);
+    var count = parseFloat(document.getElementById("count").value);
 
     if (document.getElementById("textureNamespace").value === ``) {
         textureNamespace = document.getElementById("modName").value;
@@ -32,12 +32,15 @@ document.getElementById("recipeForm").onsubmit = form => {
     result = result.toLowerCase().trim().split(/ +/).join('_');
     textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
 
-    const blockLength = blockName.length;
-    const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
-    
-    if (blockSubStr === 'bricks') {
-        blockName = blockName.substring(0, blockName.length - 1);
+    let finalBlock = blockName;
+
+    function brickSlice () {
+        const blockLength = blockName.length - 6;
+        const blockSubStr = blockName.substring(blockLength);
+  
+        if (blockSubStr === 'bricks') {
+            finalBlock = blockName.substring(0, blockName.length - 1);
+        }
     }
 
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
@@ -48,10 +51,12 @@ document.getElementById("recipeForm").onsubmit = form => {
     }
 
     setTimeout(() => {
+        // Block Creator
+        if (document.getElementById("block").checked === true) {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                  item: `${textureNamespace}:${blockName}`
+                    item: `${textureNamespace}:${blockName}`
                 },
                 result: `${modName}:${result}`,
                 count: count
@@ -59,18 +64,111 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
             fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stonecutter.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
-                console.log('Made stonecutter recipe file');
+                console.log('Made the block stonecutter recipe.');
             });
+        }
+
+        // Slab Creator
+        if (document.getElementById("slab").checked === true) {
+            brickSlice();
+
+            const jsonProduct = {
+                type: "minecraft:stonecutting",
+                ingredient: {
+                    item: `${textureNamespace}:${blockName}`
+                },
+                result: `${modName}:${result}_slab`,
+                count: 2
+            };
             
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_slab_stonecutter.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the slab stonecutter recipe.');
+            });
+        }
+
+        // Stairs Creator
+        if (document.getElementById("stairs").checked === true) {
+            brickSlice();
+
+            const jsonProduct = {
+                type: "minecraft:stonecutting",
+                ingredient: {
+                    item: `${textureNamespace}:${blockName}`
+                },
+                result: `${modName}:${result}_stairs`,
+                count: count
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stairs_stonecutter.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the stairs stonecutter recipe.');
+            });
+        }
+
+        // Pillar Creator
+        if (document.getElementById("pillar").checked === true) {
+            brickSlice();
+
+            const jsonProduct = {
+                type: "minecraft:stonecutting",
+                ingredient: {
+                    item: `${textureNamespace}:${blockName}`
+                },
+                result: `${modName}:${result}_pillar`,
+                count: count
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_pillar_stonecutter.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the pillar stonecutter recipe.');
+            });
+        }
+
+        // Wall Creator
+        if (document.getElementById("wall").checked === true) {
+            brickSlice();
+            
+            const jsonProduct = {
+                type: "minecraft:stonecutting",
+                ingredient: {
+                    item: `${textureNamespace}:${blockName}`
+                },
+                result: `${modName}:${result}_wall`,
+                count: count
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_wall_stonecutter.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the wall stonecutter recipe.');
+            });
+        }
+
+        if (document.getElementById("block").checked === false &&
+        document.getElementById("slab").checked === false &&
+        document.getElementById("stairs").checked === false &&
+        document.getElementById("wall").checked === false &&
+        document.getElementById("pillar").checked === false) {
+            return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+        }
+
         document.getElementById("generateBtn").value = "Generated!";
         document.getElementById("errorholder").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";
         }, 1000);
-
+        
     }, 10);
 };
+

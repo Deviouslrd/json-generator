@@ -5,6 +5,7 @@ function createWindow () {
         show: false,
         width: 850,
         height: 600,
+        title: "Mod JSON Generator",
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true
@@ -80,7 +81,14 @@ menu.append(new MenuItem({
             role: 'help',
             accelerator: process.platform === 'darwin' ? 'cmd+h' : 'ctrl+h',
             click: () => {
-                const win = new BrowserWindow({ width: 850, height: 600 });
+                const win = new BrowserWindow({ 
+                    width: 850, 
+                    height: 600,
+                    title: "Generator Help",
+                    webPreferences: {
+                        nodeIntegration: true
+                    }
+                });
 
                 win.loadFile('./pages/help.html');
             }

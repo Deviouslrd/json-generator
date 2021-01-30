@@ -37,12 +37,13 @@
 
 .tooltip {
     position: relative;
-    cursor: pointer;
+    cursor: default;
     background-color: rgb(255, 255, 255);
     color: black;
     display: inline-block;
     border-radius: 30%;
     font-family: minecraft;
+    padding: 2px;
 }
 
 .tooltip .tooltiptext {
@@ -56,17 +57,23 @@
     padding: 5px;
     opacity: 0;
     transition: opacity 500ms;
-    font-family: minecraft; 
+    font-family: minecraft;
+    cursor: default;
 
     position: absolute;
     z-index: 1;
-    top: -5px;
-    bottom: 105%;
+    left: 50%;
+    bottom: 100%;
+    margin-left: -100px;
 }
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+.tooltip span:hover {
+    visibility: hidden;
 }
 
 .text {

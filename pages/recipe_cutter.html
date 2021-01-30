@@ -34,7 +34,7 @@
             </div>
 
             <div name="Texture Namespace">
-                <label for="textureNamespace" class="textbold">Texture Namespace:</label>
+                <label for="textureNamespace" class="textbold">Item Namespace:</label>
                 <input type="text" id="textureNamespace" class="textinput"><br>
             </div>
 
@@ -50,7 +50,23 @@
                 <label for="result" class="textbold">Result:</label>
                 <input type="text" id="result" required="true" class="textinput"><br>
                 <label for="count" class="textbold">Count:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Slabs ignore this.</span>
+                </div>
                 <input type="number" min="1" max="64" id="count" required="true" class="textinput" style="width: 50px">
+            </div>
+
+            <div>
+                <input type="checkbox" id="block">
+                <label for="block" class="textbold">Blocks</label><br>
+                <input type="checkbox" id="slab">
+                <label for="slab" class="textbold">Slabs</label><br>
+                <input type="checkbox" id="stairs">
+                <label for="stairs" class="textbold">Stairs</label><br>
+                <input type="checkbox" id="wall">
+                <label for="wall" class="textbold">Walls</label><br>
+                <input type="checkbox" id="pillar">
+                <label for="pillar" class="textbold">Pillars</label>
             </div>
 
         <div name="bottomButtons">

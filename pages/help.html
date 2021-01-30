@@ -15,7 +15,7 @@
         <a href="#about" class="helptable">About</a><br>
         <a href="#howtouse" class="helptable">How to use the generator</a><br>
         <a href="#savelocation" class="helptable">Save Locations</a><br>
-        <a href="#textnamespace" class="helptable">The Texture Namespace box</a><br>
+        <a href="#textnamespace" class="helptable">The Namespace box</a><br>
         <a href="#advancements" class="helptable">Advancements</a><br>
         <a href="#recipes" class="helptable">Recipes</a>
     </div>
@@ -56,9 +56,10 @@
 
     <div>
         <a id="textnamespace"/>
-        <h2 class="helpheader">Texture Namespaces</h2>
+        <h2 class="helpheader">Namespace Input</h2>
         <p class="helptext">
-            That input box is used inside the json file itself. Before you ask about the "Mod Name" box, that one is used mostly for the filepath. If the "Texture Namespace" is empty, then it's value will default to the "Mod Name" box.
+            That input box is used inside the json file itself. Before you ask about the "Mod Name" box, that one is used mostly for the filepath. If the "Texture Namespace" is empty, then it's value will default to the "Mod Name" box.<br>
+            For recipes, this box is used for the resulting item.
         </p>
     </div>
 
@@ -76,9 +77,29 @@
         <a id="recipes"/>
         <h2 class="helpheader">Recipes</h2>
         <p class="helptext">
-            Recipes are currently under revamping. If you use a version which has recipes enabled, and you wish to use them, be prepared to meet a lot of bugs.<br><br>
-            I suggest not using any version with recipes at all. If its enabled, leave it be. Later versions until recipes are working and properly revamped will not have them enabled.
+            Ah yes. Recipes. This not the easiest thing to learn perhaps, or even use, simply due to the nature of the JSON file.<br><br>
+            Stonecutters:
+            <ul class="helptext">
+                <li>Item Namespace: This is the namespace the resulting item will use. If you are adding modded blocks, change this to your mod name.</li>
+                <li>Ingredient: Self-explanatory. This is the block name of the item you use to create the other blocks.</li>
+                <li>Result: This box will contain the result. However, if you are adding stonecutter recipes for slabs and stairs, from a base block, it will have the same name as your ingredient.</li>
+                <li>Count: This box determines how much you get from the recipe. Slabs will ignore this, and will give you 2 slabs per recipe use.</li>
+            </ul>
+        </p>
+        <p class="helptext">
+            Furnaces:
+            See the stonecutter section, just above, for the first 3 things on the page.
+            <ul class="helptext">
+                <li>Experience: The tooltip beside the box will explain. Basically, most normal blocks will use a value of 0.1 for the experience recieved. Cooking food will give you 0.35 points of experience. Copper and iron will give 0.7, gold gives 1, and ancient debris gives 2 points. See <button class="button" style="padding: 1px;" onclick="smeltLink()">this</button> page for further information.</li>
+                <li>Cooking Time: This box declares how long it will take to smelt. This value is in ticks. 200 is the default value.</li>
+            </ul>
         </p>
     </div>
+
+    <script>  
+        function smeltLink () {
+            require("electron").shell.openExternal("https://minecraft.gamepedia.com/Smelting#Recipes");
+        }
+    </script>
 </body>
 </html>
