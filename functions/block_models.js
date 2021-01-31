@@ -1,5 +1,39 @@
 const fs = require('fs');
 
+function allTextures () {
+    document.getElementById("sideTexture").setAttribute("disabled", "true");
+    document.getElementById("topTexture").setAttribute("disabled", "true");
+    document.getElementById("westTexture").setAttribute("disabled", "true");
+    document.getElementById("southTexture").setAttribute("disabled", "true");
+    document.getElementById("eastTexture").setAttribute("disabled", "true");
+
+    document.getElementById("mainLabel").innerHTML = "Main Texture";
+    localStorage.bmodelMode = "all";
+}
+
+function threeDirections () {
+    document.getElementById("sideTexture").removeAttribute("disabled");
+    document.getElementById("topTexture").removeAttribute("disabled");
+    document.getElementById("westTexture").setAttribute("disabled", "true");
+    document.getElementById("southTexture").setAttribute("disabled", "true");
+    document.getElementById("eastTexture").setAttribute("disabled", "true");
+
+    document.getElementById("mainLabel").innerHTML = "Bottom Texture";
+    document.getElementById("sideLabel").innerHTML = "Side Texture";
+    localStorage.bmodelMode = "three";
+}
+
+function directionalTextures () {
+    document.getElementById("sideTexture").removeAttribute("disabled");
+    document.getElementById("topTexture").removeAttribute("disabled");
+    document.getElementById("westTexture").removeAttribute("disabled");
+    document.getElementById("southTexture").removeAttribute("disabled");
+    document.getElementById("eastTexture").removeAttribute("disabled");
+
+    document.getElementById("mainLabel").innerHTML = "Bottom Texture";
+    document.getElementById("sideLabel").innerHTML = "North Texture";
+    localStorage.bmodelMode = "six";
+}
 
 document.getElementById("blockModelForm").onsubmit = form => {
     form.preventDefault();
@@ -25,6 +59,18 @@ document.getElementById("blockModelForm").onsubmit = form => {
     localStorage.checkStairs = document.getElementById("stairs").checked;
     localStorage.checkWall = document.getElementById("wall").checked;
     localStorage.checkPillar = document.getElementById("pillar").checked;
+
+    var topTexture = document.getElementById("topTexture").value;
+    var sideTexture = document.getElementById("sideTexture").value;
+    var eastTexture = document.getElementById("eastTexture").value;
+    var southTexture = document.getElementById("southTexture").value;
+    var westTexture = document.getElementById("westTexture").value;
+
+    localStorage.topTexture = topTexture;
+    localStorage.sideTexture = sideTexture;
+    localStorage.eastTexture = eastTexture;
+    localStorage.southTexture = southTexture;
+    localStorage.westTexture = westTexture;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
@@ -33,6 +79,11 @@ document.getElementById("blockModelForm").onsubmit = form => {
     blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     textureNamespace = textureNamespace.toLowerCase().trim().split(/ +/).join('_');
+    topTexture = topTexture.toLowerCase().trim().split(/ +/).join('_');
+    sideTexture = sideTexture.toLowerCase().trim().split(/ +/).join('_');
+    eastTexture = eastTexture.toLowerCase().trim().split(/ +/).join('_');
+    westTexture = westTexture.toLowerCase().trim().split(/ +/).join('_');
+    southTexture = southTexture.toLowerCase().trim().split(/ +/).join('_');
 
     let finalBlock = blockName;
 
@@ -55,11 +106,44 @@ document.getElementById("blockModelForm").onsubmit = form => {
     setTimeout(() => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
-            const jsonProduct = {
-                parent: `minecraft:block/cube_all`, textures: { all: `${textureNamespace}:block/${finalBlock}`}  
-            };
+            let finalProduct = {};
+
+            if (document.getElementById("all").checked === true) {
+                finalProduct = {
+                    parent: `minecraft:block/cube_all`,
+                    textures: {
+                        all: `${textureNamespace}:block/${finalBlock}`
+                    }  
+                };
+            }
+
+            if (document.getElementById("threeMain").checked === true) {
+                finalProduct = {
+                    parent: `minecraft:block/orientable`,
+                    textures: {
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    } 
+                };
+            }
+
+            if (document.getElementById("directional").checked === true) {
+                finalProduct = {
+                    parent: `minecraft:block/cube`,
+                    textures: {
+                        particle: `${textureNamespace}:block/${westTexture}`,
+                        north: `${textureNamespace}:block/${sideTexture}`,
+                        south: `${textureNamespace}:block/${southTexture}`,
+                        east: `${textureNamespace}:block/${eastTexture}`,
+                        west: `${textureNamespace}:block/${westTexture}`,
+                        up: `${textureNamespace}:block/${topTexture}`,
+                        down: `${textureNamespace}:block/${blockName}`
+                    }
+                };
+            }
             
-            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+            const jsonContent = JSON.stringify(finalProduct, null, 4);
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
@@ -69,28 +153,71 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
-            brickSlice();
+            let finalProduct1 = {};
+            let finalProduct2 = {};
 
-            const jsonProduct1 = {
-                parent: `minecraft:block/slab`,
-                textures: {
-                    bottom: `${textureNamespace}:block/${finalBlock}`,
-                    top: `${textureNamespace}:block/${finalBlock}`,
-                    side: `${textureNamespace}:block/${finalBlock}`
-                }
-            };
+            if (document.getElementById("all").checked === true) {
+                finalProduct1 = {
+                    parent: `minecraft:block/slab`,
+                    textures: {
+                        top: `${textureNamespace}:block/${blockName}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${blockName}`
+                    } 
+                };
 
-            const jsonProduct2 = {
-                parent: `minecraft:block/slab_top`,
-                textures: {
-                    bottom: `${textureNamespace}:block/${finalBlock}`,
-                    top: `${textureNamespace}:block/${finalBlock}`,
-                    side: `${textureNamespace}:block/${finalBlock}`
-                }
-            };
+                finalProduct2 = {
+                    parent: `minecraft:block/orientable`,
+                    textures: {
+                        top: `${textureNamespace}:block/${blockName}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${blockName}`
+                    } 
+                };
+            }
+
+            if (document.getElementById("threeMain").checked === true) {
+                finalProduct1 = {
+                    parent: `minecraft:block/orientable`,
+                    textures: {
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    } 
+                };
+
+                finalProduct2 = {
+                    parent: `minecraft:block/orientable`,
+                    textures: {
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    } 
+                };
+            }
+
+            if (document.getElementById("directional").checked === true) {
+                finalProduct = {
+                    parent: `minecraft:block/slab`,
+                    textures: {
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    }
+                };
+
+                finalProduct = {
+                    parent: `minecraft:block/slab_top`,
+                    textures: {
+                        top: `${textureNamespace}:block/${westTexture}`,
+                        bottom: `${textureNamespace}:block/${southTexture}`,
+                        side: `${textureNamespace}:block/${eastTexture}`
+                    } 
+                };
+            }
             
-            const jsonContent1 = JSON.stringify(jsonProduct1, null, 4);
-            const jsonContent2 = JSON.stringify(jsonProduct2, null, 4);
+            const jsonContent1 = JSON.stringify(finalProduct1, null, 4);
+            const jsonContent2 = JSON.stringify(finalProduct2, null, 4);
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${finalBlock}_slab.json`, jsonContent1, 'utf8', (err) => {
                 if (err) throw err;
@@ -105,38 +232,71 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Stair Creator
         if (document.getElementById("stairs").checked === true) {
-            brickSlice();
-
-            const jsonProduct1 = {
-                parent: "minecraft:block/stairs",
-                textures: {
-                    bottom: `${textureNamespace}:block/${finalBlock}`,
-                    top: `${textureNamespace}:block/${finalBlock}`,
-                    side: `${textureNamespace}:block/${finalBlock}`
-                }
-            };
-
-            const jsonProduct2 = {
-                parent: "minecraft:block/inner_stairs",
-                textures: {
-                    bottom: `${textureNamespace}:block/${finalBlock}`,
-                    top: `${textureNamespace}:block/${finalBlock}`,
-                    side: `${textureNamespace}:block/${finalBlock}`
-                }
-            };
-
-            const jsonProduct3 = {
-                parent: "minecraft:block/outer_stairs",
-                textures: {
-                    bottom: `${textureNamespace}:block/${finalBlock}`,
-                    top: `${textureNamespace}:block/${finalBlock}`,
-                    side: `${textureNamespace}:block/${finalBlock}`
-                }
-            };
+            let finalProduct1 = {};
+            let finalProduct2 = {};
+            let finalProduct3 = {};
             
-            const jsonContent1 = JSON.stringify(jsonProduct1, null, 4);
-            const jsonContent2 = JSON.stringify(jsonProduct2, null, 4);
-            const jsonContent3 = JSON.stringify(jsonProduct3, null, 4);
+            if (document.getElementById("all").checked === true) {
+                finalProduct1 = {
+                    parent: "minecraft:block/stairs",
+                    textures: {
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        top: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${blockName}`
+                    }
+                };
+
+                finalProduct2 = {
+                    parent: "minecraft:block/inner_stairs",
+                    textures: {
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        top: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${blockName}`
+                    } 
+                };
+
+                finalProduct3 = {
+                    parent: "minecraft:block/outer_stairs",
+                    textures: {
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        top: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${blockName}`
+                    }
+                };
+            }
+
+            if (document.getElementById("threeMain").checked === true || document.getElementById("directional").checked === true) {
+                finalProduct1 = {
+                    parent: "minecraft:block/stairs",
+                    textures: {
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    }
+                };
+
+                finalProduct2 = {
+                    parent: "minecraft:block/inner_stairs",
+                    textures: {
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    } 
+                };
+
+                finalProduct3 = {
+                    parent: "minecraft:block/outer_stairs",
+                    textures: {
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        side: `${textureNamespace}:block/${sideTexture}`
+                    }
+                };
+            }
+            
+            const jsonContent1 = JSON.stringify(finalProduct1, null, 4);
+            const jsonContent2 = JSON.stringify(finalProduct2, null, 4);
+            const jsonContent3 = JSON.stringify(finalProduct3, null, 4);
 
             fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${finalBlock}_stairs.json`, jsonContent1, 'utf8', (err) => {
                 if (err) throw err;

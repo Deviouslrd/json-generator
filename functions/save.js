@@ -67,6 +67,63 @@ function onLoad() {
             document.getElementById("triggerName").value = localStorage.triggerName;
         }
         
+
+        // Block Model Radio Handler
+        if (localStorage.bmodelMode === "all" && document.getElementById("mainLabel")) {
+            document.getElementById("all").checked = true;
+            document.getElementById("sideTexture").setAttribute("disabled", "true");
+            document.getElementById("topTexture").setAttribute("disabled", "true");
+            document.getElementById("westTexture").setAttribute("disabled", "true");
+            document.getElementById("southTexture").setAttribute("disabled", "true");
+            document.getElementById("eastTexture").setAttribute("disabled", "true");
+        
+            document.getElementById("mainLabel").innerHTML = "Main Texture";
+        }
+
+        if (localStorage.bmodelMode === "three" && document.getElementById("mainLabel")) {
+            document.getElementById("threeMain").checked = true;
+            document.getElementById("sideTexture").removeAttribute("disabled");
+            document.getElementById("topTexture").removeAttribute("disabled");
+            document.getElementById("westTexture").setAttribute("disabled", "true");
+            document.getElementById("southTexture").setAttribute("disabled", "true");
+            document.getElementById("eastTexture").setAttribute("disabled", "true");
+        
+            document.getElementById("mainLabel").innerHTML = "Bottom Texture";
+            document.getElementById("sideLabel").innerHTML = "Side Texture";
+        }
+
+        if (localStorage.bmodelMode === "six" && document.getElementById("mainLabel")) {
+            document.getElementById("directional").checked = true;
+            document.getElementById("sideTexture").removeAttribute("disabled");
+            document.getElementById("topTexture").removeAttribute("disabled");
+            document.getElementById("westTexture").removeAttribute("disabled");
+            document.getElementById("southTexture").removeAttribute("disabled");
+            document.getElementById("eastTexture").removeAttribute("disabled");
+        
+            document.getElementById("mainLabel").innerHTML = "Bottom Texture";
+            document.getElementById("sideLabel").innerHTML = "North Texture";
+        }
+
+        // Block Model Multi-texture handler
+        if (localStorage.topTexture && document.getElementById("topTexture")) {
+            document.getElementById("topTexture").value = localStorage.topTexture;
+        }
+
+        if (localStorage.sideTexture && document.getElementById("sideTexture")) {
+            document.getElementById("sideTexture").value = localStorage.sideTexture;
+        }
+
+        if (localStorage.eastTexture && document.getElementById("eastTexture")) {
+            document.getElementById("eastTexture").value = localStorage.eastTexture;
+        }
+
+        if (localStorage.southTexture && document.getElementById("southTexture")) {
+            document.getElementById("southTexture").value = localStorage.southTexture;
+        }
+
+        if (localStorage.westTexture && document.getElementById("westTexture")) {
+            document.getElementById("westTexture").value = localStorage.westTexture;
+        }
     }, 25);
 
 }

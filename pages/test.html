@@ -60,9 +60,9 @@
 
     <button id="button1" class="button" onclick="modify()">Colour change!</button>
 
-    <form id="test">
+    <form id="formtest">
         <div name="Main Inputs">
-            <div name="Mod Name">
+            <div name="Mod Name" id="modNameBox">
                 <label for="modName" class="textbold">Mod Name:</label>
                 <input type="text" id="modName" required="true" class="textinput"><br>
             </div>
@@ -90,6 +90,14 @@
             <input type="radio" id="textureDiff" name="textureSwitch">
             <label for="textureDiff" class="textbold" style="color:rgb(104, 104, 104)">Different texture on top and bottom</label>
         </div>
+
+        <div>
+            <input type="button" value="Make new button" class="button" onclick="newButton()">
+        </div>
+
+        <div>
+            <input type="button" value="Remove button" class="button" onclick="removeButton()">
+        </div>
         
         <div name="bottomButtons">
             <input type="submit" value="Generate!" class="button">
@@ -103,13 +111,11 @@
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
-    <div class="photo-container">
-        <a/>
-        <img src="../assets/qmark.png" alt="Monarch" />
-            <span>Test</span>
-    </div>
-
     <p id="status" style="font-family: minecraft; color:red">Status: Incomplete</p>
+
+    <script>
+
+    </script>
     
     <script type="text/javascript" src="../functions.js"></script>
     <script type="text/javascript" src="../functions/test.js"></script>

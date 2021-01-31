@@ -1,4 +1,5 @@
 const fs = require('fs');
+let btnValue = 0;
 
 document.getElementById("test").onsubmit = form => {
     form.preventDefault();
@@ -22,3 +23,21 @@ document.getElementById("test").onsubmit = form => {
         var finalBlock = blockName.substring(0, blockName.length - 1);
     }
 };
+
+
+
+function newButton () {
+    var node = document.createElement("INPUT");
+    node.setAttribute("type", "radio");
+    node.setAttribute("id", `button${btnValue}`);
+    btnValue += 1;
+    var labelnode = document.createTextNode("Item 1");
+    node.appendChild(labelnode);
+    document.getElementById("modNameBox").appendChild(node);
+}
+
+function removeButton () {
+    var btns = document.getElementById(`button${btnValue}`);
+    document.getElementById("modNameBox").removeChild(btns.removeChild);
+    btnValue -= 1;
+}
