@@ -33,18 +33,205 @@
                 <input type="text" id="modName" required="true" class="textinput"><br>
             </div>
 
-            <div name="Ingredient Name">
-                <label for="blockName" class="textbold">Block Name:</label>
-                <div class="tooltip">?
-                    <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
+            <div name="Texture Namespace">
+                <label for="textureNamespace" class="textbold">Item Namespace:</label>
+                <input type="text" id="textureNamespace" class="textinput"><br>
+            </div>
+        </div>
+
+        <!-- Keys used: R/S/T/U/V/W/X/Y/Z for each grid square. Result will be Q 
+            Alternatives: #, &, %, $, X, Y, Z, ~, ?, !,
+        -->
+
+        <div>
+            <input type="radio" id="shaped" name="type" onclick="shapedMode()">
+            <label for="all" class="textbold">Shaped 3x3 Recipe</label><br>
+            <input type="radio" id="shapeless" name="type" onclick="shapelessMode()">
+            <label for="threeMain" class="textbold">Shapeless recipe</label><br>
+            <input type="radio" id="inventory" name="type" onclick="inventoryMode()">
+            <label for="directional" class="textbold">Inventory Crafting (2x2)</label><br>
+        </div>
+
+        <div id="craftingGrid">
+            <div>
+                <div class="clickdropdown" id="dropdownOne">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="leftTop"></button>
+                    <div id="dropOne" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
                 </div>
-                <input type="text" id="blockName" required="true" class="textinput"><br>
+
+                <div class="clickdropdown" id="dropdownTwo">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="centerTop"></button>
+                    <div id="dropTwo" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div>
+
+                <div class="clickdropdown" id="dropdownThree">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="rightTop"></button>
+                    <div id="dropThree" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div><br>
             </div>
 
             <div>
-                <label for="result" class="textbold">Result:</label>
-                <input type="text" id="result" required="true" class="textinput">
+                <div class="clickdropdown" id="dropdownFour">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="leftCenter"></button>
+                    <div id="dropFour" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div>
+
+                <div class="clickdropdown" id="dropdownFive">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="center"></button>
+                    <div id="dropFive" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div>
+
+                <div class="clickdropdown" id="dropdownSix">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="rightCenter"></button>
+                    <div id="dropSix" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div><br>
             </div>
+
+            <div>
+                <div class="clickdropdown" id="dropdownSeven">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="leftBottom"></button>
+                    <div id="dropSeven" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div>
+
+                <div class="clickdropdown" id="dropdownEight">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="centerBottom"></button>
+                    <div id="dropEight" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div>
+
+                <div class="clickdropdown" id="dropdownNine">
+                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn" id="rightBottom"></button>
+                    <div id="dropNine" class="clickdrop-content">
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="R">R</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="S">S</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="T">T</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="U">U</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="V">V</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="W">W</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="X">X</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Y">Y</a>
+                        <a onclick="dropdown(this.id, this.parentElement.parentElement)" id="Z">Z</a>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div>
+            <label for="r" class="textbold">R input:</label>
+            <input type="text" id="r" required="true" class="textinput">
+                       
+            <label for="w" class="textbold">W input:</label>
+            <input type="text" id="w" required="true" class="textinput"><br>
+
+            <label for="s" class="textbold">S input:</label>
+            <input type="text" id="s" required="true" class="textinput">
+
+            <label for="x" class="textbold">X input:</label>
+            <input type="text" id="x" required="true" class="textinput"><br>
+
+            <label for="t" class="textbold">T input:</label>
+            <input type="text" id="t" required="true" class="textinput">
+
+            <label for="y" class="textbold">Y input:</label>
+            <input type="text" id="y" required="true" class="textinput"><br>
+
+            <label for="u" class="textbold">U input:</label>
+            <input type="text" id="u" required="true" class="textinput">
+ 
+            <label for="z" class="textbold">Z input:</label>
+            <input type="text" id="z" required="true" class="textinput"><br>
+
+            <label for="v" class="textbold">V input:</label>
+            <input type="text" id="v" required="true" class="textinput">
+        </div><br>
+
+        <div>
+            <label for="result" class="textbold">Result:</label>
+            <input type="text" id="result" required="true" class="textinput"><br>
+
+            <label for="count" class="textbold">Count:</label>
+            <input type="number" id="count" required="true" class="textinput" max="64" step="1" min="1" style="width: 50px">
+        </div>
+
         <div name="bottomButtons">
             <input type="submit" value="Generate!" id="generateBtn" class="button">
             <input type="reset" value="Reset All" class="button">
@@ -59,7 +246,30 @@
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
-    <script type="text/javascript" src="../functions/recipes.js"></script>
+    <script type="text/javascript">
+        // Toggle between visible and invisible dropdown on button click
+        function dropVis(id) {
+            if (!document.getElementById(id).classList.contains("craftdisabled")) {
+                document.getElementById(id).nextElementSibling.classList.add("show");
+            }
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.clickdropbtn')) {
+                var dropdowns = document.getElementsByClassName("clickdrop-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        };
+    </script>
+
+    <script type="text/javascript" src="../functions/recipe_table.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

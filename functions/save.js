@@ -124,6 +124,52 @@ function onLoad() {
         if (localStorage.westTexture && document.getElementById("westTexture")) {
             document.getElementById("westTexture").value = localStorage.westTexture;
         }
+
+        // Crafting Tables
+        if (localStorage.tableMode === "shaped" && document.getElementById("shaped")) {
+            document.getElementById("shaped").checked = true;
+            document.getElementById("rightBottom").classList.remove("craftdisabled");
+            document.getElementById("centerBottom").classList.remove("craftdisabled");
+            document.getElementById("leftBottom").classList.remove("craftdisabled");
+            document.getElementById("rightCenter").classList.remove("craftdisabled");
+            document.getElementById("rightTop").classList.remove("craftdisabled");
+        
+            document.getElementById("v").removeAttribute("disabled");
+            document.getElementById("w").removeAttribute("disabled");
+            document.getElementById("x").removeAttribute("disabled");
+            document.getElementById("y").removeAttribute("disabled");
+            document.getElementById("z").removeAttribute("disabled");
+        }
+
+        if (localStorage.tableMode === "shapeless" && document.getElementById("shapeless")) {
+            document.getElementById("shapeless").checked = true;
+            document.getElementById("rightBottom").classList.remove("craftdisabled");
+            document.getElementById("centerBottom").classList.remove("craftdisabled");
+            document.getElementById("leftBottom").classList.remove("craftdisabled");
+            document.getElementById("rightCenter").classList.remove("craftdisabled");
+            document.getElementById("rightTop").classList.remove("craftdisabled");
+        
+            document.getElementById("v").removeAttribute("disabled");
+            document.getElementById("w").removeAttribute("disabled");
+            document.getElementById("x").removeAttribute("disabled");
+            document.getElementById("y").removeAttribute("disabled");
+            document.getElementById("z").removeAttribute("disabled");
+        }
+
+        if (localStorage.tableMode === "inventory" && document.getElementById("inventory")) {
+            document.getElementById("inventory").checked = true;
+            document.getElementById("rightBottom").classList.add("craftdisabled");
+            document.getElementById("centerBottom").classList.add("craftdisabled");
+            document.getElementById("leftBottom").classList.add("craftdisabled");
+            document.getElementById("rightCenter").classList.add("craftdisabled");
+            document.getElementById("rightTop").classList.add("craftdisabled");
+        
+            document.getElementById("v").setAttribute("disabled", "true");
+            document.getElementById("w").setAttribute("disabled", "true");
+            document.getElementById("x").setAttribute("disabled", "true");
+            document.getElementById("y").setAttribute("disabled", "true");
+            document.getElementById("z").setAttribute("disabled", "true");
+        }
     }, 25);
 
 }

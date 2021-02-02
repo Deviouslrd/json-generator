@@ -1,4 +1,3 @@
-const fs = require('fs');
 let btnValue = 0;
 
 document.getElementById("test").onsubmit = form => {
@@ -24,8 +23,6 @@ document.getElementById("test").onsubmit = form => {
     }
 };
 
-
-
 function newButton () {
     var node = document.createElement("INPUT");
     node.setAttribute("type", "radio");
@@ -40,4 +37,8 @@ function removeButton () {
     var btns = document.getElementById(`button${btnValue}`);
     document.getElementById("modNameBox").removeChild(btns.removeChild);
     btnValue -= 1;
+}
+
+function test () {
+    console.log(document.getElementById("dropdownTwo").children);
 }

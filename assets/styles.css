@@ -3,6 +3,8 @@
     src: url(./minecraft.otf);
 }
 
+/* Buttons */
+
 .button {
     cursor: pointer;
     background-color: rgb(255, 255, 255);
@@ -34,6 +36,8 @@
     border-width: 2px;
     border-style: solid;
 }
+
+/* Tooltips */
 
 .tooltip {
     position: relative;
@@ -76,6 +80,8 @@
     visibility: hidden;
 }
 
+/* Simple text styles */
+
 .text {
     font-family: minecraft;
     color: white;
@@ -99,6 +105,8 @@
     color:black;
     text-align: center;
 }
+
+/* Save location boxes */
 
 .savelocation {
     font-family: minecraft;
@@ -126,6 +134,8 @@
     font-family: minecraft;
     font-size: 16px;
 }
+
+/* Hover dropdown menus - recipe menu buttons */
 
 .dropbtn {
     background-color: white;
@@ -179,6 +189,68 @@
 .dropdown:hover .dropbtn {
     background-color: grey;
 }
+
+/* Click Dropdowns */
+.clickdropbtn {
+    background-color: white;
+    font-size: 16px;
+    font-family: minecraft;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.clickdrop:hover, .clickdrop:focus {
+    background-color: grey;
+}
+
+.clickdropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.clickdrop-content {
+    display: none;
+    position: absolute;
+    background:rgb(214, 214, 214);
+    min-width: 25px;
+    overflow: auto;
+    z-index: 1;
+    text-align: center;
+}
+
+.clickdrop-content a {
+    color: black;
+    padding: 3px;
+    text-decoration: none;
+    display: block;
+    font-family: minecraft;
+}
+
+.clickdrop-content a:hover {
+    background-color: grey;
+}
+
+.show {
+    display: block;
+}
+
+.craftbutton {
+    font-family: minecraft;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+}
+
+.craftdisabled {
+    background-color: grey;
+    cursor: default;
+}
+
+/* Help page Variants */
 
 .helpheader {
     text-align: left;
