@@ -54,7 +54,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
         // Block Creator
         if (document.getElementById("block").checked === true) {
             const jsonProduct = {
-                parent: `${modName}:block/${finalBlock}`
+                parent: `${modName}:block/${blockName}`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -70,7 +70,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             brickSlice();
 
             const jsonProduct = {
-                parent: `${modName}:block/${finalBlock}_slab`
+                parent: `${modName}:block/${blockName}_slab`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -86,7 +86,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             brickSlice();
 
             const jsonProduct = {
-                parent: `${modName}:block/${finalBlock}_stairs`
+                parent: `${modName}:block/${blockName}_stairs`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -102,7 +102,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             brickSlice();
 
             const jsonProduct = {
-                parent: `${modName}:block/${finalBlock}_pillar`
+                parent: `${modName}:block/${blockName}_pillar`
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
@@ -119,7 +119,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonProduct = {
                 parent: `minecraft:block/wall_inventory`,
-                textures: { wall: `${textureNamespace}:block/${finalBlock}`}
+                textures: { wall: `${textureNamespace}:block/${blockName}`}
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);

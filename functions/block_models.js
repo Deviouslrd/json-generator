@@ -112,7 +112,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct = {
                     parent: `minecraft:block/cube_all`,
                     textures: {
-                        all: `${textureNamespace}:block/${finalBlock}`
+                        all: `${textureNamespace}:block/${blockName}`
                     }  
                 };
             }
@@ -167,7 +167,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 };
 
                 finalProduct2 = {
-                    parent: `minecraft:block/orientable`,
+                    parent: `minecraft:block/slab_top`,
                     textures: {
                         top: `${textureNamespace}:block/${blockName}`,
                         bottom: `${textureNamespace}:block/${blockName}`,
@@ -321,21 +321,21 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: `minecraft:block/template_wall_post`,
                 textures: {
-                    wall: `${textureNamespace}:block/${finalBlock}`
+                    wall: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct2 = {
                 parent: `minecraft:block/template_wall_side`,
                 textures: {
-                    wall: `${textureNamespace}:block/${finalBlock}`
+                    wall: `${textureNamespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct3 = {
                 parent: `minecraft:block/template_wall_side_tall`,
                 textures: {
-                    wall: `${textureNamespace}:block/${finalBlock}`
+                    wall: `${textureNamespace}:block/${blockName}`
                 }
             };
             
@@ -366,16 +366,16 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: "minecraft:block/cube_column",
                 textures: {
-                    end: `${textureNamespace}:block/${finalBlock}_pillar_top`,
-                    side: `${textureNamespace}"block/${finalBlock}_pillar`
+                    end: `${textureNamespace}:block/${blockName}_pillar_top`,
+                    side: `${textureNamespace}"block/${blockName}_pillar`
                 }
             };
 
             const jsonProduct2 = {
                 parent: "minecraft:block/cube_column_horizontal",
                 textures: {
-                    end: `${textureNamespace}:block/${finalBlock}_pillar_top`,
-                    side: `${textureNamespace }:block/${finalBlock}_pillar`
+                    end: `${textureNamespace}:block/${blockName}_pillar_top`,
+                    side: `${textureNamespace }:block/${blockName}_pillar`
                 }
             };
             
