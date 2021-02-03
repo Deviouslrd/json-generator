@@ -396,7 +396,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 parent: "minecraft:block/cube_column",
                 textures: {
                     end: `${textureNamespace}:block/${blockName}_pillar_top`,
-                    side: `${textureNamespace}"block/${blockName}_pillar`
+                    side: `${textureNamespace}:block/${blockName}_pillar`
                 }
             };
 
@@ -404,7 +404,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 parent: "minecraft:block/cube_column_horizontal",
                 textures: {
                     end: `${textureNamespace}:block/${blockName}_pillar_top`,
-                    side: `${textureNamespace }:block/${blockName}_pillar`
+                    side: `${textureNamespace}:block/${blockName}_pillar`
                 }
             };
             
