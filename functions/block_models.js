@@ -205,7 +205,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
             if (document.getElementById("threeMain").checked === true) {
                 finalProduct1 = {
-                    parent: `minecraft:block/orientable`,
+                    parent: `minecraft:block/slab`,
                     textures: {
                         top: `${textureNamespace}:block/${topTexture}`,
                         bottom: `${textureNamespace}:block/${blockName}`,
@@ -214,7 +214,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 };
 
                 finalProduct2 = {
-                    parent: `minecraft:block/orientable`,
+                    parent: `minecraft:block/slab_top`,
                     textures: {
                         top: `${textureNamespace}:block/${topTexture}`,
                         bottom: `${textureNamespace}:block/${blockName}`,
