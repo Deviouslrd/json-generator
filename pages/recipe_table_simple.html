@@ -23,10 +23,20 @@
     
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
     <p id="body" class="text">
-        Create furnace recipes for the new items you've added! [COMING SOON]
+        Create basic crafting table recipes for the new items!
     </p>
 
+    <div style="text-align: center;">
+        <a class="buttondisabled" href="recipe_table_simple.html">Simple Blocks</a>
+        <a class="button" href="recipe_table.html">Fully Custom</a>
+    </div>
+
     <form id="recipeForm">
+        <p class="textbold">
+            This part of the generator is a very basic form. This means that the generator will take the ingredient input and use that for the end result. <br>
+            This will create a plethora of simple vanilla blocks, for use to create your modded variants.
+        </p>
+
         <div name="Main Inputs">
             <div name="Mod Name">
                 <label for="modName" class="textbold">Mod Name:</label>
@@ -51,21 +61,29 @@
             </div>
 
             <div>
-                <label for="result" class="textbold">Result:</label>
-                <input type="text" id="result" required="true" class="textinput">
-            </div>
+                <input type="checkbox" id="slab">
+                <label for="slab" class="textbold">Slabs</label><br>
 
-            <div>
-                <label for="xpAmount" class="textbold">Experience for completion:</label>
-                <div class="tooltip">?
-                    <span class="tooltiptext">For reference, smelting ores gives 1 xp (ancient debris gives 2), food gives 0.35, and regular blocks give 0.1</span>
-                </div>
-                <input type="number" step="0.05" id="xpAmount" required="true" class="textinput" style="width: 50px;">
-            </div>
+                <input type="checkbox" id="stairs">
+                <label for="stairs" class="textbold">Stairs</label><br>
 
-            <div>
-                <label for="cookTime" class="textbold">Cooking Time:</label>
-                <input type="number" id="cookTime" required="true" value="200" class="textinput" style="width: 70px">
+                <input type="checkbox" id="wall">
+                <label for="wall" class="textbold">Walls</label><br>
+
+                <input type="checkbox" id="pillar">
+                <label for="pillar" class="textbold">Pillars</label><br>
+                
+                <input type="checkbox" id="chiseled">
+                <label for="chiseled" class="textbold">Chiseled</label><br>
+                
+                <input type="checkbox" id="cut">
+                <label for="cut" class="textbold">Cut</label><br>
+
+                <input type="checkbox" id="polished">
+                <label for="polished" class="textbold">Polished</label><br>
+                
+                <input type="checkbox" id="mossy">
+                <label for="mossy" class="textbold">Mossy</label><br>
             </div>
         </div>
         
@@ -83,7 +101,7 @@
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
-    <script type="text/javascript" src="../functions/recipe_furnace.js"></script>
+    <script type="text/javascript" src="../functions/recipe_table_simple.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

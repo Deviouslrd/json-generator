@@ -20,11 +20,18 @@
             </div>
         </div>
     </div>
+
+
     
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
     <p id="body" class="text">
         Create recipes for the new items you've added! Will be usable last after the rest of the other recipes. [COMING SOON]
     </p>
+
+    <div style="text-align: center;">
+        <a class="button" href="recipe_table_simple.html">Simple Blocks</a>
+        <a class="buttondisabled" href="recipe_table.html">Fully Custom</a>
+    </div>
 
     <form id="recipeForm">
         <div name="Main Inputs">
@@ -242,7 +249,7 @@
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
-        <input type="image"  id="savebutton" class="button" src='../assets/folder.png' onclick="saveLocation()" style="vertical-align: bottom;">
+        <input type="image" class="button" id="savebutton" src='../assets/folder.png' style="vertical-align: bottom;">
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
