@@ -283,3 +283,10 @@
     background-color: gray;
     color: black;
 }
+
+.bmodellabel {
+    display: inline-block;
+    width: 125px;
+    font-family: minecraft;
+    font-size: 16px;
+}

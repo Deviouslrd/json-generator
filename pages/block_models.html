@@ -40,47 +40,52 @@
 
             <div>
                 <input type="radio" id="all" name="texture" onclick="allTextures()">
-                <label for="all" class="textbold">Same texture on every side</label><br>
+                <label for="all" class="textbold">Same texture on every side (Blocks, Stairs, Slabs, Walls, Pillars)</label><br>
                 <input type="radio" id="threeMain" name="texture" onclick="threeDirections()">
-                <label for="threeMain" class="textbold">Different texture on top, bottom, and sides</label><br>
+                <label for="threeMain" class="textbold">Different texture on top, bottom, and sides (Block, Stairs, Slabs)</label><br>
                 <input type="radio" id="directional" name="texture" onclick="directionalTextures()">
-                <label for="directional" class="textbold">Different texture on every side</label><br>
+                <label for="directional" class="textbold">Different texture on every side (Blocks, Slabs)</label><br>
+                <input type="radio" id="diffFront" name="texture" onclick="frontDiff()">
+                <label for="diffFront" class="textbold">Different front texture (Blocks)</label><br>
             </div>
 
-            <p class="textbold">Slabs follow a different scheme, as outlined below, to allow for full texture control, <br> The bottom slab uses top for the top, side for the side, and bottom for the bottom.<br> The top slab uses west for the top, south for the bottom, and east for the side.</p>
-            <p class="textbold">Due to limitations, stairs can only have a maximum of 3 textures. The only radio buttons that will work for stairs are the first 2.</p>
-            <p class="textbold">Pillars and walls will likely not be recieving the multi-texture support, unless a way to do so is discovered.</p>
+            <p class="textbold">
+                Slabs follow a different scheme, as outlined below, to allow for full texture control,<br>
+                The bottom slab uses top for the top, side for the side, and bottom for the bottom.<br> 
+                The top slab uses west for the top, south for the bottom, and east for the side.
+                </p>
+            <p class="textbold">
+                Pillars and walls will likely not be recieving the multi-texture support, unless a way to do so is discovered.<br>
+                Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.
+            </p>
 
             <div name="Main Texture"> <!-- Main Texture (Single Texture) & Bottom Texture (3 & 6 texture Variant)-->
-                <label for="blockName" class="textbold" id="mainLabel">Main Texture:</label>
-                <div class="tooltip">?
-                    <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
-                </div>
+                <label for="blockName" class="bmodellabel" id="mainLabel">Main Texture:</label>
                 <input type="text" id="blockName" required="true" class="textinput"><br>
             </div>
 
             <div name="Top Texture"> <!-- Top Textures (3 & 6 texture variants)-->
-                <label for="topTexture" class="textbold" id="topLabel">Top Texture:</label>
+                <label for="topTexture" class="bmodellabel" id="topLabel">Top Texture:</label>
                 <input type="text" id="topTexture" required="true" class="textinput"><br>
             </div>
 
             <div name="Side Texture"> <!-- Side Texture (3 texture variant) & North Texture (6 texture variant) -->
-                <label for="sideTexture" class="textbold" id="sideLabel">Side Texture:</label>
+                <label for="sideTexture" class="bmodellabel" id="sideLabel">Side Texture:</label>
                 <input type="text" id="sideTexture" required="true" class="textinput"><br>
             </div>
 
             <div name="East Texture">
-                <label for="eastTexture" class="textbold" id="eastLabel">East Texture:</label>
+                <label for="eastTexture" class="bmodellabel" id="eastLabel">East Texture:</label>
                 <input type="text" id="eastTexture" required="true" class="textinput"><br>
             </div>
 
             <div name="South Texture">
-                <label for="southTexture" class="textbold" id="southLabel">South Texture:</label>
+                <label for="southTexture" class="bmodellabel" id="southLabel">South Texture:</label>
                 <input type="text" id="southTexture" required="true" class="textinput"><br>
             </div>
             
             <div name="West Texture">
-                <label for="westTexture" class="textbold" id="westLabel">West Texture:</label>
+                <label for="westTexture" class="bmodellabel" id="westLabel">West Texture:</label>
                 <input type="text" id="westTexture" required="true" class="textinput"><br>
             </div>
         </div>

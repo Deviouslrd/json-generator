@@ -77,7 +77,7 @@ function onLoad() {
             document.getElementById("southTexture").setAttribute("disabled", "true");
             document.getElementById("eastTexture").setAttribute("disabled", "true");
         
-            document.getElementById("mainLabel").innerHTML = "Main Texture";
+            document.getElementById("mainLabel").innerHTML = "Main Texture:";
         }
 
         if (localStorage.bmodelMode === "three" && document.getElementById("mainLabel")) {
@@ -88,8 +88,8 @@ function onLoad() {
             document.getElementById("southTexture").setAttribute("disabled", "true");
             document.getElementById("eastTexture").setAttribute("disabled", "true");
         
-            document.getElementById("mainLabel").innerHTML = "Bottom Texture";
-            document.getElementById("sideLabel").innerHTML = "Side Texture";
+            document.getElementById("mainLabel").innerHTML = "Bottom Texture:";
+            document.getElementById("sideLabel").innerHTML = "Side Texture:";
         }
 
         if (localStorage.bmodelMode === "six" && document.getElementById("mainLabel")) {
@@ -100,8 +100,21 @@ function onLoad() {
             document.getElementById("southTexture").removeAttribute("disabled");
             document.getElementById("eastTexture").removeAttribute("disabled");
         
-            document.getElementById("mainLabel").innerHTML = "Bottom Texture";
-            document.getElementById("sideLabel").innerHTML = "North Texture";
+            document.getElementById("mainLabel").innerHTML = "Bottom Texture:";
+            document.getElementById("sideLabel").innerHTML = "North Texture:";
+        }
+
+        if (localStorage.bmodelMode === "front" && document.getElementById("mainLabel")) {
+            document.getElementById("diffFront").checked = true;
+            document.getElementById("sideTexture").removeAttribute("disabled");
+            document.getElementById("topTexture").removeAttribute("disabled");
+            document.getElementById("eastTexture").removeAttribute("disabled");
+            document.getElementById("westTexture").setAttribute("disabled", "true");
+            document.getElementById("southTexture").setAttribute("disabled", "true");
+        
+            document.getElementById("mainLabel").innerHTML = "Bottom Texture:";
+            document.getElementById("eastLabel").innerHTML = "Front Texture:";
+            document.getElementById("sideLabel").innerHTML = "Side Texture:";
         }
 
         // Block Model Multi-texture handler

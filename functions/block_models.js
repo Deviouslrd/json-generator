@@ -7,7 +7,7 @@ function allTextures () {
     document.getElementById("southTexture").setAttribute("disabled", "true");
     document.getElementById("eastTexture").setAttribute("disabled", "true");
 
-    document.getElementById("mainLabel").innerHTML = "Main Texture";
+    document.getElementById("mainLabel").innerHTML = "Main Texture:";
     localStorage.bmodelMode = "all";
 }
 
@@ -18,8 +18,8 @@ function threeDirections () {
     document.getElementById("southTexture").setAttribute("disabled", "true");
     document.getElementById("eastTexture").setAttribute("disabled", "true");
 
-    document.getElementById("mainLabel").innerHTML = "Bottom Texture";
-    document.getElementById("sideLabel").innerHTML = "Side Texture";
+    document.getElementById("mainLabel").innerHTML = "Bottom Texture:";
+    document.getElementById("sideLabel").innerHTML = "Side Texture:";
     localStorage.bmodelMode = "three";
 }
 
@@ -30,9 +30,22 @@ function directionalTextures () {
     document.getElementById("southTexture").removeAttribute("disabled");
     document.getElementById("eastTexture").removeAttribute("disabled");
 
-    document.getElementById("mainLabel").innerHTML = "Bottom Texture";
-    document.getElementById("sideLabel").innerHTML = "North Texture";
+    document.getElementById("mainLabel").innerHTML = "Bottom Texture:";
+    document.getElementById("sideLabel").innerHTML = "North Texture:";
     localStorage.bmodelMode = "six";
+}
+
+function frontDiff () {
+    document.getElementById("sideTexture").removeAttribute("disabled");
+    document.getElementById("topTexture").removeAttribute("disabled");
+    document.getElementById("eastTexture").removeAttribute("disabled");
+    document.getElementById("westTexture").setAttribute("disabled", "true");
+    document.getElementById("southTexture").setAttribute("disabled", "true");
+
+    document.getElementById("mainLabel").innerHTML = "Bottom Texture:";
+    document.getElementById("eastLabel").innerHTML = "Front Texture:";
+    document.getElementById("sideLabel").innerHTML = "Side Texture:";
+    localStorage.bmodelMode = "front";
 }
 
 document.getElementById("blockModelForm").onsubmit = form => {
@@ -142,6 +155,18 @@ document.getElementById("blockModelForm").onsubmit = form => {
                     }
                 };
             }
+
+            if (document.getElementById("diffFront").checked === true) {
+                finalProduct = {
+                    parent: `minecraft:block/orientable`,
+                    textures: {
+                        top: `${textureNamespace}:block/${topTexture}`,
+                        bottom: `${textureNamespace}:block/${blockName}`,
+                        side: `${textureNamespace}:block/${sideTexture}`,
+                        front: `${textureNamespace}:block/${eastTexture}`
+                    } 
+                };
+            }
             
             const jsonContent = JSON.stringify(finalProduct, null, 4);
 
@@ -153,6 +178,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
+            brickSlice();
+            
             let finalProduct1 = {};
             let finalProduct2 = {};
 
@@ -232,6 +259,8 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         // Stair Creator
         if (document.getElementById("stairs").checked === true) {
+            brickSlice();
+
             let finalProduct1 = {};
             let finalProduct2 = {};
             let finalProduct3 = {};
