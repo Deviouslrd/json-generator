@@ -187,9 +187,9 @@ function onLoad() {
 
 }
 
-document.getElementById("generateBtn").addEventListener('click', () => {
+/*document.getElementById("generateBtn").addEventListener('click', () => {
     localStorage.blockName = document.getElementById("blockName").value;
     localStorage.modName = document.getElementById("modName").value;
     localStorage.textureNamespace = document.getElementById("textureNamespace").value;
     localStorage.path = document.getElementById("saveLocation").value; 
-});
+});*/

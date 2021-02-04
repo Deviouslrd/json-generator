@@ -56,13 +56,12 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     const filepath = localStorage.path;
 
-    var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    var itemNamespace = document.getElementById("textureNamespace").value;
 
     localStorage.modName = modName;
-    localStorage.blockName = blockName;
+    localStorage.textureNamespace = itemNamespace;
 
-    blockName = blockName.toLowerCase().split(/ +/).join('_');
     modName = modName.toLowerCase().split(/ +/).join('_');
 
     var rInput = document.getElementById("r").value;
@@ -98,24 +97,82 @@ document.getElementById("recipeForm").onsubmit = form => {
     if (document.getElementById("saveLocation").value === 'No location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
+      
+    const jsonProduct = {
+        key: {
 
-    const blockLength = blockName.length;
-    const blockLengthStart = blockLength - 6;
-    const blockSubStr = blockName.substring(blockLengthStart);
-    
-    if (blockSubStr === 'bricks') {
-        var finalBlock = blockName.substring(0, blockName.length - 1);
+        }
+    };
+
+    if (rInput !== '') {  
+        jsonProduct["key"]["R"] = { item: rInput };
     }
 
-    if (document.getElementById("").checked === true) {
+    if (sInput !== '') {
+        jsonProduct["key"]["S"] = { item: sInput };
+    }
 
-        const jsonProduct = {
+    if (tInput !== '') {
+        jsonProduct["key"]["T"] = { item: tInput };
+    }
 
-        };
+    if (uInput !== '') {
+        jsonProduct["key"]["U"] = { item: uInput };
+    }
+
+    if (vInput !== '') {
+        jsonProduct["key"]["V"] = { item: vInput };
+    }
+
+    if (wInput !== '') {
+        jsonProduct["key"]["W"] = { item: wInput };
+    }
+
+    if (xInput !== '') {
+        jsonProduct["key"]["X"] = { item: xInput };
+    }
+
+    if (yInput !== '') {
+        jsonProduct["key"]["Y"] = { item: yInput };
+    }
+
+    if (zInput !== '') {
+        jsonProduct["key"]["Z"] = { item: zInput };
+    }
+
+    const jsonContent = JSON.stringify(jsonProduct, null, 4);
+    
+    console.log(jsonContent);
+    /* None of the below is working yet, leaving that for later once I figure it out.
+
+    let rFinal = rInput;
+    let sFinal = sInput;
+    let tFinal = tInput;
+    let uFinal = uInput;
+    let vFinal = vInput;
+    let wFinal = wInput;
+    let xFinal = xInput;
+    let yFinal = yInput;
+    let zFinal = zInput;
+    
+    let finalBlocks = [rInput, sInput, tInput, uInput, vInput,  wInput, xInput, yInput, zInput];
+
+    function brickSlice (block) {
+        const blockLength = block.length - 6;
+        const blockSubStr = block.substring(blockLength);
         
-        const jsonContent = JSON.stringify(jsonProduct, null, 4);
+        if (blockSubStr === 'bricks') {
+            return finalBlock = block.substring(0, ingredient.length - 1);
+        }
+    }
 
-        if (!fs.existsSync(`${filepath}\\recipes`)) {
+    finalBlocks.forEach(element => {
+        brickSlice(finalBlocks);
+    });*/
+
+    /*if (document.getElementById("").checked === true) {*/
+
+        /*if (!fs.existsSync(`${filepath}\\recipes`)) {
             fs.mkdir(`${filepath}\\recipes`, (err) => {
                 if (err) throw err;
                 console.log('Made the  folder.');
@@ -133,6 +190,6 @@ document.getElementById("recipeForm").onsubmit = form => {
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";
-        }, 1000);
-    }
+        }, 1000);*/
+    /*}*/
 };
