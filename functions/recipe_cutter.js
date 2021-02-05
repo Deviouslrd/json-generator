@@ -64,7 +64,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stonecutter.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stonecutting.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the block stonecutter recipe.');
             });
@@ -85,7 +85,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_slab_stonecutter.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_slab_stonecutting.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the slab stonecutter recipe.');
             });
@@ -106,7 +106,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stairs_stonecutter.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stairs_stonecutting.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the stairs stonecutter recipe.');
             });
@@ -127,7 +127,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_pillar_stonecutter.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_pillar_stonecutting.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the pillar stonecutter recipe.');
             });
@@ -148,7 +148,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_wall_stonecutter.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_wall_stonecutting.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the wall stonecutter recipe.');
             });
