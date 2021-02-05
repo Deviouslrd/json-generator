@@ -2,28 +2,33 @@ const fs = require('fs');
 
 document.getElementById("advanceForm").onsubmit = form => {
     form.preventDefault();
-    
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
-    }
 
     const filepath = localStorage.path;
-
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
-    }
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var triggerName = document.getElementById("triggerName").value;
+    var itemNamespace;
+
+    if (document.getElementById("saveLocation").value === 'No Location') {
+        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    }
+
+    if (document.getElementById("namespace").value === ``) {
+        itemNamespace = document.getElementById("modName").value;
+    } else {
+        itemNamespace = document.getElementById("namespace").value;
+    }
 
     localStorage.blockName = blockName;
     localStorage.modName = modName;
     localStorage.triggerName = triggerName;
+    localStorage.namespace = itemNamespace;
 
     blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     triggerName = triggerName.toLowerCase().trim().split(/ +/).join('_');
+    itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
     
     let finalBlock = blockName;
 
@@ -40,10 +45,10 @@ document.getElementById("advanceForm").onsubmit = form => {
         parent: `minecraft:recipes/root`,
         rewards: {
             recipes: [
-                `${modName}:${finalBlock}_slab`,
-                `${modName}:${finalBlock}_stairs`,
-                `${modName}:${finalBlock}_pillar`,
-                `${modName}:${finalBlock}_wall`
+                `${itemNamespace}:${finalBlock}_slab`,
+                `${itemNamespace}:${finalBlock}_stairs`,
+                `${itemNamespace}:${finalBlock}_pillar`,
+                `${itemNamespace}:${finalBlock}_wall`
             ]
         },
         criteria: {
@@ -52,7 +57,7 @@ document.getElementById("advanceForm").onsubmit = form => {
                 conditions: {
                     items: [
                         {
-                            item: `${modName}:${triggerName}`
+                            item: `${itemNamespace}:${triggerName}`
                         }
                     ]
                 }

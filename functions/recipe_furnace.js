@@ -10,12 +10,12 @@ document.getElementById("recipeForm").onsubmit = form => {
     var result = document.getElementById("result").value;
     var xp = parseFloat(document.getElementById("xpAmount").value);
     var cookTime = parseFloat(document.getElementById("cookTime").value);
-    var textureNamespace = document.getElementById("textureNamespace").value;
+    var itemNamespace;
 
-    if (document.getElementById("textureNamespace").value === ``) {
-        textureNamespace = document.getElementById("modName").value;
+    if (document.getElementById("namespace").value === ``) {
+        itemNamespace = document.getElementById("modName").value;
     } else {
-        textureNamespace = document.getElementById("textureNamespace").value;
+        itemNamespace = document.getElementById("namespace").value;
     }
 
     localStorage.modName = modName;
@@ -23,7 +23,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.result = result;
     localStorage.xp = xp;
     localStorage.cookTime = cookTime;
-    localStorage.textureNamespace = textureNamespace;
+    localStorage.namespace = itemNamespace;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
@@ -32,7 +32,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     result = result.toLowerCase().trim().split(/ +/).join('_');
-    textureNamespace = textureNamespace.toLowerCase().trim().split(/ +/).join('_');
+    itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
 
     const blockLength = blockLength.length - 6;
     const blockSubStr = ingredient.substring(blockLengthStart);
@@ -52,7 +52,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         const jsonProduct = {
             type: "minecraft:smelting",
             ingredient: {
-                item: `${textureNamespace}:${ingredient}`
+                item: `${itemNamespace}:${ingredient}`
             },
             result: `${modName}:${result}`,
             experience: xp,

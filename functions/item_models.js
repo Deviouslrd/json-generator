@@ -4,19 +4,20 @@ document.getElementById("itemModelForm").onsubmit = form => {
     form.preventDefault();
 
     const filepath = localStorage.path;
-    var textureNamespace;
-
+    
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
-    if (document.getElementById("textureNamespace").value === ``) {
-        textureNamespace = document.getElementById("modName").value;
+    var itemNamespace;
+
+    if (document.getElementById("namespace").value === ``) {
+        itemNamespace = document.getElementById("modName").value;
     } else {
-        textureNamespace = document.getElementById("textureNamespace").value;
+        itemNamespace = document.getElementById("namespace").value;
     }
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
-    localStorage.textureNamespace = textureNamespace;
+    localStorage.namespace = itemNamespace;
 
     localStorage.checkBlock = document.getElementById("block").checked;
     localStorage.checkSlab = document.getElementById("slab").checked;
@@ -30,7 +31,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
 
     blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
-    textureNamespace =  textureNamespace.toLowerCase().trim().split(/ +/).join('_');
+    itemNamespace =  itemNamespace.toLowerCase().trim().split(/ +/).join('_');
 
     let finalBlock = blockName;
 
@@ -119,7 +120,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonProduct = {
                 parent: `minecraft:block/wall_inventory`,
-                textures: { wall: `${textureNamespace}:block/${blockName}`}
+                textures: { wall: `${itemNamespace}:block/${blockName}`}
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);

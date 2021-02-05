@@ -8,19 +8,19 @@ document.getElementById("recipeForm").onsubmit = form => {
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
-    var textureNamespace = document.getElementById("textureNamespace").value;
+    var itemNamespace;
     var count = parseFloat(document.getElementById("count").value);
 
-    if (document.getElementById("textureNamespace").value === ``) {
-        textureNamespace = document.getElementById("modName").value;
+    if (document.getElementById("namespace").value === ``) {
+        itemNamespace = document.getElementById("modName").value;
     } else {
-        textureNamespace = document.getElementById("textureNamespace").value;
+        itemNamespace = document.getElementById("namespace").value;
     }
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
     localStorage.result = result;
-    localStorage.textureNamespace = textureNamespace;
+    localStorage.namespace = itemNamespace;
     localStorage.count = count;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
@@ -30,7 +30,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     result = result.toLowerCase().trim().split(/ +/).join('_');
-    textureNamespace = textureNamespace.toLowerCase().split(/ +/).join('_');
+    itemNamespace = itemNamespace.toLowerCase().split(/ +/).join('_');
 
     let finalBlock = blockName;
 
@@ -56,7 +56,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${textureNamespace}:${blockName}`
+                    item: `${itemNamespace}:${blockName}`
                 },
                 result: `${modName}:${result}`,
                 count: count
@@ -77,7 +77,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${textureNamespace}:${blockName}`
+                    item: `${itemNamespace}:${blockName}`
                 },
                 result: `${modName}:${result}_slab`,
                 count: 2
@@ -98,7 +98,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${textureNamespace}:${blockName}`
+                    item: `${itemNamespace}:${blockName}`
                 },
                 result: `${modName}:${result}_stairs`,
                 count: count
@@ -119,7 +119,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${textureNamespace}:${blockName}`
+                    item: `${itemNamespace}:${blockName}`
                 },
                 result: `${modName}:${result}_pillar`,
                 count: count
@@ -140,7 +140,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${textureNamespace}:${blockName}`
+                    item: `${itemNamespace}:${blockName}`
                 },
                 result: `${modName}:${result}_wall`,
                 count: count

@@ -16,8 +16,8 @@ function onLoad() {
             document.getElementById("modName").value = localStorage.modName;
         }
             
-        if (localStorage.textureNamespace && document.getElementById("textureNamespace")) {
-            document.getElementById("textureNamespace").value = localStorage.textureNamespace;
+        if (localStorage.namespace && document.getElementById("namespace")) {
+            document.getElementById("namespace").value = localStorage.namespace;
         }
 
         if (localStorage.path) {
@@ -183,6 +183,80 @@ function onLoad() {
             document.getElementById("y").setAttribute("disabled", "true");
             document.getElementById("z").setAttribute("disabled", "true");
         }
+
+        if (localStorage.rInput && document.getElementById("r")) {
+            document.getElementById("r").value = localStorage.rInput;
+        }
+
+        if (localStorage.sInput && document.getElementById("s")) {
+            document.getElementById("s").value = localStorage.sInput;
+        }
+
+        if (localStorage.tInput && document.getElementById("t")) {
+            document.getElementById("t").value = localStorage.tInput;
+        }
+
+        if (localStorage.uInput && document.getElementById("u")) {
+            document.getElementById("u").value = localStorage.uInput;
+        }
+
+        if (localStorage.vInput && document.getElementById("v")) {
+            document.getElementById("v").value = localStorage.vInput;
+        }
+
+        if (localStorage.wInput && document.getElementById("w")) {
+            document.getElementById("w").value = localStorage.wInput;
+        }
+
+        if (localStorage.xInput && document.getElementById("x")) {
+            document.getElementById("x").value = localStorage.xInput;
+        }
+
+        if (localStorage.yInput && document.getElementById("y")) {
+            document.getElementById("y").value = localStorage.yInput;
+        }
+
+        if (localStorage.zInput && document.getElementById("z")) {
+            document.getElementById("z").value = localStorage.zInput;
+        }
+
+
+        if (localStorage.leftTop && document.getElementById("leftTop")) {
+            document.getElementById("leftTop").innerHTML = localStorage.leftTop;
+        }
+        
+        if (localStorage.centerTop && document.getElementById("centerTop")) {
+            document.getElementById("centerTop").innerHTML = localStorage.centerTop;
+        }
+        
+        if (localStorage.rightTop && document.getElementById("rightTop")) {
+            document.getElementById("rightTop").innerHTML = localStorage.rightTop;
+        }
+        
+        if (localStorage.leftCenter && document.getElementById("leftCenter")) {
+            document.getElementById("leftCenter").innerHTML = localStorage.leftCenter;
+        }
+        
+        if (localStorage.center && document.getElementById("center")) {
+            document.getElementById("center").innerHTML = localStorage.center;
+        }
+        
+        if (localStorage.rightCenter && document.getElementById("rightCenter")) {
+            document.getElementById("rightCenter").innerHTML = localStorage.rightCenter;
+        }
+        
+        if (localStorage.leftBottom && document.getElementById("leftBottom")) {
+            document.getElementById("leftBottom").innerHTML = localStorage.leftBottom;
+        }
+        
+        if (localStorage.centerBottom && document.getElementById("centerBottom")) {
+            document.getElementById("centerBottom").innerHTML = localStorage.centerBottom;
+        }
+        
+        if (localStorage.rightBottom && document.getElementById("rightBottom")) {
+            document.getElementById("rightBottom").innerHTML = localStorage.rightBottom;
+        }
+
     }, 25);
 
 }
@@ -190,6 +264,6 @@ function onLoad() {
 /*document.getElementById("generateBtn").addEventListener('click', () => {
     localStorage.blockName = document.getElementById("blockName").value;
     localStorage.modName = document.getElementById("modName").value;
-    localStorage.textureNamespace = document.getElementById("textureNamespace").value;
+    localStorage.namespace = document.getElementById("namespace").value;
     localStorage.path = document.getElementById("saveLocation").value; 
 });*/

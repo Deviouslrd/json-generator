@@ -4,20 +4,20 @@ document.getElementById("blockstateForm").onsubmit = form => {
     form.preventDefault();
 
     const filepath = localStorage.path;
-
-    var textureNamespace;
+    
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    var textureNamespace;
 
-    if (document.getElementById("textureNamespace").value === ``) {
+    if (document.getElementById("namespace").value === ``) {
         textureNamespace = document.getElementById("modName").value;
     } else {
-        textureNamespace = document.getElementById("textureNamespace").value;
+        textureNamespace = document.getElementById("namespace").value;
     }
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
-    localStorage.textureNamespace = textureNamespace;
+    localStorage.namespace = textureNamespace;
 
     localStorage.checkBlock = document.getElementById("block").checked;
     localStorage.checkSlab = document.getElementById("slab").checked;

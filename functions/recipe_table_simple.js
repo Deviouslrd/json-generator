@@ -7,12 +7,18 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     var modName = document.getElementById("modName").value;
     var ingredient = document.getElementById("blockName").value;
-    var textureNamespace = document.getElementById("textureNamespace");
+    var itemNamespace;
+
+    if (document.getElementById("namespace").value === ``) {
+        itemNamespace = document.getElementById("modName").value;
+    } else {
+        itemNamespace = document.getElementById("namespace").value;
+    }
 
     localStorage.modName = modName;
     localStorage.blockName = ingredient;
-    localStorage.textureNamespace = textureNamespace;
-    
+    localStorage.namespace = itemNamespace;
+
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
@@ -51,10 +57,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   "XXX"
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}` }
+                  X: { item: `${itemNamespace}:${ingredient}` }
                 },
                 result: {
-                  item: `${textureNamespace}:${finalBlock}_slab`,
+                  item: `${itemNamespace}:${finalBlock}_slab`,
                   count: 6
                 }
             };
@@ -79,10 +85,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   "XXX"
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}` }
+                  X: { item: `${itemNamespace}:${ingredient}` }
                 },
                 result: {
-                  item: `${textureNamespace}:${finalBlock}_stairs`,
+                  item: `${itemNamespace}:${finalBlock}_stairs`,
                   count: 4
                 }
             };
@@ -105,10 +111,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   "XXX"
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}` }
+                  X: { item: `${itemNamespace}:${ingredient}` }
                 },
                 result: {
-                  item: `${textureNamespace}:${finalBlock}_wall`,
+                  item: `${itemNamespace}:${finalBlock}_wall`,
                   count: 6
                 }
             };
@@ -131,10 +137,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   " X "
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}_slab` }
+                  X: { item: `${itemNamespace}:${ingredient}_slab` }
                 },
                 result: {
-                  item: `${textureNamespace}:${finalBlock}_pillar`,
+                  item: `${itemNamespace}:${finalBlock}_pillar`,
                   count: 1
                 }
             };
@@ -157,10 +163,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   " X "
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}_slab` }
+                  X: { item: `${itemNamespace}:${ingredient}_slab` }
                 },
                 result: {
-                  item: `${textureNamespace}:chiseled_${finalBlock}`,
+                  item: `${itemNamespace}:chiseled_${finalBlock}`,
                   count: 1
                 }
             };
@@ -183,10 +189,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   "XX "
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}` }
+                  X: { item: `${itemNamespace}:${ingredient}` }
                 },
                 result: {
-                  item: `${textureNamespace}:cut_${finalBlock}`,
+                  item: `${itemNamespace}:cut_${finalBlock}`,
                   count: 4
                 }
             };
@@ -209,10 +215,10 @@ document.getElementById("recipeForm").onsubmit = form => {
                   "XX "
                 ],
                 key: {
-                  X: { item: `${textureNamespace}:${ingredient}` }
+                  X: { item: `${itemNamespace}:${ingredient}` }
                 },
                 result: {
-                  item: `${textureNamespace}:polished_${finalBlock}`,
+                  item: `${itemNamespace}:polished_${finalBlock}`,
                   count: 4
                 }
             };
@@ -230,11 +236,11 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:crafting_shapeless",
                 ingredients: [
-                  { item: `${textureNamespace}:${ingredient}` },
+                  { item: `${itemNamespace}:${ingredient}` },
                   { item: "minecraft:vine" }
                 ],
                 result: {
-                  item: `${textureNamespace}:mossy_${ingredient}`,
+                  item: `${itemNamespace}:mossy_${ingredient}`,
                   count: 1
                 }
             };
