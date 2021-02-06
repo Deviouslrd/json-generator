@@ -252,7 +252,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_table.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made shaped table recipe');
         });
@@ -315,7 +315,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_table.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made shapeless table recipe');
         });
@@ -362,7 +362,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_table.json`, jsonContent, 'utf8', (err) => {
+        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made inventory recipe');
         });
