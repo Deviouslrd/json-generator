@@ -26,7 +26,6 @@ document.getElementById("recipeForm").onsubmit = form => {
     ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
-    // Readd texturenamespace tolowercase, was erroring
 
     let finalBlock = ingredient;
 
@@ -69,7 +68,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_slab_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_slab.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made slab table recipe');
             });
@@ -97,7 +96,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_stairs_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_stairs.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made stair table recipe');
             });
@@ -123,7 +122,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_wall_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_wall.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made wall table recipe');
             });
@@ -149,7 +148,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_pillar_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_pillar.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made pillar table recipe');
             });
@@ -175,7 +174,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\chiseled_${finalBlock}_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\chiseled_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made slab table recipe');
             });
@@ -201,7 +200,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\cut_${finalBlock}_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\cut_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made cut table recipe');
             });
@@ -227,7 +226,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\polished_${finalBlock}_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\polished_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made polished table recipe');
             });
@@ -249,7 +248,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
             // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\mossy_${finalBlock}_table.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\mossy_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made mossy table recipe');
             });
