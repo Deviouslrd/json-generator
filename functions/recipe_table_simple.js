@@ -25,6 +25,7 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
+    itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
     // Readd texturenamespace tolowercase, was erroring
 
     let finalBlock = ingredient;
@@ -34,7 +35,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         const blockSubStr = ingredient.substring(blockLength);
         
         if (blockSubStr === 'bricks') {
-            var finalBlock = ingredient.substring(0, ingredient.length - 1);
+            finalBlock = ingredient.substring(0, ingredient.length - 1);
         }
     }
 
