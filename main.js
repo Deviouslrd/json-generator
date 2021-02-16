@@ -5,7 +5,7 @@ function createWindow () {
         show: false,
         width: 850,
         height: 600,
-        title: "Mod JSON Generator vA1.8.1",
+        title: "Mod JSON Generator vA1.9",
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true

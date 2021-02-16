@@ -67,6 +67,13 @@ function onLoad() {
             document.getElementById("triggerName").value = localStorage.triggerName;
         }
         
+        if (localStorage.namingConvention && document.getElementById("mojang")) {
+            document.getElementById("mojang").checked = true;
+        }
+
+        if (localStorage.namingConvention && document.getElementById("custom")) {
+            document.getElementById("custom").checked = true;
+        }
 
         // Block Model Radio Handler
         if (localStorage.bmodelMode === "all" && document.getElementById("mainLabel")) {
@@ -260,10 +267,3 @@ function onLoad() {
     }, 25);
 
 }
-
-/*document.getElementById("generateBtn").addEventListener('click', () => {
-    localStorage.blockName = document.getElementById("blockName").value;
-    localStorage.modName = document.getElementById("modName").value;
-    localStorage.namespace = document.getElementById("namespace").value;
-    localStorage.path = document.getElementById("saveLocation").value; 
-});*/

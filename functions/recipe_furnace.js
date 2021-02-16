@@ -34,8 +34,8 @@ document.getElementById("recipeForm").onsubmit = form => {
     result = result.toLowerCase().trim().split(/ +/).join('_');
     itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
 
-    const blockLength = blockLength.length - 6;
-    const blockSubStr = ingredient.substring(blockLengthStart);
+    const blockLength = ingredient.length - 6;
+    const blockSubStr = ingredient.substring(blockLength);
     
     if (blockSubStr === 'bricks') {
         ingredient = ingredient.substring(0, ingredient.length - 1);

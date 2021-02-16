@@ -5,7 +5,7 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     const filepath = localStorage.path;
 
-    var blockName = document.getElementById("blockName").value;
+    var ingredient = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var result = document.getElementById("result").value;
     var itemNamespace;
@@ -18,7 +18,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     }
 
     localStorage.modName = modName;
-    localStorage.blockName = blockName;
+    localStorage.blockName = ingredient;
     localStorage.result = result;
     localStorage.namespace = itemNamespace;
     localStorage.count = count;
@@ -27,19 +27,19 @@ document.getElementById("recipeForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
+    ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
     result = result.toLowerCase().trim().split(/ +/).join('_');
     itemNamespace = itemNamespace.toLowerCase().split(/ +/).join('_');
 
-    let finalBlock = blockName;
+    let finalBlock = ingredient;
 
     function brickSlice () {
-        const blockLength = blockName.length - 6;
-        const blockSubStr = blockName.substring(blockLength);
+        const blockLength = ingredient.length - 6;
+        const blockSubStr = ingredient.substring(blockLength);
   
         if (blockSubStr === 'bricks') {
-            finalBlock = blockName.substring(0, blockName.length - 1);
+            finalBlock = ingredient.substring(0, ingredient.length - 1);
         }
     }
 
@@ -50,26 +50,19 @@ document.getElementById("recipeForm").onsubmit = form => {
         });
     }
 
+    let filename;
+
+    if (document.getElementById("mojang").checked === true) {
+        filename = `${result}_from_${ingredient}_stonecutting`;
+        localStorage.namingConvention = "mojang";
+    }
+
+    if (document.getElementById("custom").checked === true) {
+        filename = `${result}_stonecutting`;
+        localStorage.namingConvention = "custom";
+    }
+
     setTimeout(() => {
-        // Block Creator
-        if (document.getElementById("block").checked === true) {
-            const jsonProduct = {
-                type: "minecraft:stonecutting",
-                ingredient: {
-                    item: `${itemNamespace}:${blockName}`
-                },
-                result: `${modName}:${result}`,
-                count: count
-            };
-            
-            const jsonContent = JSON.stringify(jsonProduct, null, 4);
-
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stonecutting.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the block stonecutter recipe.');
-            });
-        }
-
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
             brickSlice();
@@ -77,7 +70,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${itemNamespace}:${blockName}`
+                    item: `${itemNamespace}:${ingredient}`
                 },
                 result: `${modName}:${result}_slab`,
                 count: 2
@@ -85,7 +78,19 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_slab_stonecutting.json`, jsonContent, 'utf8', (err) => {
+            let filename;
+
+            if (document.getElementById("mojang").checked === true) {
+                filename = `${result}_slab_from_${ingredient}_stonecutting`;
+                localStorage.namingConvention = "mojang";
+            }
+        
+            if (document.getElementById("custom").checked === true) {
+                filename = `${result}_slab_stonecutting`;
+                localStorage.namingConvention = "custom";
+            }
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the slab stonecutter recipe.');
             });
@@ -98,7 +103,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${itemNamespace}:${blockName}`
+                    item: `${itemNamespace}:${ingredient}`
                 },
                 result: `${modName}:${result}_stairs`,
                 count: count
@@ -106,7 +111,19 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_stairs_stonecutting.json`, jsonContent, 'utf8', (err) => {
+            let filename;
+
+            if (document.getElementById("mojang").checked === true) {
+                filename = `${result}_stairs_from_${ingredient}_stonecutting`;
+                localStorage.namingConvention = "mojang";
+            }
+        
+            if (document.getElementById("custom").checked === true) {
+                filename = `${result}_stairs_stonecutting`;
+                localStorage.namingConvention = "custom";
+            }
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the stairs stonecutter recipe.');
             });
@@ -119,13 +136,25 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${itemNamespace}:${blockName}`
+                    item: `${itemNamespace}:${ingredient}`
                 },
                 result: `${modName}:${result}_pillar`,
                 count: count
             };
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            let filename;
+
+            if (document.getElementById("mojang").checked === true) {
+                filename = `${result}_pillar_from_${ingredient}_stonecutting`;
+                localStorage.namingConvention = "mojang";
+            }
+        
+            if (document.getElementById("custom").checked === true) {
+                filename = `${result}_pillar_stonecutting`;
+                localStorage.namingConvention = "custom";
+            }
 
             fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_pillar_stonecutting.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
@@ -140,7 +169,7 @@ document.getElementById("recipeForm").onsubmit = form => {
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
-                    item: `${itemNamespace}:${blockName}`
+                    item: `${itemNamespace}:${ingredient}`
                 },
                 result: `${modName}:${result}_wall`,
                 count: count
@@ -148,14 +177,25 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_wall_stonecutting.json`, jsonContent, 'utf8', (err) => {
+            let filename;
+
+            if (document.getElementById("mojang").checked === true) {
+                filename = `${result}_wall_from_${ingredient}_stonecutting`;
+                localStorage.namingConvention = "mojang";
+            }
+        
+            if (document.getElementById("custom").checked === true) {
+                filename = `${result}_wall_stonecutting`;
+                localStorage.namingConvention = "custom";
+            }
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the wall stonecutter recipe.');
             });
         }
 
-        if (document.getElementById("block").checked === false &&
-        document.getElementById("slab").checked === false &&
+        if (document.getElementById("slab").checked === false &&
         document.getElementById("stairs").checked === false &&
         document.getElementById("wall").checked === false &&
         document.getElementById("pillar").checked === false) {
