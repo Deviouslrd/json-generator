@@ -195,7 +195,8 @@ document.getElementById("recipeForm").onsubmit = form => {
             });
         }
 
-        if (document.getElementById("slab").checked === false &&
+        if (//document.getElementById("block").checked === false &&
+        document.getElementById("slab").checked === false &&
         document.getElementById("stairs").checked === false &&
         document.getElementById("wall").checked === false &&
         document.getElementById("pillar").checked === false) {
