@@ -1,4 +1,5 @@
 let btnValue = 0;
+import brickSlice from './slicers';
 
 document.getElementById("test").onsubmit = form => {
     form.preventDefault();
@@ -22,6 +23,10 @@ document.getElementById("test").onsubmit = form => {
         var finalBlock = blockName.substring(0, blockName.length - 1);
     }
 };
+
+document.getElementById("test1").addEventListener('click', () => {
+    brickSlice();
+});
 
 function newButton () {
     var node = document.createElement("INPUT");

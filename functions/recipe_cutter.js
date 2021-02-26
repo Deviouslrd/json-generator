@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from "fs";
 
 document.getElementById("recipeForm").onsubmit = form => {
     form.preventDefault();
@@ -212,4 +212,3 @@ document.getElementById("recipeForm").onsubmit = form => {
         
     }, 10);
 };
-

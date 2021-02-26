@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "author": "deviouslrd",
     "description": "Auto-creates the specified JSON files for a minecraft mod.",
-    "main": "main.js",
+    "main": "main.cjs",
+    "type": "module",
     "scripts": {
         "start": "electron .",
         "build": "electron-packager ./ \"Minecraft JSON Generator\" --app-version=1.9 --out=builds --executable-name=minecraftjsongenerator --appname=\"Minecraft JSON Generator\"  --ignore=/builds --ignore=/node_modules --ignore=.gitignore --ignore=README.md --ignore=.eslintrc.json --icon=./assets/icon.ico --overwrite"

@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from "fs";
 
 function dropdown (id, parent) {
     const test = document.getElementById(id).innerHTML;

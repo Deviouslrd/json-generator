@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from "fs";
 
 document.getElementById("blockstateForm").onsubmit = form => {
     form.preventDefault();

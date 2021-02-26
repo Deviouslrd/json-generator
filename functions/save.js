@@ -1,4 +1,4 @@
-const { dialog } = require('electron').remote;
+import dialog, { remote } from 'electron';
 
 document.getElementById("savebutton").addEventListener('click', async () => {
     localStorage.path = (await dialog.showOpenDialog({ properties: ['openDirectory']})).filePaths[0];
