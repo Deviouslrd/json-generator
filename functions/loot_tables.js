@@ -1,4 +1,4 @@
-import fs from "fs";
+const fs = require('fs');
 
 document.getElementById("lootTableForm").onsubmit = form => {
     form.preventDefault();

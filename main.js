@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, MenuItem } from "electron";
+const { app, BrowserWindow, Menu, MenuItem } = require("electron");
 
 function createWindow () {
     const win = new BrowserWindow({

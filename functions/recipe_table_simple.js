@@ -1,4 +1,4 @@
-import fs from "fs";
+const fs = require('fs');
 
 document.getElementById("recipeForm").onsubmit = form => {
     form.preventDefault();

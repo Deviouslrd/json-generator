@@ -1,4 +1,4 @@
-import fs from "fs";
+const fs = require('fs');
 
 function allTextures () {
     document.getElementById("sideTexture").setAttribute("disabled", "true");

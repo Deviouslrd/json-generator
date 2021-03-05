@@ -1,7 +1,11 @@
 let btnValue = 0;
-import brickSlice from './slicers';
+const slicers = require('../functions/slicers.js');
 
-document.getElementById("test").onsubmit = form => {
+document.getElementById("test1").addEventListener('click', () => {
+    slicers.brickSlice();
+});
+
+document.getElementById("formtest").onsubmit = form => {
     form.preventDefault();
 
     const filepath = localStorage.path;
@@ -24,9 +28,6 @@ document.getElementById("test").onsubmit = form => {
     }
 };
 
-document.getElementById("test1").addEventListener('click', () => {
-    brickSlice();
-});
 
 function newButton () {
     var node = document.createElement("INPUT");

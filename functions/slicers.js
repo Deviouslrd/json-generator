@@ -1,9 +1,5 @@
-/*module.exports = {
-    brickSlice: function() {
-        return console.log("yeah");
+module.exports = {
+    brickSlice: () => {
+        return console.log('Yeah');
     }
-};*/
-
-export function brickSlice () {
-    return console.log("yeah");
-}
+};
