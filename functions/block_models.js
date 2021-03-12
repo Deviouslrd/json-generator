@@ -357,21 +357,21 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: `minecraft:block/template_wall_post`,
                 textures: {
-                    wall: `${textureNamespace}:block/${blockName}`
+                    wall: `${textureNamespace}:block/${blockID}`
                 }
             };
 
             const jsonProduct2 = {
                 parent: `minecraft:block/template_wall_side`,
                 textures: {
-                    wall: `${textureNamespace}:block/${blockName}`
+                    wall: `${textureNamespace}:block/${blockID}`
                 }
             };
 
             const jsonProduct3 = {
                 parent: `minecraft:block/template_wall_side_tall`,
                 textures: {
-                    wall: `${textureNamespace}:block/${blockName}`
+                    wall: `${textureNamespace}:block/${blockID}`
                 }
             };
             
