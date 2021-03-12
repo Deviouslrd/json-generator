@@ -59,9 +59,9 @@ document.getElementById("blockModelForm").onsubmit = form => {
     var modName = document.getElementById("modName").value;
 
     if (document.getElementById("blockID").value === ``) {
-        textureNamespace = document.getElementById("blockName").value;
+        blockID = document.getElementById("blockName").value;
     } else {
-        textureNamespace = document.getElementById("blockID").value;
+        blockID = document.getElementById("blockID").value;
     }
 
      if (document.getElementById("namespace").value === ``) {
