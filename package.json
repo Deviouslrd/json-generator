@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "author": "deviouslrd",
     "description": "Auto-creates the specified JSON files for a minecraft mod.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Deviouslrd/json-generator"
+    },
     "main": "main.js",
     "scripts": {
         "start": "electron .",
@@ -11,5 +15,8 @@
     "devDependencies": {
         "electron": "^11.1.1",
         "electron-packager": "^15.2.0"
+    },
+    "dependencies": {
+        "update-electron-app": "^2.0.1"
     }
 }
