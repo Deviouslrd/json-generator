@@ -27,21 +27,10 @@ document.getElementById("recipeForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
-    modName = modName.toLowerCase().trim().split(/ +/).join('_');
-    result = result.toLowerCase().trim().split(/ +/).join('_');
-    itemNamespace = itemNamespace.toLowerCase().split(/ +/).join('_');
-
-    let finalBlock = ingredient;
-
-    function brickSlice () {
-        const blockLength = ingredient.length - 6;
-        const blockSubStr = ingredient.substring(blockLength);
-  
-        if (blockSubStr === 'bricks') {
-            finalBlock = ingredient.substring(0, ingredient.length - 1);
-        }
-    }
+    result = result.toLowerCase().trim();
+    ingredient = ingredient.toLowerCase().trim();
+    modName = modName.toLowerCase().trim().replace(/ +/g, '_');
+    itemNamespace = itemNamespace.toLowerCase().replace(/ +/g, '_');
 
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
@@ -65,8 +54,6 @@ document.getElementById("recipeForm").onsubmit = form => {
     setTimeout(() => {
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
-            brickSlice();
-
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
@@ -98,8 +85,6 @@ document.getElementById("recipeForm").onsubmit = form => {
 
         // Stairs Creator
         if (document.getElementById("stairs").checked === true) {
-            brickSlice();
-
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
@@ -131,8 +116,6 @@ document.getElementById("recipeForm").onsubmit = form => {
 
         // Pillar Creator
         if (document.getElementById("pillar").checked === true) {
-            brickSlice();
-
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {
@@ -163,9 +146,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         }
 
         // Wall Creator
-        if (document.getElementById("wall").checked === true) {
-            brickSlice();
-            
+        if (document.getElementById("wall").checked === true) {   
             const jsonProduct = {
                 type: "minecraft:stonecutting",
                 ingredient: {

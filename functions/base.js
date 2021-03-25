@@ -1,4 +1,5 @@
 const fs = require('fs');
+const slicers = require('../functions/slicers.js');
 
 document.getElementById("").onsubmit = form => {
     form.preventDefault();

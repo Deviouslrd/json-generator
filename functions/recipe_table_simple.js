@@ -23,20 +23,9 @@ document.getElementById("recipeForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
-    modName = modName.toLowerCase().trim().split(/ +/).join('_');
-    itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
-
-    let finalBlock = ingredient;
-
-    function brickSlice () {
-        const blockLength = ingredient.length - 6;
-        const blockSubStr = ingredient.substring(blockLength);
-        
-        if (blockSubStr === 'bricks') {
-            finalBlock = ingredient.substring(0, ingredient.length - 1);
-        }
-    }
+    ingredient = ingredient.toLowerCase().trim().replace(/ +/g, '_');
+    modName = modName.toLowerCase().trim().replace(/ +/g, '_');
+    itemNamespace = itemNamespace.toLowerCase().trim().replace(/ +/g, '_');
 
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
@@ -47,8 +36,6 @@ document.getElementById("recipeForm").onsubmit = form => {
 
     setTimeout(() => {
         if (document.getElementById("slab").checked === true) {
-            brickSlice();
-
             const jsonProduct = {
                 type: "minecraft:crafting_shaped",
                 pattern: [
@@ -75,8 +62,6 @@ document.getElementById("recipeForm").onsubmit = form => {
         }
 
         if (document.getElementById("stairs").checked === true) {
-            brickSlice();
-            
             const jsonProduct = {
                 type: "minecraft:crafting_shaped",
                 pattern: [

@@ -87,9 +87,9 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.result = result;
     localStorage.count = count;
 
-    modName = modName.toLowerCase().split(/ +/).join('_');
-    result = result.toLowerCase().split(/ +/).join('_');
-    itemNamespace = itemNamespace.toLowerCase().split(/ +/).join('_');
+    modName = modName.toLowerCase().replace(/ +/g, '_');
+    result = result.toLowerCase().replace(/ +/g, '_');
+    itemNamespace = itemNamespace.toLowerCase().replace(/ +/g, '_');
 
     var leftTop = document.getElementById("leftTop").innerHTML;
     var centerTop = document.getElementById("centerTop").innerHTML;
@@ -144,21 +144,22 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.yInput = yInput;
     localStorage.zInput = zInput;
 
-    rInput = rInput.toLowerCase().split(/ +/).join('_');
-    sInput = sInput.toLowerCase().split(/ +/).join('_');
-    tInput = tInput.toLowerCase().split(/ +/).join('_');
-    uInput = uInput.toLowerCase().split(/ +/).join('_');
-    vInput = vInput.toLowerCase().split(/ +/).join('_');
-    wInput = wInput.toLowerCase().split(/ +/).join('_');
-    xInput = xInput.toLowerCase().split(/ +/).join('_');
-    yInput = yInput.toLowerCase().split(/ +/).join('_');
-    zInput = zInput.toLowerCase().split(/ +/).join('_');
+    rInput = rInput.toLowerCase().replace(/ +/g, '_');
+    sInput = sInput.toLowerCase().replace(/ +/g, '_');
+    tInput = tInput.toLowerCase().replace(/ +/g, '_');
+    uInput = uInput.toLowerCase().replace(/ +/g, '_');
+    vInput = vInput.toLowerCase().replace(/ +/g, '_');
+    wInput = wInput.toLowerCase().replace(/ +/g, '_');
+    xInput = xInput.toLowerCase().replace(/ +/g, '_');
+    yInput = yInput.toLowerCase().replace(/ +/g, '_');
+    zInput = zInput.toLowerCase().replace(/ +/g, '_');
 
     if (document.getElementById("saveLocation").value === 'No location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
     // None of the below is working yet, leaving that for later once I figure it out.
+    // Goal was applying brickSlice() to every input. 
 
     /*let rFinal = rInput;
     let sFinal = sInput;
@@ -190,12 +191,12 @@ document.getElementById("recipeForm").onsubmit = form => {
     console.log(sInput);
     console.log(rInput);*/
 
-    /*if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
+    if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
             if (err) throw err;
             console.log('Made the recipe folder structure.');
         });
-    }*/
+    }
 
     if (document.getElementById("shaped").checked === true) {
         const jsonProduct = {

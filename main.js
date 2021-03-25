@@ -1,19 +1,19 @@
-const { app, BrowserWindow, Menu, MenuItem } = require("electron");
+const { app, BrowserWindow, Menu, MenuItem, autoUpdater, dialog } = require("electron");
 require('update-electron-app')({
     updateInterval: '1 hour'
 });
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title: 'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+        type: 'info',
+        buttons: ['Restart', 'Later'],
+        title: 'Generator Update',
+        message: process.platform === 'win32' ? releaseNotes : releaseName,
+        detail: 'A new version has been downloaded. Restart the application to apply the updates.'
     };
   
     dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) autoUpdater.quitAndInstall();
+        if (returnValue.response === 0) autoUpdater.quitAndInstall();
     });
 });
 
@@ -27,7 +27,7 @@ function createWindow () {
         show: false,
         width: 850,
         height: 600,
-        title: "Mod JSON Generator vA1.9",
+        title: `Mod JSON Generator ${app.getVersion()}`,
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true
@@ -63,18 +63,7 @@ menu.append(new MenuItem({
             label: 'Exit',
             accelerator: process.platform === 'darwin' ? 'esc' : 'esc',
             click: () => { app.quit(); }
-        },
-        /*{
-            label: 'Save Dialog',
-            accelerator: process.platform === 'darwin' ? 'cmd+s' : 'ctrl+s',
-            click: () => {
-                dialog.showOpenDialog( { properties: ['openDirectory'] } ).then(data => {
-                    console.log(data.filePaths);
-                    module.exports.filePath = data.filePaths;
-                });
-
-            }
-        }*/
+        }
     ]
 }));
 

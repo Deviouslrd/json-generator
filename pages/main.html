@@ -3,8 +3,8 @@
 <head>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body style="background: rgb(95, 95, 95);">
-    <h1 class="header1">Minecraft Mod JSON Creation Tool vA1.9</h1>
+<body style="background: rgb(95, 95, 95);" onload="changeVersion()">
+    <h1 class="header1" id="header1">Minecraft Mod JSON Creation Tool `version`</h1>
     <p id="body" class="text">
         Click on any of the below buttons to create the JSON for the that type!<br><br>
         Each page has menu buttons on the top to switch to a different page. <br><br>
@@ -30,6 +30,7 @@
     </div><br>
     <label class="textbold" style="font-size: 20px; vertical-align: 10px;">Github Link:</label>
     <input type="image" src="../assets/github.png" onclick="gitLink()" alt="https://github.com/Deviouslrd/json-generator">
+    <a href="https://discord.gg/z83vMB6U7v">Discord</a>
 
     <script>
         function gitLink () {
@@ -53,6 +54,11 @@
             win.once('ready-to-show', () => {
                 win.show();
             });
+        }
+
+        function changeVersion () {
+            //const version = require('../package.json').version;
+            document.getElementById("header1").innerHTML = `Minecraft JSON Generator Tool vA${require('../package.json').version}`
         }
     </script>
 </body>

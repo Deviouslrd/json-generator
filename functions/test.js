@@ -3,6 +3,7 @@ const slicers = require('../functions/slicers.js');
 
 document.getElementById("test1").addEventListener('click', () => {
     slicers.brickSlice();
+    slicers.pillarSlice();
 });
 
 document.getElementById("formtest").onsubmit = form => {

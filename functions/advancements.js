@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fixers = require('../functions/fixers.js');
 
 document.getElementById("advanceForm").onsubmit = form => {
     form.preventDefault();
@@ -8,11 +9,12 @@ document.getElementById("advanceForm").onsubmit = form => {
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
     var triggerName = document.getElementById("triggerName").value;
-    var itemNamespace;
-
+    
     if (document.getElementById("saveLocation").value === 'No Location') {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
+
+    var itemNamespace;
 
     if (document.getElementById("namespace").value === ``) {
         itemNamespace = document.getElementById("modName").value;
@@ -25,21 +27,11 @@ document.getElementById("advanceForm").onsubmit = form => {
     localStorage.triggerName = triggerName;
     localStorage.namespace = itemNamespace;
 
-    blockName = blockName.toLowerCase().trim().split(/ +/).join('_');
-    modName = modName.toLowerCase().trim().split(/ +/).join('_');
-    triggerName = triggerName.toLowerCase().trim().split(/ +/).join('_');
-    itemNamespace = itemNamespace.toLowerCase().trim().split(/ +/).join('_');
-    
-    let finalBlock = blockName;
+    finalBlock = fixers(blockName);
+    triggerName = fixers(triggerName);
 
-    function brickSlice () {
-        const blockLength = blockName.length - 6;
-        const blockSubStr = blockName.substring(blockLength);
-  
-        if (blockSubStr === 'bricks') {
-            finalBlock = blockName.substring(0, blockName.length - 1);
-        }
-    }
+    modName = modName.toLowerCase().trim().replace(/ +/g, '_');
+    itemNamespace = itemNamespace.toLowerCase().trim().replace(/ +/g, '_');
 
     const jsonProduct = {
         parent: `minecraft:recipes/root`,
@@ -77,7 +69,6 @@ document.getElementById("advanceForm").onsubmit = form => {
     fs.writeFile(`${filepath}\\data\\${modName}\\advancements\\${blockName}.json`, jsonContent, 'utf8', (err) => {
         if (err) throw err;
         console.log('Made advancement file.');
-
     });
     
     document.getElementById("generateBtn").value = "Generated!";
@@ -86,5 +77,4 @@ document.getElementById("advanceForm").onsubmit = form => {
     setTimeout(() => {
         document.getElementById("generateBtn").value ="Generate!";
     }, 1000);
-    
 };
