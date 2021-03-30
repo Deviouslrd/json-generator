@@ -54,19 +54,19 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
     const filepath = localStorage.path;
 
-    var textureNamespace;
+    var namespace;
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
 
     if (document.getElementById("namespace").value === ``) {
-        textureNamespace = document.getElementById("modName").value;
+        namespace = document.getElementById("modName").value;
     } else {
-        textureNamespace = document.getElementById("namespace").value;
+        namespace = document.getElementById("namespace").value;
     }
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
-    localStorage.namespace = textureNamespace;
+    localStorage.namespace = namespace;
 
     localStorage.checkBlock = document.getElementById("block").checked;
     localStorage.checkSlab = document.getElementById("slab").checked;
@@ -92,7 +92,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
     blockName = blockName.fixers(blockName);
     modName = modName.toLowerCase().trim().replace(/ +/g, '_');
-    textureNamespace = textureNamespace.toLowerCase().trim().replace(/ +/g, '_');
+    namespace = namespace.toLowerCase().trim().replace(/ +/g, '_');
     topTexture = topTexture.fixers(topTexture);
     sideTexture = sideTexture.fixers(sideTexture);
     eastTexture = eastTexture.fixers(eastTexture);
@@ -116,7 +116,7 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct = {
                     parent: `minecraft:block/cube_all`,
                     textures: {
-                        all: `${textureNamespace}:block/${blockName}`
+                        all: `${namespace}:block/${blockName}`
                     }  
                 };
             }
@@ -125,9 +125,9 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct = {
                     parent: `minecraft:block/orientable`,
                     textures: {
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        top: `${namespace}:block/${topTexture}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${sideTexture}`
                     } 
                 };
             }
@@ -136,13 +136,13 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct = {
                     parent: `minecraft:block/cube`,
                     textures: {
-                        particle: `${textureNamespace}:block/${westTexture}`,
-                        north: `${textureNamespace}:block/${sideTexture}`,
-                        south: `${textureNamespace}:block/${southTexture}`,
-                        east: `${textureNamespace}:block/${eastTexture}`,
-                        west: `${textureNamespace}:block/${westTexture}`,
-                        up: `${textureNamespace}:block/${topTexture}`,
-                        down: `${textureNamespace}:block/${blockName}`
+                        particle: `${namespace}:block/${westTexture}`,
+                        north: `${namespace}:block/${sideTexture}`,
+                        south: `${namespace}:block/${southTexture}`,
+                        east: `${namespace}:block/${eastTexture}`,
+                        west: `${namespace}:block/${westTexture}`,
+                        up: `${namespace}:block/${topTexture}`,
+                        down: `${namespace}:block/${blockName}`
                     }
                 };
             }
@@ -151,10 +151,10 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct = {
                     parent: `minecraft:block/orientable`,
                     textures: {
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${sideTexture}`,
-                        front: `${textureNamespace}:block/${eastTexture}`
+                        top: `${namespace}:block/${topTexture}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${sideTexture}`,
+                        front: `${namespace}:block/${eastTexture}`
                     } 
                 };
             }
@@ -176,18 +176,18 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct1 = {
                     parent: `minecraft:block/slab`,
                     textures: {
-                        top: `${textureNamespace}:block/${blockName}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${blockName}`
+                        top: `${namespace}:block/${blockName}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${blockName}`
                     } 
                 };
 
                 finalProduct2 = {
                     parent: `minecraft:block/slab_top`,
                     textures: {
-                        top: `${textureNamespace}:block/${blockName}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${blockName}`
+                        top: `${namespace}:block/${blockName}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${blockName}`
                     } 
                 };
             }
@@ -196,18 +196,18 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct1 = {
                     parent: `minecraft:block/slab`,
                     textures: {
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        top: `${namespace}:block/${topTexture}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${sideTexture}`
                     } 
                 };
 
                 finalProduct2 = {
                     parent: `minecraft:block/slab_top`,
                     textures: {
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        top: `${namespace}:block/${topTexture}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${sideTexture}`
                     } 
                 };
             }
@@ -216,18 +216,18 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct = {
                     parent: `minecraft:block/slab`,
                     textures: {
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        top: `${namespace}:block/${topTexture}`,
+                        bottom: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${sideTexture}`
                     }
                 };
 
                 finalProduct = {
                     parent: `minecraft:block/slab_top`,
                     textures: {
-                        top: `${textureNamespace}:block/${westTexture}`,
-                        bottom: `${textureNamespace}:block/${southTexture}`,
-                        side: `${textureNamespace}:block/${eastTexture}`
+                        top: `${namespace}:block/${westTexture}`,
+                        bottom: `${namespace}:block/${southTexture}`,
+                        side: `${namespace}:block/${eastTexture}`
                     } 
                 };
             }
@@ -256,27 +256,27 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct1 = {
                     parent: "minecraft:block/stairs",
                     textures: {
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        top: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${blockName}`
+                        bottom: `${namespace}:block/${blockName}`,
+                        top: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${blockName}`
                     }
                 };
 
                 finalProduct2 = {
                     parent: "minecraft:block/inner_stairs",
                     textures: {
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        top: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${blockName}`
+                        bottom: `${namespace}:block/${blockName}`,
+                        top: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${blockName}`
                     } 
                 };
 
                 finalProduct3 = {
                     parent: "minecraft:block/outer_stairs",
                     textures: {
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        top: `${textureNamespace}:block/${blockName}`,
-                        side: `${textureNamespace}:block/${blockName}`
+                        bottom: `${namespace}:block/${blockName}`,
+                        top: `${namespace}:block/${blockName}`,
+                        side: `${namespace}:block/${blockName}`
                     }
                 };
             }
@@ -285,27 +285,27 @@ document.getElementById("blockModelForm").onsubmit = form => {
                 finalProduct1 = {
                     parent: "minecraft:block/stairs",
                     textures: {
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        bottom: `${namespace}:block/${blockName}`,
+                        top: `${namespace}:block/${topTexture}`,
+                        side: `${namespace}:block/${sideTexture}`
                     }
                 };
 
                 finalProduct2 = {
                     parent: "minecraft:block/inner_stairs",
                     textures: {
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        bottom: `${namespace}:block/${blockName}`,
+                        top: `${namespace}:block/${topTexture}`,
+                        side: `${namespace}:block/${sideTexture}`
                     } 
                 };
 
                 finalProduct3 = {
                     parent: "minecraft:block/outer_stairs",
                     textures: {
-                        bottom: `${textureNamespace}:block/${blockName}`,
-                        top: `${textureNamespace}:block/${topTexture}`,
-                        side: `${textureNamespace}:block/${sideTexture}`
+                        bottom: `${namespace}:block/${blockName}`,
+                        top: `${namespace}:block/${topTexture}`,
+                        side: `${namespace}:block/${sideTexture}`
                     }
                 };
             }
@@ -335,21 +335,21 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: `minecraft:block/template_wall_post`,
                 textures: {
-                    wall: `${textureNamespace}:block/${blockName}`
+                    wall: `${namespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct2 = {
                 parent: `minecraft:block/template_wall_side`,
                 textures: {
-                    wall: `${textureNamespace}:block/${blockName}`
+                    wall: `${namespace}:block/${blockName}`
                 }
             };
 
             const jsonProduct3 = {
                 parent: `minecraft:block/template_wall_side_tall`,
                 textures: {
-                    wall: `${textureNamespace}:block/${blockName}`
+                    wall: `${namespace}:block/${blockName}`
                 }
             };
             
@@ -378,16 +378,16 @@ document.getElementById("blockModelForm").onsubmit = form => {
             const jsonProduct1 = {
                 parent: "minecraft:block/cube_column",
                 textures: {
-                    end: `${textureNamespace}:block/${blockName}_pillar_top`,
-                    side: `${textureNamespace}:block/${blockName}_pillar`
+                    end: `${namespace}:block/${blockName}_pillar_top`,
+                    side: `${namespace}:block/${blockName}_pillar`
                 }
             };
 
             const jsonProduct2 = {
                 parent: "minecraft:block/cube_column_horizontal",
                 textures: {
-                    end: `${textureNamespace}:block/${blockName}_pillar_top`,
-                    side: `${textureNamespace}:block/${blockName}_pillar`
+                    end: `${namespace}:block/${blockName}_pillar_top`,
+                    side: `${namespace}:block/${blockName}_pillar`
                 }
             };
             

@@ -23,7 +23,7 @@
 
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
     <p id="body" class="text">
-        Create loot tables for the new additions! This is only a simple version, it will become more fully-fledged later.<br> Only works for breaking the block and recieving 1 in return (double slabs give 2).
+        Create loot tables for the new additions!
     </p>
 
     <form id="lootTableForm">
@@ -33,16 +33,18 @@
                 <input type="text" id="modName" required="true" class="textinput"><br>
             </div>
 
+            <div name="Item Namespace">
+                <label for="namespace" class="textbold">Item Namespace:</label>
+                <input type="text" id="namespace" class="textinput"><br>
+            </div>
+
             <div name="Block Name">
                 <label for="blockName" class="textbold">Block Name:</label>
-                <div class="tooltip">?
-                    <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
-                </div>
                 <input type="text" id="blockName" required="true" class="textinput"><br>
             </div>
         </div>
 
-        <div>
+        <div class="divspacing">
             <input type="checkbox" id="block">
             <label for="block" class="textbold">Blocks</label><br>
             <input type="checkbox" id="slab">
@@ -55,7 +57,7 @@
             <label for="pillar" class="textbold">Pillars</label>
         </div>
         
-        <div name="bottomButtons">
+        <div name="bottomButtons" class="divspacing">
             <input type="submit" value="Generate!" id="generateBtn" class="button">
             <input type="reset" value="Reset All" class="button">
         </div>

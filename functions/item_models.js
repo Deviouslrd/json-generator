@@ -35,7 +35,7 @@ document.getElementById("itemModelForm").onsubmit = form => {
     itemNamespace =  itemNamespace.toLowerCase().trim().replace(/ +/g, '_');
 
     if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
-        fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, {recursive: true}, (err) => {
+        fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, { recursive: true }, (err) => {
             if (err) throw err;
             console.log('Made the models/item/ folder.');
         });

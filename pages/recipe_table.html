@@ -21,11 +21,9 @@
         </div>
     </div>
 
-
-    
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
     <p id="body" class="text">
-        Create recipes for the new items you've added! Will be usable last after the rest of the other recipes. [COMING SOON]
+        Create recipes for the new items you've added!
     </p>
 
     <div style="text-align: center;">
@@ -34,7 +32,7 @@
     </div>
 
     <form id="recipeForm">
-        <div name="Main Inputs">
+        <div name="Main Inputs" class="divspacing">
             <div name="Mod Name">
                 <label for="modName" class="textbold">Mod Name:</label>
                 <input type="text" id="modName" required="true" class="textinput"><br>
@@ -50,7 +48,7 @@
             Alternatives: #, &, %, $, X, Y, Z, ~, ?, !,
         -->
 
-        <div>
+        <div class="divspacing">
             <input type="radio" id="shaped" name="type" onclick="shapedMode()">
             <label for="shaped" class="textbold">Shaped 3x3 Recipe</label><br>
             <input type="radio" id="shapeless" name="type" onclick="shapelessMode()">
@@ -59,7 +57,7 @@
             <label for="inventory" class="textbold">Inventory Crafting (2x2)</label><br>
         </div>
 
-        <div id="craftingGrid">
+        <div id="craftingGrid" class="divspacing">
             <div>
                 <div class="clickdropdown" id="dropdownOne">
                     <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton" id="leftTop"></button>
@@ -248,7 +246,7 @@
             <input type="number" id="count" required="true" class="textinput" max="64" step="1" min="1" style="width: 50px">
         </div>
 
-        <div name="bottomButtons">
+        <div name="bottomButtons" class="divspacing">
             <input type="submit" value="Generate!" id="generateBtn" class="button">
             <input type="reset" value="Reset All" class="button">
         </div>

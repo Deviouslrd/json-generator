@@ -256,6 +256,7 @@
     text-align: left;
     font-family: minecraft;
     color:black;
+    margin-left: 25px;
 }
 
 .helptext {
@@ -263,6 +264,7 @@
     font-family: minecraft;
     color:white;
     font-size: 18px;
+    margin-left: 50px;
 }
 
 .helptable {
@@ -271,12 +273,15 @@
     color: black;
     font-size: 18px;
     font-family: minecraft;
+    text-align: center;
     padding: 2px;
     text-decoration: none;
     border-color: rgb(153, 153, 153);
     border-width: 2px;
     border-style: solid;
-    vertical-align: 6px;
+
+    display: inline-block;
+    width: 250px;
 }
 
 .helptable:hover {
@@ -284,9 +289,20 @@
     color: black;
 }
 
+.helptableheader {
+    text-align: left;
+    font-family: minecraft;
+    color:black;
+    font-size: 18px;
+}
+
 .bmodellabel {
     display: inline-block;
     width: 125px;
     font-family: minecraft;
     font-size: 16px;
+}
+
+.divspacing {
+    margin-top: 10px
 }

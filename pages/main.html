@@ -8,7 +8,6 @@
     <p id="body" class="text">
         Click on any of the below buttons to create the JSON for the that type!<br><br>
         Each page has menu buttons on the top to switch to a different page. <br><br>
-        Please note that blocks which include _pillar or _slab etc. will be automatically added when you generate the files for the block you need.
     </p>
 
     <div style="text-align: center;">
@@ -17,7 +16,7 @@
         <a class="button" href="./blockstates.html">Blockstates</a>
         <a class="button" href="./advancement.html">Advancements</a>
         <a class="button" href="./loot_tables.html">Loot Tables</a>
-        <div class="dropdown">
+        <div class="dropdown" style="vertical-align: 1px;">
             <button class="dropbtn" id="dropBtn">Recipes</button>
             <div class="dropdown-content">
                 <a href="recipe_cutter.html">Stonecutter</a>
@@ -25,16 +24,22 @@
                 <a href="recipe_table.html">Crafting Table</a>
             </div>
         </div>
-        <a class="button" style="background-color: darkgrey;color:grey" href="./test.html">Testing</a>
-        <button class="button" onclick="helpLink()">Help</button>
+        <a class="button" onclick="helpLink()">Help</button>
     </div><br>
-    <label class="textbold" style="font-size: 20px; vertical-align: 10px;">Github Link:</label>
-    <input type="image" src="../assets/github.png" onclick="gitLink()" alt="https://github.com/Deviouslrd/json-generator">
-    <a href="https://discord.gg/z83vMB6U7v">Discord</a>
+    
+    <div style="text-align: center;">
+        <label class="textbold" style="font-size: 20px;">Social Links</label><br>
+        <input type="image" src="../assets/GitHub-Mark.svg" onclick="gitLink()" alt="https://github.com/Deviouslrd/json-generator">
+        <input type="image" style="vertical-align: -5px;" src="../assets/Discord-Logo-White.svg" onclick="discLink()" alt="https://discord.gg/neXPNSY">
+    </div>
 
     <script>
         function gitLink () {
             require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator");
+        }
+
+        function discLink () {
+            require("electron").shell.openExternal("https://discord.gg/neXPNSY");
         }
 
         function helpLink () {

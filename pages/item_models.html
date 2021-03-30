@@ -40,13 +40,10 @@
             
             <div name="Block Name">
                 <label for="blockName" class="textbold">Block Name:</label>
-                <div class="tooltip">?
-                    <span class="tooltiptext" style="height: 75px;">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
-                </div>
                 <input type="text" id="blockName" required="true" class="textinput"><br>
             </div>
 
-            <div>
+            <div class="divspacing">
                 <input type="checkbox" id="block">
                 <label for="block" class="textbold">Blocks</label><br>
                 <input type="checkbox" id="slab">
@@ -58,10 +55,9 @@
                 <input type="checkbox" id="pillar">
                 <label for="pillar" class="textbold">Pillars</label>
             </div>
-            
         </div>
 
-        <div name="bottomButtons">
+        <div name="bottomButtons" class="divspacing">
             <input type="submit" value="Generate!" id="generateBtn" class="button">
             <input type="reset" value="Reset All" class="button">
         </div>

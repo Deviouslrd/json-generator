@@ -8,9 +8,17 @@ document.getElementById("lootTableForm").onsubmit = form => {
 
     var blockName = document.getElementById("blockName").value;
     var modName = document.getElementById("modName").value;
+    var namespace;
+
+    if (document.getElementById("namespace").value === ``) {
+        namespace = document.getElementById("modName").value;
+    } else {
+        namespace = document.getElementById("namespace").value;
+    }
 
     localStorage.modName = modName;
     localStorage.blockName = blockName;
+    localStorage.namespace = namespace;
 
     localStorage.checkBlock = document.getElementById("block").checked;
     localStorage.checkSlab = document.getElementById("slab").checked;
@@ -43,7 +51,7 @@ document.getElementById("lootTableForm").onsubmit = form => {
                         entries: [
                             {
                                 type: "minecraft:item",
-                                name: `${modName}:${blockName}`
+                                name: `${namespace}:${blockName}`
                             }
                         ]
                     }

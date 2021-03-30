@@ -158,39 +158,6 @@ document.getElementById("recipeForm").onsubmit = form => {
         return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
     }
 
-    // None of the below is working yet, leaving that for later once I figure it out.
-    // Goal was applying brickSlice() to every input. 
-
-    /*let rFinal = rInput;
-    let sFinal = sInput;
-    let tFinal = tInput;
-    let uFinal = uInput;
-    let vFinal = vInput;
-    let wFinal = wInput;
-    let xFinal = xInput;
-    let yFinal = yInput;
-    let zFinal = zInput;
-    
-    let finalBlocks = [rInput, sInput, tInput, uInput, vInput,  wInput, xInput, yInput, zInput];
-
-    function brickSlice (i) {
-        const string = i;
-
-        const blockLength = i.length - 6;
-        const blockSubStr = string.substr(blockLength);
-        
-        if (blockSubStr === 'bricks') {
-            console.log(i);  
-        }
-    }
-
-    for (let i = 0; i < finalBlocks.length; i++) {
-        brickSlice(i);
-    }
-   
-    console.log(sInput);
-    console.log(rInput);*/
-
     if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
         fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
             if (err) throw err;
