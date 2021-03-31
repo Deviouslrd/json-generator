@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "minecraft:andesite"
+    "item": "[example_namespace]:[block_name]"
   },
-  "result": "consistency_plus:smooth_andesite",
+  "result": "[example_namespace]:[block_name]",
   "experience": 1,
   "cooking_time": 200
 }

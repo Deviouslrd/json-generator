@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fixers = require('../functions/fixers.js');
+const fixers = require('../functions/fixers');
 
 document.getElementById("advanceForm").onsubmit = form => {
     form.preventDefault();
@@ -27,7 +27,7 @@ document.getElementById("advanceForm").onsubmit = form => {
     localStorage.triggerName = triggerName;
     localStorage.namespace = itemNamespace;
 
-    finalBlock = fixers(blockName);
+    blockName = fixers(blockName);
     triggerName = fixers(triggerName);
 
     modName = modName.toLowerCase().trim().replace(/ +/g, '_');
@@ -37,10 +37,10 @@ document.getElementById("advanceForm").onsubmit = form => {
         parent: `minecraft:recipes/root`,
         rewards: {
             recipes: [
-                `${itemNamespace}:${finalBlock}_slab`,
-                `${itemNamespace}:${finalBlock}_stairs`,
-                `${itemNamespace}:${finalBlock}_pillar`,
-                `${itemNamespace}:${finalBlock}_wall`
+                `${itemNamespace}:${blockName}_slab`,
+                `${itemNamespace}:${blockName}_stairs`,
+                `${itemNamespace}:${blockName}_pillar`,
+                `${itemNamespace}:${blockName}_wall`
             ]
         },
         criteria: {
@@ -70,6 +70,36 @@ document.getElementById("advanceForm").onsubmit = form => {
         if (err) throw err;
         console.log('Made advancement file.');
     });
+
+    if (document.getElementById("template").checked === true) {
+        const jsonProduct = {
+            parent: `minecraft:recipes/root`,
+            rewards: {
+                recipes: [
+                    `[example_namespace]: [ingredient_name]`
+                ]
+            },
+            criteria: {
+                has_item: {
+                    trigger: `minecraft: inventory_changed`,
+                    conditions: {
+                        items: [
+                            {
+                                item: `[example_namespace]: [trigger_name]`
+                            }
+                        ]
+                    }
+                }
+            }
+        };
+
+        const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+        fs.writeFile(`${filepath}\\data\\${modName}\\advancements\\advancement_template.json`, jsonContent, 'utf8', (err) => {
+            if (err) throw err;
+            console.log('Made advancement template file.');
+        });
+    }
     
     document.getElementById("generateBtn").value = "Generated!";
     document.getElementById("errorholder").innerHTML = "";

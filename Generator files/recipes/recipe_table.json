@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-      "X  ",
-      "XX ",
-      "XXX"
+      "   ",
+      "   ",
+      "   "
   ],
   "key": {
       "X": {
-        "item": "consistency_plus:polished_stone"
+        "item": "[example_namespace]:[block_name]"
       }
   },
   "result": {
-      "item": "consistency_plus:polished_stone_stairs",
+      "item": "[example_namespace]:[block_name]",
       "count": 6
   }
 }

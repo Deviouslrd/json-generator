@@ -6,10 +6,10 @@
     "XX "
   ],
   "key": {
-    "X": {"item": "consistency_plus:block"}
+    "X": {"item": "[example_namespace]:[block_name]"}
   },
   "result": {
-    "item": "consistency_plus:cut_andesite",
+    "item": "[example_namespace]:[block_name]",
     "count": 1
   }
 }

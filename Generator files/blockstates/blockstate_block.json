@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "[example_namespace]:block/[block_name]"
+    }
+  }
+}

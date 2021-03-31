@@ -233,6 +233,20 @@ document.getElementById("blockstateForm").onsubmit = form => {
             });
         }
 
+        // Template creator
+        if (document.getElementById("template").checked === true) {
+            const jsonProduct = {
+                variants: { "": { model: `[example_namespace]:block/[example_block]` }}
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\blockstate_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made blockstate template file');
+            });
+        }
+
         if (document.getElementById("block").checked === false &&
             document.getElementById("slab").checked === false &&
             document.getElementById("stairs").checked === false &&

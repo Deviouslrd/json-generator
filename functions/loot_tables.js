@@ -182,6 +182,31 @@ document.getElementById("lootTableForm").onsubmit = form => {
                 if (err) throw err;
                 console.log('Made the pillar loot table file');
             });
+        } 
+        
+        // Template Creator
+        if (document.getElementById("block").checked === true) {
+            const jsonProduct = {
+                type: "minecraft:block",
+                pools: [
+                    {
+                        rolls: 1,
+                        entries: [
+                            {
+                                type: "minecraft:item",
+                                name: `[example_namespace]:[example_block]`
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\loot_tables\\blocks\\loot_table_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the loot table template file.');
+            });
         }  
 
         if (document.getElementById("block").checked === false &&

@@ -2,15 +2,8 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "consistency_plus:smooth_andesite_slab",
-      "consistency_plus:smooth_andesite_slab_furnace",
-      "consistency_plus:smooth_andesite_slab_stonecutter",
-      "consistency_plus:smooth_andesite_stairs",
-      "consistency_plus:smooth_andesite_stairs_furnace",
-      "consistency_plus:smooth_andesite_stairs_stonecutter",
-      "consistency_plus:smooth_andesite_wall",
-      "consistency_plus:smooth_andesite_wall_furnace",
-      "consistency_plus:smooth_andesite_wall_stonecutter"
+      "[example_namespace]:[block_name]",
+      "[example_namespace]:[block_name]"
     ]
   },
   "criteria": {
@@ -19,7 +12,7 @@
       "conditions": {
         "items": [
           {
-            "item": "consistency_plus:smooth_andesite"
+            "item": "[example_namespace]:[block_name"
           }
         ]
       }

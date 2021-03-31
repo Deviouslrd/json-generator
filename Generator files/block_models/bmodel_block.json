@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "consistency_plus:block/smooth_andesite"
+    "all": "[example_namespace]:block/[block_name]"
   }
 }

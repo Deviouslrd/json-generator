@@ -113,6 +113,20 @@ document.getElementById("itemModelForm").onsubmit = form => {
             });
         }
 
+        // Template Creator
+        if (document.getElementById("template").checked === true) {
+            const jsonProduct = {
+                parent: `[example_namespace]:block/[example_block]`
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFileSync(`${filepath}\\assets\\${modName}\\models\\item\\item_model_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the item model template file');
+            });
+        }
+
         if (document.getElementById("block").checked === false &&
             document.getElementById("slab").checked === false &&
             document.getElementById("stairs").checked === false &&

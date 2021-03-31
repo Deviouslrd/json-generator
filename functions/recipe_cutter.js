@@ -39,18 +39,6 @@ document.getElementById("recipeForm").onsubmit = form => {
         });
     }
 
-    let filename;
-
-    if (document.getElementById("mojang").checked === true) {
-        filename = `${result}_from_${ingredient}_stonecutting`;
-        localStorage.namingConvention = "mojang";
-    }
-
-    if (document.getElementById("custom").checked === true) {
-        filename = `${result}_stonecutting`;
-        localStorage.namingConvention = "custom";
-    }
-
     setTimeout(() => {
         // Slab Creator
         if (document.getElementById("slab").checked === true) {
@@ -139,7 +127,7 @@ document.getElementById("recipeForm").onsubmit = form => {
                 localStorage.namingConvention = "custom";
             }
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_pillar_stonecutting.json`, jsonContent, 'utf8', (err) => {
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the pillar stonecutter recipe.');
             });
@@ -173,6 +161,25 @@ document.getElementById("recipeForm").onsubmit = form => {
             fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
                 if (err) throw err;
                 console.log('Made the wall stonecutter recipe.');
+            });
+        }
+
+        // Template Creator
+        if (document.getElementById("wall").checked === true) {   
+            const jsonProduct = {
+                type: "minecraft:stonecutting",
+                ingredient: {
+                    item: `[example_namespace]:[ingredient_name]`
+                },
+                result: `[example_namespace]:[result_name]`,
+                count: count
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\stonecutter_recipe_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the stonecutter recipe template.');
             });
         }
 

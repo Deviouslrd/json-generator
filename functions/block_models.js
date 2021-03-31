@@ -406,6 +406,29 @@ document.getElementById("blockModelForm").onsubmit = form => {
 
         }
 
+        // Template Creator
+        if (document.getElementById("template").checked === true) {
+            const jsonProduct = {
+                parent: "minecraft:block/cube",
+                textures: {
+                    all: "[example_namespace]: [example_block]"
+                }
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\block_model_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made block model template file.');
+            });
+
+            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\block\\${blockName}_pillar_horizontal.json`, jsonContent2, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made pillar horizontal file.');
+            });
+
+        }
+
         if (document.getElementById("block").checked === false &&
             document.getElementById("slab").checked === false &&
             document.getElementById("stairs").checked === false &&

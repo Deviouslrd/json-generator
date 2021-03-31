@@ -238,6 +238,32 @@ document.getElementById("recipeForm").onsubmit = form => {
                 console.log('Made mossy table recipe');
             });
         }
+
+        if (document.getElementById("template").checked === true) {
+            const jsonProduct = {
+                type: "minecraft:crafting_shaped",
+                pattern: [
+                  "   ",
+                  "   ",
+                  "   "
+                ],
+                key: {
+                  X: { item: `[example_namespace]:[ingredient_name]` },
+                  Y: { item: `[example_namespace]:[ingredient_name]` }
+                },
+                result: {
+                  item: `[example_namespace]:[result_name]`,
+                  count: 1
+                }
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\crafting_table_recipe_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made the crafting table recipe template.');
+            });
+        }
             
         document.getElementById("generateBtn").value = "Generated!";
         document.getElementById("errorholder").innerHTML = "";

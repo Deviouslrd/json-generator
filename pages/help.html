@@ -29,6 +29,7 @@
             <a href="#savelocation" class="helptable">Save Locations</a><br>
             <a href="#namespace" class="helptable">The Namespace Box</a><br>
             <a href="#blockname" class="helptable">The Block Name Box</a><br>
+            <a href="#templates" class="helptable">File Templates</a><br>
             <label class="helptableheader" style="margin-left: -30px;">The Pages</label><br>
             <a href="#blockmodels" class="helptable">Block Models</a><br>
             <a href="#advancements" class="helptable">Advancements</a><br>
@@ -86,6 +87,14 @@
         </p>
     </div>
 
+    <div>
+        <a id="templates"/>
+        <h2 class="helpheader">File Templates</h2>
+        <p class="helptext">
+            Each page has an option to generate some file templates along with the other files. To use it, just generate the file, and replace all the content that is surrounded in brackets. For more file examples beyond the provided ones, go to <a onclick="genFilesLink()" class="helplink">here</a> for the rest of the files the generator provides.
+        </p>
+    </div>
+
     <h1 class="helpheader" style="margin-left: 0px;">The Pages</h1>
     <div>
         <a id="blockmodels"/>
@@ -105,7 +114,7 @@
         <a id="advancements"/>
         <h2 class="helpheader">Advancements</h2>
         <p class="helptext">
-            As of right now, the advancement page can only create recipe advancements. This may be expanded upon later, see issue #41 <a onclick="advanceLink()" style="text-decoration: underline; cursor: pointer;">here</a>.<br><br>
+            As of right now, the advancement page can only create recipe advancements. This may be expanded upon later, see issue #41 <a onclick="advanceLink()" class="helplink">here</a>.<br><br>
             The <em>'Trigger Name'</em> box allows you to create a trigger for the advancement. If you wish to unlock recipes, this should be the item that unlocks the other recipes.<br><br>
             Upon clicking generate, you will create a single JSON file with 1 trigger, and 4 given recipes, <em>'Stairs', 'Slabs', 'Walls'</em> and <em>'Pillars</em>.
         </p>
@@ -123,17 +132,20 @@
                 <li>Count: This is how many you get from the recipe. Slabs ignore this, and will give 2 for each block.</li>
             </ul>
         </p>
+
         <h3 class="helpheader" style="margin-left: 50px">Furnace Recipes</h3>
         <p class="helptext">
             <ul class="helptext">
-                <li>Experience: Most smeltable blocks will give 0.1 experience points per smelt. Cooking food gives 0.35 points. Copper and Iron give 0.7, Gold gives 1, and Ancient Debris gives 2. See <a onclick="smeltLink()" style="text-decoration: underline; cursor: pointer;">this</a> page for further information.</li>
+                <li>Experience: Most smeltable blocks will give 0.1 experience points per smelt. Cooking food gives 0.35 points. Copper and Iron give 0.7, Gold gives 1, and Ancient Debris gives 2. See <a onclick="smeltLink()" class="helplink">this</a> page for further information.</li>
                 <li>Cooking Time: This box determines the length of the smelting process. This value is measured in ticks, and 200 ticks is the default value.</li>
             </ul>
         </p>
+
         <h3 class="helpheader" style="margin-left: 50px">Simple Crafting Table Recipes</h3>
         <p class="helptext" style="margin-left: 70px;">
-            The simple recipe page takes the given inputs and places them inside of the JSON files that can be generated via the checkboxes.
+            The simple recipe page takes the given inputs and places them inside of the JSON files that can be generated via the checkboxes. It allows for a large amount of variated blocks to be generated quickly.
         </p>
+
         <h3 class="helpheader" style="margin-left: 50px">Custom Crafting Table Recipes</h3>
         <p class="helptext" style="margin-left: 70px;">
             For the other page, the table is controlled by clicking on each of the boxes, to change the value on it. The table shifts, simply due to the CSS setup. 
@@ -150,6 +162,10 @@
 
         function advanceLink () {
             require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator/issues/41");
+        }
+
+        function genFilesLink () {
+            require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator/tree/main/Generator%20files");
         }
     </script>
 </body>

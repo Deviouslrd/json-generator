@@ -61,7 +61,26 @@ document.getElementById("recipeForm").onsubmit = form => {
         
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
+        if (document.getElementById("template").checked === true) {
+            const jsonProduct = {
+                type: "minecraft:smelting",
+                ingredient: {
+                    item: `[example_namespace]:[ingredient_name]`
+                },
+                result: `[example_namespace]:[result_name]`,
+                experience: "0.1",
+                cooking_time: "200"
+            };
+            
+            const jsonContent = JSON.stringify(jsonProduct, null, 4);
+
+            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\furnace_recipe_template.json`, jsonContent, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('Made furnace recipe template.');
+            });
+        }
+
+        
         fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_furnace.json`, jsonContent, 'utf8', (err) => {
             if (err) throw err;
             console.log('Made furnace recipe');

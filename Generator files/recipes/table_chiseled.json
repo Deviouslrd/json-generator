@@ -6,10 +6,10 @@
     " X "
   ],
   "key": {
-    "X": {"item": "consistency_plus:block_slab"}
+    "X": {"item": "[example_namespace]:[block_name]"}
   },
   "result": {
-    "item": "consistency_plus:chiseled_purpur_block",
+    "item": "[example_namespace]:[block_name]",
     "count": 4
   }
 }

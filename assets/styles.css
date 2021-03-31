@@ -296,6 +296,12 @@
     font-size: 18px;
 }
 
+.helplink {
+    cursor: pointer;
+    text-decoration: underline;
+    color:rgb(209, 209, 209);
+}
+
 .bmodellabel {
     display: inline-block;
     width: 125px;

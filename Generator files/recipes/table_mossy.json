@@ -1,11 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:chiseled_stone_bricks"},
-    {"item": "minecraft:vine"}
+    {"item": "[example_namespace]:[block_name]"},
+    {"item": "[example_namespace]:vine"}
   ],
   "result": {
-    "item": "consistency_plus:mossy_chiseled_stone_bricks",
+    "item": "[example_namespace]:[block_name]",
     "count": 1
   }
 }
