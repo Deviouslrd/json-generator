@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body style="background: rgb(95, 95, 95);" onload="onLoad()">
+<body class="page" onload="onLoad()">
     <div style="text-align: center;">
         <a class="button" href="./main.html">Home Page</a>
         <a class="button" href="./block_models.html">Block Models</a>
@@ -29,25 +29,16 @@
     <form id="advanceForm">
         <div name="Block Name">
             <label for="blockName" class="textbold">Block Name:</label>
-            <div class="tooltip">?
-                <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
-            </div>
             <input type="text" id="blockName" required="true" class="textinput"><br>
         </div>
         
         <div>
             <label for="triggerName" class="textbold">Trigger Name:</label>
-            <div class="tooltip">?
-                <span class="tooltiptext">The name of the item that will trigger the advancement.</span>
-            </div>
             <input type="text" id="triggerName" required="true" class="textinput"><br>
         </div>
 
         <div name="Mod Name">
             <label for="modName" class="textbold">Mod Name:</label>
-            <div class="tooltip">?
-                <span class="tooltiptext">Input your mod id. Capitals are not necessary.</span>
-            </div>
             <input type="text" id="modName" required="true" class="textinput"><br>
         </div>
 

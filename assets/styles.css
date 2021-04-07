@@ -3,8 +3,9 @@
     src: url(./minecraft.otf);
 }
 
-/* Buttons */
 
+
+/* Buttons */
 .button {
     cursor: pointer;
     background-color: rgb(255, 255, 255);
@@ -38,7 +39,6 @@
 }
 
 /* Tooltips */
-
 .tooltip {
     position: relative;
     cursor: default;
@@ -81,7 +81,6 @@
 }
 
 /* Simple text styles */
-
 .text {
     font-family: minecraft;
     color: white;
@@ -98,6 +97,7 @@
     font-family: minecraft;
     font-size: 16px;
     width: 250px;
+    margin-top: 2px;
 }
 
 .header1 {
@@ -107,7 +107,6 @@
 }
 
 /* Save location boxes */
-
 .savelocation {
     font-family: minecraft;
     color: black;
@@ -136,7 +135,6 @@
 }
 
 /* Hover dropdown menus - recipe menu buttons */
-
 .dropbtn {
     background-color: white;
     font-family: minecraft;
@@ -251,7 +249,6 @@
 }
 
 /* Help page Variants */
-
 .helpheader {
     text-align: left;
     font-family: minecraft;
@@ -302,6 +299,7 @@
     color:rgb(209, 209, 209);
 }
 
+/* Additional Unclassified Styles */
 .bmodellabel {
     display: inline-block;
     width: 125px;
@@ -310,5 +308,10 @@
 }
 
 .divspacing {
-    margin-top: 10px
+    margin-top: 8px
+}
+
+.page {
+    background-image: url(./Background-1.png);
+    background-size: 100% auto;
 }

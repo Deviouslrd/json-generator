@@ -26,7 +26,9 @@ function createWindow () {
     const win = new BrowserWindow({
         show: false,
         width: 850,
+        minWidth: 650,
         height: 600,
+        minHeight: 500,
         title: `Mod JSON Generator ${app.getVersion()}`,
         webPreferences: {
             nodeIntegration: true,
