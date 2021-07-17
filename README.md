@@ -1,7 +1,8 @@
 # json-generator
 Easy-to-use generator to make the JSON files for primarily resource packs, but also can be used for resource packs.
 
-Currently working on a merge to Tauri, hence why it hasn't recieved any commits for multiple months. Additionally, expect bugs to exist, as it is still in its alpha stage.
+Tauri switch has been abandoned due to the incompleteness of Tauri.
+It is now being actively being rewritten into java.
 
 If you find any issues, report them on the github here, and Deviouslrd will attend to it!
 
