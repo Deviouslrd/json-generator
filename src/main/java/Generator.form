@@ -1,0 +1,2829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main.java.Generator">
+  <grid id="27dc6" binding="ContentPane" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="800" height="823"/>
+    </constraints>
+    <properties>
+      <maximumSize width="1000" height="1000"/>
+      <minimumSize width="800" height="800"/>
+      <preferredSize width="700" height="700"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="388d7" binding="tabbedPane1" default-binding="true">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <minimumSize width="600" height="800"/>
+          <preferredSize width="682" height="700"/>
+          <tabLayoutPolicy value="1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="88f1b" binding="blockModels" layout-manager="GridBagLayout">
+            <constraints>
+              <tabbedpane title="Block Models"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e70ee" class="javax.swing.JTextField" binding="westTexture_bm">
+                <constraints>
+                  <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="f708f" class="javax.swing.JTextField" binding="sideTexture_bm">
+                <constraints>
+                  <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="95854" class="javax.swing.JTextField" binding="topTexture_bm">
+                <constraints>
+                  <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="b9e19" class="javax.swing.JLabel" binding="modNameLabel_bm">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <alignmentY value="0.5"/>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Mod Name"/>
+                </properties>
+              </component>
+              <component id="9166d" class="javax.swing.JLabel" binding="namespaceLabel_bm">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Namespace"/>
+                </properties>
+              </component>
+              <component id="6629d" class="javax.swing.JRadioButton" binding="allText">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <horizontalAlignment value="10"/>
+                  <margin top="2" left="2" bottom="2" right="2"/>
+                  <text value="Same texture on every side"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="db920" class="javax.swing.JRadioButton" binding="frontText">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Different front texture"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="87095" class="javax.swing.JRadioButton" binding="threeText">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Different texture on top, bottom, and sides"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="d03e2" class="javax.swing.JRadioButton" binding="sixText">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Different texture on every side"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="4c93" class="javax.swing.JCheckBox" binding="block_bm">
+                <constraints>
+                  <grid row="13" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Blocks"/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="7eee0" class="javax.swing.JCheckBox" binding="slabs_bm">
+                <constraints>
+                  <grid row="14" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Slabs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="7d0d" class="javax.swing.JLabel" binding="mainLabel_bm">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Main Texture"/>
+                </properties>
+              </component>
+              <component id="bd2df" class="javax.swing.JLabel" binding="topLabel_bm">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Top Texture"/>
+                </properties>
+              </component>
+              <component id="855e0" class="javax.swing.JLabel" binding="westLabel_bm">
+                <constraints>
+                  <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="West Texture"/>
+                </properties>
+              </component>
+              <component id="3d1a4" class="javax.swing.JLabel" binding="southLabel_bm">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="South Texture"/>
+                </properties>
+              </component>
+              <component id="226d1" class="javax.swing.JLabel" binding="eastLabel_bm">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="East Texture"/>
+                </properties>
+              </component>
+              <component id="c58b4" class="javax.swing.JLabel" binding="sideLabel_bm">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Side Texture"/>
+                </properties>
+              </component>
+              <component id="2f098" class="javax.swing.JCheckBox" binding="stairs_bm">
+                <constraints>
+                  <grid row="15" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Stairs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="c35de" class="javax.swing.JCheckBox" binding="walls_bm">
+                <constraints>
+                  <grid row="16" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Walls"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="5349b" class="javax.swing.JCheckBox" binding="pillars_bm">
+                <constraints>
+                  <grid row="17" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Pillars"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="4f62e" class="javax.swing.JCheckBox" binding="fileTemplate_bm">
+                <constraints>
+                  <grid row="18" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="File Template"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="bab02" class="javax.swing.JTextField" binding="eastTexture_bm">
+                <constraints>
+                  <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="4cd25" class="javax.swing.JTextField" binding="southTexture_bm">
+                <constraints>
+                  <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="53e64" class="javax.swing.JTextField" binding="namespace_bm">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="f98d1" class="javax.swing.JButton" binding="generateButton_bm">
+                <constraints>
+                  <grid row="19" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="150" height="30"/>
+                  <preferredSize width="150" height="30"/>
+                  <text value="Generate"/>
+                </properties>
+              </component>
+              <component id="5ecdc" class="javax.swing.JTextField" binding="mainTexture_bm">
+                <constraints>
+                  <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="8287a" class="javax.swing.JTextField" binding="modName_bm">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <hspacer id="1ee5d">
+                <constraints>
+                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="75e43" class="javax.swing.JTextArea" binding="title_bm">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="50"/>
+                  <text value="JSON Generator"/>
+                </properties>
+              </component>
+              <hspacer id="5da0a">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="8d99d" class="javax.swing.JTextField" binding="saveLocation_bm">
+                <constraints>
+                  <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <background color="-12236470"/>
+                  <editable value="true"/>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="400" height="30"/>
+                  <preferredSize width="400" height="30"/>
+                  <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                </properties>
+              </component>
+              <component id="7e30a" class="javax.swing.JLabel" binding="saveLabel_bm">
+                <constraints>
+                  <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <opaque value="false"/>
+                  <text value="Save Location"/>
+                </properties>
+              </component>
+              <vspacer id="3e80b">
+                <constraints>
+                  <grid row="21" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </vspacer>
+              <component id="4313d" class="javax.swing.JButton" binding="saveButton_bm">
+                <constraints>
+                  <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <icon value="main/resources/folder.png"/>
+                  <minimumSize width="30" height="30"/>
+                  <preferredSize width="30" height="30"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="a48e0">
+                <constraints>
+                  <grid row="20" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+          <grid id="22922" binding="itemModels" layout-manager="GridBagLayout">
+            <constraints>
+              <tabbedpane title="Item Models"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="73ae6" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <alignmentY value="0.5"/>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Mod Name"/>
+                </properties>
+              </component>
+              <component id="870d2" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Namespace"/>
+                </properties>
+              </component>
+              <component id="c87b2" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Blocks"/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="a10b" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Slabs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="1880a" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Stairs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="bfa3d" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Walls"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="d1cb6" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="7" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Pillars"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="a5bde" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="8" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="File Template"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="ebd8a" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="c792b" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="150" height="30"/>
+                  <preferredSize width="150" height="30"/>
+                  <text value="Generate"/>
+                </properties>
+              </component>
+              <component id="da319" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <hspacer id="16fc0">
+                <constraints>
+                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="467e1" class="javax.swing.JTextArea">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="50"/>
+                  <text value="JSON Generator"/>
+                </properties>
+              </component>
+              <hspacer id="d3a64">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="7cd80" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <background color="-12236470"/>
+                  <editable value="true"/>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="400" height="30"/>
+                  <preferredSize width="400" height="30"/>
+                  <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                </properties>
+              </component>
+              <component id="85240" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <opaque value="false"/>
+                  <text value="Save Location"/>
+                </properties>
+              </component>
+              <vspacer id="4de9c">
+                <constraints>
+                  <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </vspacer>
+              <component id="ccef" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <icon value="main/resources/folder.png"/>
+                  <minimumSize width="30" height="30"/>
+                  <preferredSize width="30" height="30"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="a239b">
+                <constraints>
+                  <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+          <grid id="759c8" binding="blockstates" layout-manager="GridBagLayout">
+            <constraints>
+              <tabbedpane title="Blockstates"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="85756" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <alignmentY value="0.5"/>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Mod Name"/>
+                </properties>
+              </component>
+              <component id="51f8c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Namespace"/>
+                </properties>
+              </component>
+              <component id="2ec4e" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Blocks"/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="abef2" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Slabs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="80f42" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Stairs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="8746b" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Walls"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="824ab" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="7" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Pillars"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="3b4d5" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="8" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="File Template"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="e3b99" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="afd11" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="150" height="30"/>
+                  <preferredSize width="150" height="30"/>
+                  <text value="Generate"/>
+                </properties>
+              </component>
+              <component id="592a9" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <hspacer id="d2311">
+                <constraints>
+                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="b24e3" class="javax.swing.JTextArea">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="50"/>
+                  <text value="JSON Generator"/>
+                </properties>
+              </component>
+              <hspacer id="136f2">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="debf8" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <background color="-12236470"/>
+                  <editable value="true"/>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="400" height="30"/>
+                  <preferredSize width="400" height="30"/>
+                  <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                </properties>
+              </component>
+              <component id="56ff1" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <opaque value="false"/>
+                  <text value="Save Location"/>
+                </properties>
+              </component>
+              <vspacer id="51b92">
+                <constraints>
+                  <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </vspacer>
+              <component id="9170d" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <icon value="main/resources/folder.png"/>
+                  <minimumSize width="30" height="30"/>
+                  <preferredSize width="30" height="30"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="6cb53">
+                <constraints>
+                  <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+          <grid id="9b653" binding="advancements" layout-manager="GridBagLayout">
+            <constraints>
+              <tabbedpane title="Advancements"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="95a19" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <alignmentY value="0.5"/>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Mod Name"/>
+                </properties>
+              </component>
+              <component id="b4fb9" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Namespace"/>
+                </properties>
+              </component>
+              <component id="fe8cb" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="File Template"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="3eae7" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="a6b31" class="javax.swing.JButton" default-binding="true">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="150" height="30"/>
+                  <preferredSize width="150" height="30"/>
+                  <text value="Generate"/>
+                </properties>
+              </component>
+              <component id="35426" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <hspacer id="80808">
+                <constraints>
+                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="55a74" class="javax.swing.JTextArea">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="50"/>
+                  <text value="JSON Generator"/>
+                </properties>
+              </component>
+              <hspacer id="85c32">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="9253f" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <background color="-12236470"/>
+                  <editable value="true"/>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="400" height="30"/>
+                  <preferredSize width="400" height="30"/>
+                  <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                </properties>
+              </component>
+              <component id="938ab" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <opaque value="false"/>
+                  <text value="Save Location"/>
+                </properties>
+              </component>
+              <vspacer id="7f394">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </vspacer>
+              <component id="91321" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <icon value="main/resources/folder.png"/>
+                  <minimumSize width="30" height="30"/>
+                  <preferredSize width="30" height="30"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="ab252">
+                <constraints>
+                  <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+          <grid id="88def" binding="lootTables" layout-manager="GridBagLayout">
+            <constraints>
+              <tabbedpane title="Loot Tables"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="32c7a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <alignmentY value="0.5"/>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Mod Name"/>
+                </properties>
+              </component>
+              <component id="42a28" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Namespace"/>
+                </properties>
+              </component>
+              <component id="1b0c1" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Blocks"/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="e4f12" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Slabs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="be0c2" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Main Texture"/>
+                </properties>
+              </component>
+              <component id="d05c0" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Stairs"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="29f81" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="7" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Walls"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="cd54a" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="8" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="Pillars"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="d5a2d" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="9" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <text value="File Template"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="7c8f5" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="ada14" class="javax.swing.JButton" default-binding="true">
+                <constraints>
+                  <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="150" height="30"/>
+                  <preferredSize width="150" height="30"/>
+                  <text value="Generate"/>
+                </properties>
+              </component>
+              <component id="65962" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <component id="ccf24" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="30"/>
+                  <preferredSize width="250" height="30"/>
+                </properties>
+              </component>
+              <hspacer id="9d242">
+                <constraints>
+                  <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="caf6e" class="javax.swing.JTextArea">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                  <gridbag weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <font size="50"/>
+                  <text value="JSON Generator"/>
+                </properties>
+              </component>
+              <hspacer id="656df">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+              <component id="2e909" class="javax.swing.JTextField">
+                <constraints>
+                  <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <background color="-12236470"/>
+                  <editable value="true"/>
+                  <font name="Minecraft" size="16"/>
+                  <minimumSize width="400" height="30"/>
+                  <preferredSize width="400" height="30"/>
+                  <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                </properties>
+              </component>
+              <component id="75633" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Minecraft" size="16"/>
+                  <opaque value="false"/>
+                  <text value="Save Location"/>
+                </properties>
+              </component>
+              <vspacer id="2d762">
+                <constraints>
+                  <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </vspacer>
+              <component id="3de78" class="javax.swing.JButton">
+                <constraints>
+                  <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <icon value="main/resources/folder.png"/>
+                  <minimumSize width="30" height="30"/>
+                  <preferredSize width="30" height="30"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="bdfe5">
+                <constraints>
+                  <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+          <grid id="4792" binding="recipes" layout-manager="CardLayout" hgap="0" vgap="0">
+            <constraints>
+              <tabbedpane title="Recipes"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <tabbedpane id="7938e" binding="recipeTabs">
+                <constraints>
+                  <card name="Card1"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="30c77" binding="stonecutter" layout-manager="GridBagLayout">
+                    <constraints>
+                      <tabbedpane title="Stonecutter"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="e2167" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="39a03" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="38beb" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="fd5c8" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <alignmentY value="0.5"/>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Mod Name"/>
+                        </properties>
+                      </component>
+                      <component id="5e94b" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Namespace"/>
+                        </properties>
+                      </component>
+                      <component id="ac608" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <horizontalAlignment value="10"/>
+                          <margin top="2" left="2" bottom="2" right="2"/>
+                          <text value="Same texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="64bcb" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different front texture"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="17954" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on top, bottom, and sides"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="a9f4f" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="fe9ed" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="13" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Blocks"/>
+                          <verticalAlignment value="0"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="9172e" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="14" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Slabs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="75bc0" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Main Texture"/>
+                        </properties>
+                      </component>
+                      <component id="650a3" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Top Texture"/>
+                        </properties>
+                      </component>
+                      <component id="85449" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="West Texture"/>
+                        </properties>
+                      </component>
+                      <component id="662ae" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="South Texture"/>
+                        </properties>
+                      </component>
+                      <component id="842e7" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="East Texture"/>
+                        </properties>
+                      </component>
+                      <component id="ada21" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Side Texture"/>
+                        </properties>
+                      </component>
+                      <component id="6b56f" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="15" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Stairs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="17e69" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="16" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Walls"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="e2c8d" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="17" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Pillars"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="2f60d" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="18" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="File Template"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="e314e" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="e7c58" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="e556b" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="6984f" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="19" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="150" height="30"/>
+                          <preferredSize width="150" height="30"/>
+                          <text value="Generate"/>
+                        </properties>
+                      </component>
+                      <component id="1ae33" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="2c3f" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <hspacer id="7c2b4">
+                        <constraints>
+                          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="38857" class="javax.swing.JTextArea">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="50"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <editable value="false"/>
+                          <font size="50"/>
+                          <text value="JSON Generator"/>
+                        </properties>
+                      </component>
+                      <hspacer id="8b494">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="8ee47" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <background color="-12236470"/>
+                          <editable value="true"/>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="400" height="30"/>
+                          <preferredSize width="400" height="30"/>
+                          <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                        </properties>
+                      </component>
+                      <component id="ec432" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <opaque value="false"/>
+                          <text value="Save Location"/>
+                        </properties>
+                      </component>
+                      <vspacer id="debbd">
+                        <constraints>
+                          <grid row="21" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </vspacer>
+                      <component id="d980d" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <icon value="main/resources/folder.png"/>
+                          <minimumSize width="30" height="30"/>
+                          <preferredSize width="30" height="30"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <hspacer id="6216c">
+                        <constraints>
+                          <grid row="20" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                    </children>
+                  </grid>
+                  <grid id="8891d" binding="furnace" layout-manager="GridBagLayout">
+                    <constraints>
+                      <tabbedpane title="Furnace"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="3b8c5" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="b8598" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="576dc" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="705cf" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <alignmentY value="0.5"/>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Mod Name"/>
+                        </properties>
+                      </component>
+                      <component id="9cbe0" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Namespace"/>
+                        </properties>
+                      </component>
+                      <component id="e773c" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <horizontalAlignment value="10"/>
+                          <margin top="2" left="2" bottom="2" right="2"/>
+                          <text value="Same texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="77769" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different front texture"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="30c66" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on top, bottom, and sides"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="99f51" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="af13a" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="13" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Blocks"/>
+                          <verticalAlignment value="0"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="30c25" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="14" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Slabs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="9e8d" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Main Texture"/>
+                        </properties>
+                      </component>
+                      <component id="b6815" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Top Texture"/>
+                        </properties>
+                      </component>
+                      <component id="fd0ea" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="West Texture"/>
+                        </properties>
+                      </component>
+                      <component id="adf58" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="South Texture"/>
+                        </properties>
+                      </component>
+                      <component id="82271" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="East Texture"/>
+                        </properties>
+                      </component>
+                      <component id="19f23" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Side Texture"/>
+                        </properties>
+                      </component>
+                      <component id="9595f" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="15" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Stairs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="eeee2" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="16" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Walls"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="e491c" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="17" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Pillars"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="8c23a" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="18" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="File Template"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="a0df1" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="aad2e" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="4183a" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="5b45" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="19" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="150" height="30"/>
+                          <preferredSize width="150" height="30"/>
+                          <text value="Generate"/>
+                        </properties>
+                      </component>
+                      <component id="3ced3" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="291d5" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <hspacer id="8ad86">
+                        <constraints>
+                          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="92188" class="javax.swing.JTextArea">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="50"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <editable value="false"/>
+                          <font size="50"/>
+                          <text value="JSON Generator"/>
+                        </properties>
+                      </component>
+                      <hspacer id="a0fd4">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="2ff19" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <background color="-12236470"/>
+                          <editable value="true"/>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="400" height="30"/>
+                          <preferredSize width="400" height="30"/>
+                          <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                        </properties>
+                      </component>
+                      <component id="6f5e4" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <opaque value="false"/>
+                          <text value="Save Location"/>
+                        </properties>
+                      </component>
+                      <vspacer id="f4ba4">
+                        <constraints>
+                          <grid row="21" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </vspacer>
+                      <component id="ce566" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <icon value="main/resources/folder.png"/>
+                          <minimumSize width="30" height="30"/>
+                          <preferredSize width="30" height="30"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <hspacer id="de545">
+                        <constraints>
+                          <grid row="20" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                    </children>
+                  </grid>
+                  <grid id="c94a8" binding="craftingSimple" layout-manager="GridBagLayout">
+                    <constraints>
+                      <tabbedpane title="Crafting Table - Simple"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="cde4a" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="4f9d7" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="d695" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="b74e0" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <alignmentY value="0.5"/>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Mod Name"/>
+                        </properties>
+                      </component>
+                      <component id="86f5" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Namespace"/>
+                        </properties>
+                      </component>
+                      <component id="31e8d" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <horizontalAlignment value="10"/>
+                          <margin top="2" left="2" bottom="2" right="2"/>
+                          <text value="Same texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="ad442" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different front texture"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="2ecab" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on top, bottom, and sides"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="d9705" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="afd9e" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="13" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Blocks"/>
+                          <verticalAlignment value="0"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="98715" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="14" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Slabs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="c2034" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Main Texture"/>
+                        </properties>
+                      </component>
+                      <component id="941c3" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Top Texture"/>
+                        </properties>
+                      </component>
+                      <component id="8e041" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="West Texture"/>
+                        </properties>
+                      </component>
+                      <component id="4c1aa" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="South Texture"/>
+                        </properties>
+                      </component>
+                      <component id="2c990" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="East Texture"/>
+                        </properties>
+                      </component>
+                      <component id="426dc" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Side Texture"/>
+                        </properties>
+                      </component>
+                      <component id="cea2e" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="15" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Stairs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="86e39" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="16" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Walls"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="686b1" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="17" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Pillars"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="1f2fe" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="18" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="File Template"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="d52ff" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="ed214" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="e7c3c" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="64780" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="19" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="150" height="30"/>
+                          <preferredSize width="150" height="30"/>
+                          <text value="Generate"/>
+                        </properties>
+                      </component>
+                      <component id="8c8fb" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="9e73b" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <hspacer id="9af4e">
+                        <constraints>
+                          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="e6823" class="javax.swing.JTextArea">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="50"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <editable value="false"/>
+                          <font size="50"/>
+                          <text value="JSON Generator"/>
+                        </properties>
+                      </component>
+                      <hspacer id="36165">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="81d15" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <background color="-12236470"/>
+                          <editable value="true"/>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="400" height="30"/>
+                          <preferredSize width="400" height="30"/>
+                          <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                        </properties>
+                      </component>
+                      <component id="49c5e" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <opaque value="false"/>
+                          <text value="Save Location"/>
+                        </properties>
+                      </component>
+                      <vspacer id="3f21a">
+                        <constraints>
+                          <grid row="21" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </vspacer>
+                      <component id="4de77" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <icon value="main/resources/folder.png"/>
+                          <minimumSize width="30" height="30"/>
+                          <preferredSize width="30" height="30"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <hspacer id="dd58c">
+                        <constraints>
+                          <grid row="20" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                    </children>
+                  </grid>
+                  <grid id="b3559" binding="craftingAdvanced" layout-manager="GridBagLayout">
+                    <constraints>
+                      <tabbedpane title="Crafting Table - Advanced"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="e236d" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="3f726" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="67787" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="d9516" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <alignmentY value="0.5"/>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Mod Name"/>
+                        </properties>
+                      </component>
+                      <component id="4fde4" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Namespace"/>
+                        </properties>
+                      </component>
+                      <component id="7b0cf" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <horizontalAlignment value="10"/>
+                          <margin top="2" left="2" bottom="2" right="2"/>
+                          <text value="Same texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="5f402" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different front texture"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="d5a46" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on top, bottom, and sides"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="bd48d" class="javax.swing.JRadioButton">
+                        <constraints>
+                          <grid row="6" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Different texture on every side"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="dbeeb" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="13" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Blocks"/>
+                          <verticalAlignment value="0"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="61ed3" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="14" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Slabs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="9bff2" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Main Texture"/>
+                        </properties>
+                      </component>
+                      <component id="f9704" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Top Texture"/>
+                        </properties>
+                      </component>
+                      <component id="340f0" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="West Texture"/>
+                        </properties>
+                      </component>
+                      <component id="a403c" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="South Texture"/>
+                        </properties>
+                      </component>
+                      <component id="12dc3" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="East Texture"/>
+                        </properties>
+                      </component>
+                      <component id="71a2" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Side Texture"/>
+                        </properties>
+                      </component>
+                      <component id="41a75" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="15" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Stairs"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="ec877" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="16" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Walls"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="1e14" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="17" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="Pillars"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="e1da2" class="javax.swing.JCheckBox">
+                        <constraints>
+                          <grid row="18" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <text value="File Template"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="485c4" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="3124b" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="6dc05" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="28073" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="19" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="150" height="30"/>
+                          <preferredSize width="150" height="30"/>
+                          <text value="Generate"/>
+                        </properties>
+                      </component>
+                      <component id="64f8" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <component id="fa5d4" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="250" height="30"/>
+                          <preferredSize width="250" height="30"/>
+                        </properties>
+                      </component>
+                      <hspacer id="1bfa8">
+                        <constraints>
+                          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="0" left="0" bottom="0" right="50" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="efd41" class="javax.swing.JTextArea">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="50"/>
+                          </grid>
+                          <gridbag weightx="1.0" weighty="1.0"/>
+                        </constraints>
+                        <properties>
+                          <editable value="false"/>
+                          <font size="50"/>
+                          <text value="JSON Generator"/>
+                        </properties>
+                      </component>
+                      <hspacer id="c39b7">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="c709f" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <background color="-12236470"/>
+                          <editable value="true"/>
+                          <font name="Minecraft" size="16"/>
+                          <minimumSize width="400" height="30"/>
+                          <preferredSize width="400" height="30"/>
+                          <text value="yaaaaaaaaaaaaaaaaaaaaaaaaaass"/>
+                        </properties>
+                      </component>
+                      <component id="2325e" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font name="Minecraft" size="16"/>
+                          <opaque value="false"/>
+                          <text value="Save Location"/>
+                        </properties>
+                      </component>
+                      <vspacer id="e1fe8">
+                        <constraints>
+                          <grid row="21" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </vspacer>
+                      <component id="c8fc4" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag top="5" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <icon value="main/resources/folder.png"/>
+                          <minimumSize width="30" height="30"/>
+                          <preferredSize width="30" height="30"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <hspacer id="7ec32">
+                        <constraints>
+                          <grid row="20" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                    </children>
+                  </grid>
+                </children>
+              </tabbedpane>
+            </children>
+          </grid>
+          <grid id="3784" binding="settings" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <tabbedpane title="Settings"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="2fc25" class="javax.swing.JLabel" binding="themeLabel">
+                <constraints/>
+                <properties>
+                  <text value="Theme"/>
+                </properties>
+              </component>
+              <component id="9dfc2" class="javax.swing.JComboBox" binding="themeSelect">
+                <constraints/>
+                <properties>
+                  <preferredSize width="100" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+      <hspacer id="dbe4a">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="0" right="5" weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="modelMode">
+      <member id="6629d"/>
+      <member id="6629d"/>
+      <member id="87095"/>
+      <member id="d03e2"/>
+      <member id="db920"/>
+    </group>
+  </buttonGroups>
+</form>
