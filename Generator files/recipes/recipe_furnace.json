@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "[example_namespace]:[block_name]"
-  },
-  "result": "[example_namespace]:[block_name]",
-  "experience": 1,
-  "cooking_time": 200
-}

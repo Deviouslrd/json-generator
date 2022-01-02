@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+<link rel="stylesheet" href="./assets/styling/styles.css">
+</head>
+<script src="./functions/main_links.js"></script>
+<script>
+    window.onload = title();
+    function title () {
+        console.log("yo");
+    }
+</script>
+<body class="transition">
+    <h1 class="header1" id="header1">Minecraft Mod JSON Creation Tool `version`</h1>
+    <p id="body" class="text">
+        Click on any of the below buttons to create the JSON for the that type!<br><br>
+        Each page has menu buttons on the top to switch to a different page. <br><br>
+    </p>
+
+    <div style="text-align: center;">
+        <a class="button" onclick="transitionToPage('./pages/block_models.html')">Block Models</a>
+        <a class="button" onclick="transitionToPage('./pages/item_models.html')">Item Models</a>
+        <a class="button" onclick="transitionToPage('./pages/blockstates.html')">Blockstates</a>
+        <a class="button" onclick="transitionToPage('./pages/advancement.html')">Advancements</a>
+        <a class="button" onclick="transitionToPage('./pages/loot_tables.html')">Loot Tables</a>
+        <a class="button" onclick="transitionToPage('./pages/test.html')">Test</a>
+        <div class="dropdown" style="vertical-align: 1px;">
+            <button class="dropbtn" id="dropBtn">Recipes</button>
+            <div class="dropdown-content">
+                <a onclick="transitionToPage('./pages/recipe_cutter.html')">Stonecutter</a>
+                <a onclick="transitionToPage('./pages/recipe_furnace.html')">Furnace</a>
+                <a onclick="transitionToPage('./pages/recipe_table_simple.html')">Crafting Table</a>
+            </div>
+        </div>
+        <a class="button" onclick="helpLink()">Help</a>
+    </div><br>
+
+    <div style="text-align: center;">
+        <label class="textbold" style="font-size: 20px;">Social Links</label><br>
+        <input type="image" src="./assets/GitHub-Mark.svg" onclick="gitLink()" alt="https://github.com/Deviouslrd/json-generator">
+        <input type="image" style="vertical-align: -5px;" src="./assets/Discord-Logo-White.svg" alt="https://discord.gg/neXPNSY">
+    </div>
+
+    <!--<script type="text/javascript" src="./functions/main_links.js"></script>-->
+    <script type="text/javascript" src="../functions/transition.js"></script>
+</body>
+</html>

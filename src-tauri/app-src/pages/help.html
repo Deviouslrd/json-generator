@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="stylesheet" href="../assets/styling/helpstyles.css">
+</head>
+<body class="page">
+    <div>
+        <h1 class="header1">Help</h1>
+        <a id="top"/>
+        <p class="text">
+            Welcome to the help page! This is in very early development, and as such, information may be missing.
+        </p>
+    </div>
+
+    <div>
+        <a id="about"/>
+        <h2 class="helpheader" style="margin-left: 0px;">What is this Generator?</h2>
+        <p class="helptext">
+            This program is a simple way to generate all the JSON files you require for things such as mods, resource packs, and data packs!<br>
+            You give it some inputs, and it automatically generates the JSON files.
+        </p>
+    </div>
+
+    <div>
+        <h3 class="helpheader" style="margin-left: 0px;">Table of Contents</h3>
+        <div style="margin-left: 50px;">
+            <label class="helptableheader" style="margin-left: -30px;">The Basics</label><br>
+            <a href="#howtouse" class="helptable">How to Use</a><br>
+            <a href="#savelocation" class="helptable">Save Locations</a><br>
+            <a href="#namespace" class="helptable">The Namespace Box</a><br>
+            <a href="#blockname" class="helptable">The Block Name Box</a><br>
+            <a href="#templates" class="helptable">File Templates</a><br>
+            <label class="helptableheader" style="margin-left: -30px;">The Pages</label><br>
+            <a href="#blockmodels" class="helptable">Block Models</a><br>
+            <a href="#advancements" class="helptable">Advancements</a><br>
+            <a href="#recipes" class="helptable">Recipes</a><br>
+        </div>    
+    </div>
+
+    <h1 class="helpheader" style="margin-left: 0px;">The Basics</h1>
+    <div>
+        <a id="howtouse"/>
+        <h2 class="helpheader">How to Use the Generator</h2>
+        <p class="helptext">
+            Simple! Just put inputs into the boxes on the page and watch the generator create the files!<br><br>
+            The id format for Minecraft is, for example, <em>'minecraft:stone_brick_slab'</em>. It doesn't matter how you input your own blocks into the inputs, as the generator will reformat it as needed.
+            This same rule applies to the mod name, as well as the namespace boxes.
+        </p>
+    </div>
+
+    <div>
+        <a id="savelocation"/>
+        <h2 class="helpheader">Save Locations and File Paths</h2>
+        <ul class="helptext">
+            <li>If you are creating a fabric mod, then you will want to select the <em>src/main/resources.</em></li>
+            <li>If you are creating a forge mod, you will want to select the topmost folder.</li>
+            <li>If you are creating a resource pack, you will want to select the topmost folder.</li>
+            <li>If there are pre-existing folders, those will be used. Otherwise, the folders will be generated for you.</li>
+        </ul>
+        <p class="helptext">
+            Datapack support is unlikely. However, the crafting recipes could be useful for your datapacks.<br>
+        </p>
+    </div>
+
+    <div>
+        <a id="namespace"/>
+        <h2 class="helpheader">Namespace Input</h2>
+        <p class="helptext">
+            The namespace box (Texture Namespace, Item Namespace) is used inside the file for the items. The <em>'Mod Name'</em> box is used for the folder structure and some other cases. This value is used if the namespace box is empty.
+        </p>
+    </div>
+
+    <div>
+        <a id="blockname"/>
+        <h2 class="helpheader">Block Name Input</h2>
+        <p class="helptext">
+            The <em>Block Name</em> is the name of the block you wish to create a JSON file for. The input is automatically formatted as needed. Additionally, if the input has the words <em>'slab', 'stairs', 'wall', 'pillar'</em>, or <em>'mossy'</em>, it will be automatically removed. This happens on every page's <em>'Block Name'</em> box, except for recipes (the inputs are untouched for maximum control).
+        </p>
+    </div>
+
+    <div>
+        <a id="checkboxes"/>
+        <h2 class="helpheader">The Checkboxes</h2>
+        <p class="helptext">
+            Every page has 5 different checkboxes. Some exceptions include the recipes, and the advancement page. These checkboxes allow you to efficiently create large amounts of JSON files. Just select these boxes, and upon clicking the Generate! button, it will create the JSON files using the inputs you provided.<br><br>
+            There is also a template checkbox, to create a template form of that JSON file, for editing yourself.
+        </p>
+    </div>
+
+    <div>
+        <a id="templates"/>
+        <h2 class="helpheader">File Templates</h2>
+        <p class="helptext">
+            Each page has an option to generate some file templates along with the other files. To use it, just generate the file, and replace all the content that is surrounded in brackets. For more file examples beyond the provided ones, go to <a onclick="genFilesLink()" class="helplink">here</a> for the rest of the files the generator provides.
+        </p>
+    </div>
+
+    <h1 class="helpheader" style="margin-left: 0px;">The Pages</h1>
+    <div>
+        <a id="blockmodels"/>
+        <h2 class="helpheader">Block Models</h2>
+        <p class="helptext">
+            Each radio button near the top tells you what each one allows you to do. The following bit in brackets tells you what blocks are able to use that setting.<br><br>
+            Pillars and walls are unlikely to recieve proper support for multiple textures.<br><br>
+
+            Slabs follow a different scheme for texture placement on the block. 
+            The <em>"Top texture"</em> is used for the bottom slab's top, <em>"Side Texture"</em> is used for the sides, and <em>"Bottom Textures"</em> is for the bottom.
+            The top slab uses <em>"West Texture"</em> for the top, <em>"South Texture"</em> for the bottom, and <em>"East Texture"</em> for the sides.
+
+        </p>
+    </div>
+
+    <div>
+        <a id="advancements"/>
+        <h2 class="helpheader">Advancements</h2>
+        <p class="helptext">
+            As of right now, the advancement page can only create recipe advancements. This may be expanded upon later, see issue #41 <a onclick="advanceLink()" class="helplink">here</a>.<br><br>
+            The <em>'Trigger Name'</em> box allows you to create a trigger for the advancement. If you wish to unlock recipes, this should be the item that unlocks the other recipes.<br><br>
+            Upon clicking generate, you will create a single JSON file with 1 trigger, and 4 given recipes, <em>'Stairs', 'Slabs', 'Walls'</em> and <em>'Pillars</em>.
+        </p>
+    </div>
+
+    <div>
+        <a id="recipes"/>
+        <h2 class="helpheader">Recipes</h2>
+        <h3 class="helpheader" style="margin-left: 50px">Stonecutter Recipes</h3>
+        <p class="helptext">
+            <ul class="helptext">
+                <li>Item Namespace: If you are using modded blocks, change this to your mod name.</li>
+                <li>Ingredient: This is the name of the ingredient.</li>
+                <li>Result: This is the name of the result in the middle panel.</li>
+                <li>Count: This is how many you get from the recipe. Slabs ignore this, and will give 2 for each block.</li>
+            </ul>
+        </p>
+
+        <h3 class="helpheader" style="margin-left: 50px">Furnace Recipes</h3>
+        <p class="helptext">
+            <ul class="helptext">
+                <li>Experience: Most smeltable blocks will give 0.1 experience points per smelt. Cooking food gives 0.35 points. Copper and Iron give 0.7, Gold gives 1, and Ancient Debris gives 2. See <a onclick="smeltLink()" class="helplink">this</a> page for further information.</li>
+                <li>Cooking Time: This box determines the length of the smelting process. This value is measured in ticks, and 200 ticks is the default value.</li>
+            </ul>
+        </p>
+
+        <h3 class="helpheader" style="margin-left: 50px">Simple Crafting Table Recipes</h3>
+        <p class="helptext" style="margin-left: 70px;">
+            The simple recipe page takes the given inputs and places them inside of the JSON files that can be generated via the checkboxes. It allows for a large amount of variated blocks to be generated quickly.
+        </p>
+
+        <h3 class="helpheader" style="margin-left: 50px">Custom Crafting Table Recipes</h3>
+        <p class="helptext" style="margin-left: 70px;">
+            For the other page, the table is controlled by clicking on each of the boxes, to change the value on it. The table shifts, simply due to the CSS setup. 
+            The input boxes allow you to give values for each of the given letters in the table. <br><br>
+            When you do the 2x2 crafting table, the only open boxes are the first 4. The dropdowns still provide all 9 options, but you can only use the first 4. 
+            If a box is empty, or if a letter is used but its input box is empty, it will also be ignored.
+        </p>
+    </div>
+
+    <script>  
+        function smeltLink () {
+            require("electron").shell.openExternal("https://minecraft.gamepedia.com/Smelting#Recipes");
+        }
+
+        function advanceLink () {
+            require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator/issues/41");
+        }
+
+        function genFilesLink () {
+            require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator/tree/main/Generator%20files");
+        }
+    </script>
+</body>
+</html>

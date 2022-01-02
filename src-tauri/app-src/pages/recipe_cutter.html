@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="page" onload="onLoad()">
+<head>
+<link rel="stylesheet" href="../assets/styling/styles.css">
+</head>
+<body class="transition">
+    <div style="text-align: center;">
+        <a class="button" onclick="transitionToPage('../index.html')">Home Page</a>
+        <a class="button" onclick="transitionToPage('./block_models.html')">Block Models</a>
+        <a class="button" onclick="transitionToPage('./item_models.html')">Item Models</a>
+        <a class="button" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
+        <a class="button" onclick="transitionToPage('./advancement.html')">Advancements</a>
+        <a class="button" onclick="transitionToPage('./loot_tables.html')">Loot Tables</a>
+        <div class="dropdown" style="vertical-align: 1px;">
+            <button class="dropbtn" id="dropBtn">Recipes</button>
+            <div class="dropdown-content">
+                <a class="buttondisabled" onclick="transitionToPage('./recipe_cutter.html')">Stonecutter</a>
+                <a onclick="transitionToPage('./recipe_furnace.html')">Furnace</a>
+                <a onclick="transitionToPage('./recipe_table_simple.html')">Crafting Table</a>
+            </div>
+        </div>
+    </div><br>
+    
+    <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
+    <p id="body" class="text">
+        Create stonecutter recipes for your blocks! [COMING SOON]
+    </p>
+
+    <form id="recipeForm">
+        <div name="Main Inputs">
+            <div name="Mod Name">
+                <label for="modName" class="textbold">Mod Name:</label>
+                <input type="text" id="modName" required="true" class="textinput"><br>
+            </div>
+
+            <div name="Item Namespace">
+                <label for="namespace" class="textbold">Item Namespace:</label>
+                <input type="text" id="namespace" class="textinput"><br>
+            </div>
+
+            <div name="Ingredient Name">
+                <label for="blockName" class="textbold">Ingredient:</label>
+                <input type="text" id="blockName" required="true" class="textinput"><br>
+            </div>
+
+            <div>
+                <label for="result" class="textbold">Result:</label>
+                <input type="text" id="result" required="true" class="textinput"><br>
+                <label for="count" class="textbold">Count:</label>
+                <input type="number" min="1" max="64" id="count" required="true" class="textinput" style="width: 50px">
+            </div>
+
+            <div class="divspacing">
+                <div>
+                    <!--<input type="checkbox" id="block">
+                    <label for="block" class="textbold">Blocks</label>-->
+                    <input type="checkbox" id="slab">
+                    <label for="slab" class="textbold">Slabs</label><br>
+                    <input type="checkbox" id="stairs">
+                    <label for="stairs" class="textbold">Stairs</label><br>
+                    <input type="checkbox" id="wall">
+                    <label for="wall" class="textbold">Walls</label><br>
+                </div>
+
+            <div style="position: absolute; left: 100px; bottom:323px">  
+                <input type="checkbox" id="pillar">
+                <label for="pillar" class="textbold">Pillars</label><br>
+                <input type="checkbox" id="template">
+                <label for="template" class="textbold">File Template</label>
+            </div>      
+            </div>
+
+            <div class="divspacing">
+                <input type="radio" id="mojang" name="naming" required="true">
+                <label for="mojang" class="textbold">Mojang Naming Convention - <i>result</i>_from_<i>ingredient</i>_stonecutting</label><br>
+                <input type="radio" id="custom" name="naming" required="true">
+                <label for="custom" class="textbold">Custom Naming Convention - <i>result</i>_stonecutting</label><br>
+            </div>
+        </div>
+
+        <div name="bottomButtons" class="divspacing">
+            <input type="submit" value="Generate!" id="generateBtn" class="button">
+            <input type="reset" value="Reset All" class="button">
+        </div>
+
+        <p id="errorholder" class="error"></p>
+    </form>
+
+    <div>
+        <label for="saveLocation" class="textbold">Save Location:</label>
+        <input type="image" class="button" id="savebutton" src='../assets/folder.png' style="vertical-align: bottom;">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
+    </div>
+    <script type="text/javascript" src="../functions/save.js"></script>
+    <script type="text/javascript" src="../functions/recipe_cutter.js"></script>
+    <script type="text/javascript" src="../functions/transition.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="page" onload="onLoad()">
+<head>
+<link rel="stylesheet" href="../assets/styling/styles.css">
+</head>
+<body class="transition">
+    <div style="text-align: center;">
+        <a class="button" onclick="transitionToPage('../index.html')">Home Page</a>
+        <a class="button" onclick="transitionToPage('./block_models.html')">Block Models</a>
+        <a class="button" onclick="transitionToPage('./item_models.html')">Item Models</a>
+        <a class="buttondisabled" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
+        <a class="button" onclick="transitionToPage('./advancement.html')">Advancements</a>
+        <a class="button" onclick="transitionToPage('./loot_tables.html')">Loot Tables</a>
+        <div class="dropdown" style="vertical-align: 1px;">
+            <button class="dropbtn" id="dropBtn">Recipes</button>
+            <div class="dropdown-content">
+                <a onclick="transitionToPage('./recipe_cutter.html')">Stonecutter</a>
+                <a onclick="transitionToPage('./recipe_furnace.html')">Furnace</a>
+                <a onclick="transitionToPage('./recipe_table_simple.html')">Crafting Table</a>
+            </div>
+        </div>
+    </div><br>
+
+    <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
+    <p id="body" class="text">
+        Create blockstates for the new blocks!
+    </p>
+
+    <form id="blockstateForm">
+        <div name="Main Inputs">
+            <div name="Mod Name">
+                <label for="modName" class="textbold">Mod Name:</label>
+                <input type="text" id="modName" required="true" class="textinput"><br>
+            </div>
+            
+            <div name="Texture Namespace">
+                <label for="namespace" class="textbold">Texture Namespace:</label>
+                <input type="text" id="namespace" class="textinput"><br>
+            </div>
+
+            <div name="Block Name">
+                <label for="blockName" class="textbold">Block Name:</label>
+                <input type="text" id="blockName" required="true" class="textinput"><br>
+            </div>
+        </div>
+
+        <div class="divspacing">
+            <div>
+                <input type="checkbox" id="block">
+                <label for="block" class="textbold">Blocks</label><br>
+                <input type="checkbox" id="slab">
+                <label for="slab" class="textbold">Slabs</label><br>
+                <input type="checkbox" id="stairs">
+                <label for="stairs" class="textbold">Stairs</label><br>
+            </div>
+
+            <div style="position: absolute; left: 100px; bottom:357px">
+                <input type="checkbox" id="wall">
+                <label for="wall" class="textbold">Walls</label><br>
+                <input type="checkbox" id="pillar">
+                <label for="pillar" class="textbold">Pillars</label><br>
+                <input type="checkbox" id="template">
+                <label for="template" class="textbold">File Template</label>
+            </div>    
+        </div>
+
+        <div name="bottomButtons" class="divspacing">
+            <input type="submit" value="Generate!" id="generateBtn" class="button buttonh">
+            <input type="reset" value="Reset All" class="button buttonh">
+        </div>
+
+        <p id="errorholder" class="error"></p>
+    </form>
+
+    <div>
+        <label for="saveLocation" class="textbold">Save Location:</label>
+        <input type="image" id="savebutton" class="button" src='../assets/folder.png' style="vertical-align: bottom;">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
+    </div><br>
+
+    <script type="text/javascript" src="../functions/blockstates.js"></script>
+    <script type="text/javascript" src="../functions/save.js"></script>
+    <script type="text/javascript" src="../functions/transition.js"></script>
+</body>
+</html>

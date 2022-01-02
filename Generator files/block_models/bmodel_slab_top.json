@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "[example_namespace]:block/[block_name]",
-    "top": "[example_namespace]:block/[block_name]",
-    "side": "[example_namespace]:block/[block_name]"
-  }
-}

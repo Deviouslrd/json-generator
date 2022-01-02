@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../assets/styling/styles.css">
+</head>
+<body style="background: rgb(95, 95, 95);" onload="onLoad()">
+    <div style="text-align: center;">
+        <a class="button" href="../index.html">Home Page</a>
+        <a class="button" href="./block_models.html">Block Models</a>
+        <a class="button" href="./item_models.html">Item Models</a>
+        <a class="button" href="./blockstates.html">Blockstates</a>
+        <a class="button" href="./advancement.html">Advancements</a>
+        <a class="button" href="./loot_tables.html">Loot Tables</a>
+        <div class="dropdown">
+            <button class="dropbtn" id="dropBtn">Recipes</button>
+            <div class="dropdown-content">
+                <a class="buttondisabled" href="recipe_cutter.html">Stonecutter</a>
+                <a href="recipe_furnace.html">Furnace</a>
+                <a href="recipe_table.html">Crafting Table</a>
+            </div>
+        </div>
+    </div>
+    
+    <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
+    <p id="body" class="text">
+        Create stonecutter recipes for your blocks! [COMING SOON]
+    </p>
+
+    <form id="recipeForm">
+        <div name="Main Inputs">
+            <div name="Mod Name">
+                <label for="modName" class="textbold">Mod Name:</label>
+                <input type="text" id="modName" required="true" class="textinput"><br>
+            </div>
+
+            <div name="Item Namespace">
+                <label for="namespace" class="textbold">Item Namespace:</label>
+                <input type="text" id="namespace" class="textinput"><br>
+            </div>
+
+            <div name="Ingredient Name">
+                <label for="blockName" class="textbold">Ingredient:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Input the name of the block you want to make, as you might see it in the inventory, i.e. Birch Logs. Capitals are not necessary.</span>
+                </div>
+                <input type="text" id="blockName" required="true" class="textinput"><br>
+            </div>
+
+            <div>
+                <label for="result" class="textbold">Result:</label>
+                <input type="text" id="result" required="true" class="textinput"><br>
+                <label for="count" class="textbold">Count:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Slabs ignore this.</span>
+                </div>
+                <input type="number" min="1" max="64" id="count" required="true" class="textinput" style="width: 50px">
+            </div>
+
+            <div>
+                
+
+		<input type="checkbox" id="baseBlock">
+                <label for="baseBlock" class="textbold">Base - Block</label>
+                <input type="checkbox" id="baseBlockNamespace">
+                <label for="baseBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="baseSlab">
+                <label for="baseSlab" class="textbold">Base - Slab</label>
+                <input type="checkbox" id="baseSlabNamespace">
+                <label for="baseSlabNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="baseStairs">
+                <label for="baseStairs" class="textbold">Base - Stairs</label>
+                <input type="checkbox" id="baseStairsNamespace">
+                <label for="baseStairsNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="baseWall">
+                <label for="baseWall" class="textbold">Base - Wall</label>
+                <input type="checkbox" id="baseWallNamespace">
+                <label for="baseWallNamespace" class="textbold">Use Namespace</label><br>
+    
+                    <input type="checkbox" id="baseGate">
+                <label for="baseGate" class="textbold">Base - Gate</label>
+                <input type="checkbox" id="baseGateNamespace">
+                <label for="baseGateNamespace" class="textbold">Use Namespace</label><br>
+
+		<input type="checkbox" id="polishedBlock">
+                <label for="polishedBlock" class="textbold">Polished - Block</label>
+                <input type="checkbox" id="polishedBlockNamespace">
+                <label for="polishedBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="polishedSlab">
+                <label for="polishedSlab" class="textbold">Polished - Slab</label>
+                <input type="checkbox" id="polishedSlabNamespace">
+                <label for="polishedSlabNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="polishedStairs">
+                <label for="polishedStairs" class="textbold">Polished - Stairs</label>
+                <input type="checkbox" id="polishedStairsNamespace">
+                <label for="polishedStairsNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="polishedWall">
+                <label for="polishedWall" class="textbold">Polished - Wall</label>
+                <input type="checkbox" id="polishedWallNamespace">
+                <label for="polishedWallNamespace" class="textbold">Use Namespace</label><br>
+    
+                    <input type="checkbox" id="polishedGate">
+                <label for="polishedGate" class="textbold">Polished - Gate</label>
+                <input type="checkbox" id="polishedGateNamespace">
+                <label for="polishedGateNamespace" class="textbold">Use Namespace</label><br>
+
+		<input type="checkbox" id="brickBlock">
+                <label for="brickBlock" class="textbold">Bricks - Block</label>
+                <input type="checkbox" id="brickBlockNamespace">
+                <label for="brickBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="brickSlab">
+                <label for="brickSlab" class="textbold">Bricks - Slab</label>
+                <input type="checkbox" id="brickSlabNamespace">
+                <label for="brickSlabNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="brickStairs">
+                <label for="brickStairs" class="textbold">Bricks - Stairs</label>
+                <input type="checkbox" id="brickStairsNamespace">
+                <label for="brickStairsNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="brickWall">
+                <label for="brickWall" class="textbold">Bricks - Wall</label>
+                <input type="checkbox" id="brickWallNamespace">
+                <label for="brickWallNamespace" class="textbold">Use Namespace</label><br>
+    
+                    <input type="checkbox" id="brickGate">
+                <label for="brickGate" class="textbold">Bricks - Gate</label>
+                <input type="checkbox" id="brickGateNamespace">
+                <label for="brickGateNamespace" class="textbold">Use Namespace</label><br>
+
+		<input type="checkbox" id="cutBlock">
+                <label for="cutBlock" class="textbold">Cut - Block</label>
+                <input type="checkbox" id="cutBlockNamespace">
+                <label for="cutBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="cutSlab">
+                <label for="cutSlab" class="textbold">Cut - Slab</label>
+                <input type="checkbox" id="cutSlabNamespace">
+                <label for="cutSlabNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="cutStairs">
+                <label for="cutStairs" class="textbold">Cut - Stairs</label>
+                <input type="checkbox" id="cutStairsNamespace">
+                <label for="cutStairsNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="cutWall">
+                <label for="cutWall" class="textbold">Cut - Wall</label>
+                <input type="checkbox" id="cutWallNamespace">
+                <label for="cutWallNamespace" class="textbold">Use Namespace</label><br>
+    
+                    <input type="checkbox" id="cutGate">
+                <label for="cutGate" class="textbold">Cut - Gate</label>
+                <input type="checkbox" id="cutGateNamespace">
+                <label for="cutGateNamespace" class="textbold">Use Namespace</label><br>
+
+		<input type="checkbox" id="smoothBlock">
+                <label for="smoothBlock" class="textbold">Smooth - Block</label>
+                <input type="checkbox" id="smoothBlockNamespace">
+                <label for="smoothBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="smoothSlab">
+                <label for="smoothSlab" class="textbold">Smooth - Slab</label>
+                <input type="checkbox" id="smoothSlabNamespace">
+                <label for="smoothSlabNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="smoothStairs">
+                <label for="smoothStairs" class="textbold">Smooth - Stairs</label>
+                <input type="checkbox" id="smoothStairsNamespace">
+                <label for="smoothStairsNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="smoothWall">
+                <label for="smoothWall" class="textbold">Smooth - Wall</label>
+                <input type="checkbox" id="smoothWallNamespace">
+                <label for="smoothWallNamespace" class="textbold">Use Namespace</label><br>
+    
+                    <input type="checkbox" id="smoothGate">
+                <label for="smoothGate" class="textbold">Smooth - Gate</label>
+                <input type="checkbox" id="smoothGateNamespace">
+                <label for="smoothGateNamespace" class="textbold">Use Namespace</label><br>
+
+		                <input type="checkbox" id="chiseledBlock">
+                <label for="chiseledBlock" class="textbold">Chiseled</label>
+                <input type="checkbox" id="chiseledBlockNamespace">
+                <label for="chiseledBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                <input type="checkbox" id="carvedBlock">
+                <label for="carvedBlock" class="textbold">Carved</label>
+                <input type="checkbox" id="carvedBlockNamespace">
+                <label for="carvedBlockNamespace" class="textbold">Use Namespace</label><br>
+    
+                    <input type="checkbox" id="pillar">
+                <label for="pillar" class="textbold">Pillar</label>
+                <input type="checkbox" id="pillarNamespace">
+                <label for="pillarNamespace" class="textbold">Use Namespace</label><br>	
+            </div><br>
+
+            <div>
+                <input type="radio" id="mojang" name="naming" required="true">
+                <label for="mojang" class="textbold">Mojang Naming Convention - <i>result</i>_from_<i>ingredient</i>_stonecutting</label><br>
+                <input type="radio" id="custom" name="naming" required="true">
+                <label for="custom" class="textbold">Custom Naming Convention - <i>result</i>_stonecutting</label><br>
+            </div>
+
+        </div>
+        <div name="bottomButtons">
+            <input type="submit" value="Generate!" id="generateBtn" class="button">
+            <input type="reset" value="Reset All" class="button">
+        </div>
+
+        <p id="errorholder" class="error"></p>
+    </form>
+
+    <div>
+        <label for="saveLocation" class="textbold">Save Location:</label>
+        <input type="image" class="button" id="savebutton" src='../assets/folder.png' style="vertical-align: bottom;">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
+    </div>
+
+    <script type="text/javascript" src="../functions/save.js"></script>
+    <script type="text/javascript" src="../functions/recipe_cutter_cplus.js"></script>
+</body>
+</html>

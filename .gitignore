@@ -1,7 +1,4 @@
 node_modules
-builds
-Git Image.png
-package.json
-useful logs
-Loading Gif
-out
+src-tauri/target
+src-tauri/binaries
+src-tauri/WixTools

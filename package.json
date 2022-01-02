@@ -1,60 +1,23 @@
 {
-    "name": "minecraft-json-generator",
-    "productName": "Minecraft JSON Generator",
-    "version": "1.9.1",
-    "author": "Deviouslrd",
-    "description": "Automatic Minecraft JSON generator.",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Deviouslrd/json-generator"
-    },
-    "main": "main.js",
-    "scripts": {
-        "start": "electron-forge start",
-        "build": "electron-packager ./ \"Minecraft JSON Generator\" --app-version=%npm_package_version% --out=builds --executable-name=minecraftjsongenerator --ignore=/builds --ignore=.gitignore --ignore=README.md --ignore=.eslintrc.json --icon=./assets/icon.ico --overwrite",
-        "package": "electron-forge package",
-        "make": "electron-forge make"
-    },
-    "devDependencies": {
-        "@electron-forge/cli": "^6.0.0-beta.54",
-        "@electron-forge/maker-deb": "^6.0.0-beta.54",
-        "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-        "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-        "@electron-forge/maker-zip": "^6.0.0-beta.54",
-        "electron": "^11.1.1"
-    },
-    "dependencies": {
-        "electron-squirrel-startup": "^1.0.0",
-        "update-electron-app": "^2.0.1"
-    },
-    "config": {
-        "forge": {
-            "packagerConfig": {
-                "icon": "./assets/icon.ico",
-                "ignore": [
-                    ".gitignore",
-                    "out",
-                    "Loading Gif"
-                ]
-            },
-            "makers": [
-                {
-                    "name": "@electron-forge/maker-squirrel",
-                    "config": {
-                        "name": "minecraft-json-generator",
-                        "setupExe": "JSON Generator.exe",
-                        "setupIcon": "./assets/icon.ico",
-                        "loadingGif": "./assets/loading.gif",
-                        "icon": "./assets/icon.ico"
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-zip",
-                    "platforms": [
-                        "darwin"
-                    ]
-                }
-            ]
-        }
-    }
+  "name": "tauri",
+  "version": "2.0.0",
+  "description": "generator but attempted for tauri",
+  "bin": "./src-tauri/app-src/index.js",
+  "pkg": {
+    "assets": [
+      "src/**/*"
+    ]
+  },
+  "scripts": {
+    "tauri": "tauri",
+    "debug": "tauri build -- --debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-beta.10"
+  }
 }
