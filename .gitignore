@@ -1,4 +1,8 @@
 node_modules
+
+# Tauri auto-generated folders
 src-tauri/target
 src-tauri/binaries
 src-tauri/WixTools
+
+src-tauri/app-src/functions/recipe_cutter_cplus.js
