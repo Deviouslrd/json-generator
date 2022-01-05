@@ -13,7 +13,7 @@
     "debug": "tauri build -- --debug"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@tauri-apps/api": "^1.0.0-beta.8"
   },

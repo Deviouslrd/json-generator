@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html class="page" onload="onLoad()">
+<html class="page">
 <head>
 <link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
 <body class="transition">
     <div style="text-align: center;">
@@ -16,7 +17,7 @@
             <div class="dropdown-content">
                 <a onclick="transitionToPage('./recipe_cutter.html')">Stonecutter</a>
                 <a onclick="transitionToPage('./recipe_furnace.html')">Furnace</a>
-                <a class="buttondisabled" onclick="transitionToPage('./recipe_table_simple.html')">Crafting Table</a>
+                <a class="buttondisabled">Crafting Table</a>
             </div>
         </div>
     </div><br>
@@ -27,8 +28,8 @@
     </p>
 
     <div style="text-align: center;">
-        <a class="buttondisabled" href="recipe_table_simple.html">Simple Blocks</a>
-        <a class="button" href="recipe_table.html">Fully Custom</a>
+        <a class="buttondisabled">Simple Blocks</a>
+        <a class="button" onclick="transitionToPage('./recipe_table.html')">Fully Custom</a>
     </div>
 
     <form id="recipeForm">
@@ -67,7 +68,7 @@
                     <label for="chiseled" class="textbold">Chiseled</label><br>
                 </div>
 
-                <div style="position: absolute; left: 100px; bottom:306px">
+                <div style="position: absolute; left: 100px; bottom:358px">
                     <input type="checkbox" id="cut">
                     <label for="cut" class="textbold">Cut</label><br>
 
@@ -79,7 +80,7 @@
                     
                     <input type="checkbox" id="template">
                     <label for="template" class="textbold">File Template</label>
-                </div>    
+                </div>
             </div>
         </div>
         
@@ -88,7 +89,7 @@
             <input type="reset" value="Reset All" class="button">
         </div>
 
-        <p id="errorholder" class="error"></p>
+        <p id="error" class="error"></p>
     </form>
 
     <div>

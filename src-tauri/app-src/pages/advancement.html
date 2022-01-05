@@ -2,6 +2,7 @@
 <html class="page" onload="onLoad()">
 <head>
 <link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
 <body class="transition">
     <div style="text-align: center;">
@@ -9,7 +10,7 @@
         <a class="button" onclick="transitionToPage('./block_models.html')">Block Models</a>
         <a class="button" onclick="transitionToPage('./item_models.html')">Item Models</a>
         <a class="button" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
-        <a class="buttondisabled" onclick="transitionToPage('./advancements.html')">Advancements</a>
+        <a class="buttondisabled">Advancements</a>
         <a class="button" onclick="transitionToPage('./loot_tables.html')">Loot Tables</a>
         <div class="dropdown" style="vertical-align: 1px;">
             <button class="dropbtn" id="dropBtn">Recipes</button>
@@ -57,7 +58,7 @@
             <input type="reset" value="Reset All" class="button">
         </div>
 
-        <p id="errorholder" class="error"></p>
+        <p id="error" class="error"></p>
     </form>
 
     <div>

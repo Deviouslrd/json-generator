@@ -1,4 +1,8 @@
-//const fixers = require('../functions/fixers.js');
+let fs = window.__TAURI__.fs;
+import fixers from './fixers.js';
+
+const observer = new MutationObserver(function(mutationList, observer) { for (const mutation of mutationList) { if (mutation.type === 'childList') document.getElementById("error").classList.add("errortransition"); }});
+observer.observe(document.getElementById("error"), {childList: true});
 
 document.getElementById("itemModelForm").onsubmit = form => {
     form.preventDefault();
@@ -24,21 +28,17 @@ document.getElementById("itemModelForm").onsubmit = form => {
     localStorage.checkStairs = document.getElementById("stairs").checked;
     localStorage.checkWall = document.getElementById("wall").checked;
     localStorage.checkPillar = document.getElementById("pillar").checked;
+    localStorage.checkTemplate = document.getElementById("template").checked;
     
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No Location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
-    //blockName = blockName.fixers(blockName);
+    blockName = fixers(blockName);
     modName = modName.toLowerCase().trim().replace(/ +/g, '_');
     itemNamespace =  itemNamespace.toLowerCase().trim().replace(/ +/g, '_');
 
-    if (!fs.existsSync(`${filepath}\\assets\\${modName}\\models\\item`)) {
-        fs.mkdir(`${filepath}\\assets\\${modName}\\models\\item`, { recursive: true }, (err) => {
-            if (err) throw err;
-            console.log('Made the models/item/ folder.');
-        });
-    }
+    fs.createDir(`${filepath}\\assets\\${modName}\\models\\item`, { recursive: true });
 
     setTimeout(() => {
         // Block Creator
@@ -49,9 +49,11 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the block file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\models\\item\\${blockName}.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -63,9 +65,11 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the slab file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\models\\item\\${blockName}_slab.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -77,9 +81,11 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the stairs file.');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\models\\item\\${blockName}_stairs.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -91,9 +97,11 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the pillar file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\models\\item\\${blockName}_pillar.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -106,9 +114,11 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFileSync(`${filepath}\\assets\\${modName}\\models\\item\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the wall file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\models\\item\\${blockName}_wall.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -120,9 +130,11 @@ document.getElementById("itemModelForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFileSync(`${filepath}\\assets\\${modName}\\models\\item\\item_model_template.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the item model template file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\models\\item\\item_model_template.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -130,11 +142,14 @@ document.getElementById("itemModelForm").onsubmit = form => {
             document.getElementById("slab").checked === false &&
             document.getElementById("stairs").checked === false &&
             document.getElementById("wall").checked === false &&
-            document.getElementById("pillar").checked === false) {
-                return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+            document.getElementById("pillar").checked === false &&
+            document.getElementById("template").checked === false) {
+                document.getElementById("error").classList.add("errortransition");
+                return document.getElementById("error").innerHTML = "Error: No boxes were selected!";
         }
-        
-        document.getElementById("errorholder").innerHTML = "";
+
+        document.getElementById("error").classList.remove("errortransition");
+        document.getElementById("error").innerHTML = "";
         document.getElementById("generateBtn").value = "Generated!";
 
         setTimeout(() => {

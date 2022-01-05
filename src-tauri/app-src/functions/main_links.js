@@ -1,32 +1,18 @@
-function gitLink () {
-    require("electron").shell.openExternal("https://github.com/Deviouslrd/json-generator");
-}
+let shell = window.__TAURI__.shell;
 
-function discLink () {
-    require("electron").shell.openExternal("https://discord.gg/neXPNSY");
-}
+document.getElementById("gitlink").addEventListener('click', async function gitLink () {
+    await shell.open("https://github.com/Deviouslrd/json-generator/tree/tauri");
+});
+
+
+document.getElementById("disclink").addEventListener('click', async () => {
+    await shell.open("https://discord.gg/neXPNSY");
+});
 
 function helpLink () {
-    const { BrowserWindow } = require('electron').remote;
-
-    const win = new BrowserWindow({
-        show: false,
-        width: 850, 
-        height: 600,
-        title: "Generator Help",
-        webPreferences: {
-            nodeIntegration: true
-        }
-    });
-
-    win.loadFile('pages/help.html');
-    win.once('ready-to-show', () => {
-        win.show();
-    });
+    //Put help page on domain
 }
 
-function changeVersion () {
-    const version = require("../../../package.json");
-    console.log(version);
-    document.getElementById("header1").innerHTML = `Minecraft JSON Generator Tool vA`;
-}
+window.onload = async function changeVersion () {
+    document.getElementById("header1").innerHTML = `Minecraft JSON Generator Tool v${await window.__TAURI__.app.getVersion()}`;
+};

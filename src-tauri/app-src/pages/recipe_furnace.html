@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html class="page" onload="onLoad()">
+<html class="page">
 <head>
 <link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
 <body class="transition">
     <div style="text-align: center;">
@@ -15,7 +16,7 @@
             <button class="dropbtn" id="dropBtn">Recipes</button>
             <div class="dropdown-content">
                 <a onclick="transitionToPage('./recipe_cutter.html')">Stonecutter</a>
-                <a class="buttondisabled" onclick="transitionToPage('./recipe_furnace.html')">Furnace</a>
+                <a class="buttondisabled">Furnace</a>
                 <a onclick="transitionToPage('./recipe_table_simple.html')">Crafting Table</a>
             </div>
         </div>
@@ -73,7 +74,7 @@
             <input type="reset" value="Reset All" class="button">
         </div>
 
-        <p id="errorholder" class="error"></p>
+        <p id="error" class="error"></p>
     </form>
 
     <div>

@@ -231,7 +231,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.count = count;
     
     if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
     ingredient = ingredient.toLowerCase().trim().split(/ +/).join('_');
@@ -1731,7 +1731,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         }
         
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";

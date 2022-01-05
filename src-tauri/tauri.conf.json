@@ -1,7 +1,7 @@
 {
   "package": {
-    "productName": "tauri",
-    "version": "0.1.0"
+    "productName": "json-generator",
+    "version": "1.0.0b1"
   },
   "build": {
     "distDir": "app-src",
@@ -14,7 +14,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.deviouslrd.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -50,19 +50,25 @@
       "active": false
     },
     "allowlist": {
-        "fs": {
-          "all": true,
-          "writeFile": true,
-          "readDir": true,
-          "createDir": true,
-          "renameFile": true
+      "fs": {
+        "all": true,
+        "writeFile": true,
+        "readDir": true,
+        "createDir": true,
+        "renameFile": true
+      },
+      "shell": {
+        "open": true
+      },
+      "dialog": {
+        "open": true
       }
     },
     "windows": [
       {
-        "title": "jsongenerator",
+        "title": "Minecraft JSON Generator",
         "width": 830,
-        "height": 650,
+        "height": 700,
         "resizable": false,
         "fullscreen": false
       }

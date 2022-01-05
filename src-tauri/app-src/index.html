@@ -2,14 +2,8 @@
 <html class="page">
 <head>
 <link rel="stylesheet" href="./assets/styling/styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
-<script src="./functions/main_links.js"></script>
-<script>
-    window.onload = title();
-    function title () {
-        console.log("yo");
-    }
-</script>
 <body class="transition">
     <h1 class="header1" id="header1">Minecraft Mod JSON Creation Tool `version`</h1>
     <p id="body" class="text">
@@ -37,11 +31,11 @@
 
     <div style="text-align: center;">
         <label class="textbold" style="font-size: 20px;">Social Links</label><br>
-        <input type="image" src="./assets/GitHub-Mark.svg" onclick="gitLink()" alt="https://github.com/Deviouslrd/json-generator">
-        <input type="image" style="vertical-align: -5px;" src="./assets/Discord-Logo-White.svg" alt="https://discord.gg/neXPNSY">
+        <input type="image" src="./assets/github.svg" id="gitlink" alt="https://github.com/Deviouslrd/json-generator">
+        <input type="image" style="vertical-align: -5px;" id="disclink" src="./assets/discord.svg" alt="https://discord.gg/neXPNSY">
     </div>
 
-    <!--<script type="text/javascript" src="./functions/main_links.js"></script>-->
     <script type="text/javascript" src="../functions/transition.js"></script>
+    <script type="module" src="./functions/main_links.js"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
-const fs = require('fs');
+let fs = window.__TAURI__.fs;
+
+const observer = new MutationObserver(function(mutationList, observer) { for (const mutation of mutationList) { if (mutation.type === 'childList') document.getElementById("error").classList.add("errortransition"); }});
+observer.observe(document.getElementById("error"), {childList: true});
 
 document.getElementById("recipeForm").onsubmit = form => {
     form.preventDefault();
@@ -22,22 +25,18 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.result = result;
     localStorage.namespace = itemNamespace;
     localStorage.count = count;
+    localStorage.checkTemplate = document.getElementById("template").checked;
     
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No Location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
-    result = result.toLowerCase().trim();
-    ingredient = ingredient.toLowerCase().trim();
+    result = result.toLowerCase().trim().replace(/ +/g, '_');
+    ingredient = ingredient.toLowerCase().trim().replace(/ +/g, '_');
     modName = modName.toLowerCase().trim().replace(/ +/g, '_');
     itemNamespace = itemNamespace.toLowerCase().replace(/ +/g, '_');
 
-    if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
-        fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
-            if (err) throw err;
-            console.log('Made the stonecutting folder structure.');
-        });
-    }
+    fs.createDir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true });
 
     setTimeout(() => {
         // Slab Creator
@@ -65,9 +64,11 @@ document.getElementById("recipeForm").onsubmit = form => {
                 localStorage.namingConvention = "custom";
             }
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the slab stonecutter recipe.');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${filename}.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -96,9 +97,12 @@ document.getElementById("recipeForm").onsubmit = form => {
                 localStorage.namingConvention = "custom";
             }
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the stairs stonecutter recipe.');
+
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${filename}.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -127,9 +131,11 @@ document.getElementById("recipeForm").onsubmit = form => {
                 localStorage.namingConvention = "custom";
             }
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the pillar stonecutter recipe.');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${filename}.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -158,9 +164,11 @@ document.getElementById("recipeForm").onsubmit = form => {
                 localStorage.namingConvention = "custom";
             }
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${filename}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the wall stonecutter recipe.');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${filename}.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -177,9 +185,11 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\stonecutter_recipe_template.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the stonecutter recipe template.');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\stonecutter_recipe_template.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -187,12 +197,15 @@ document.getElementById("recipeForm").onsubmit = form => {
         document.getElementById("slab").checked === false &&
         document.getElementById("stairs").checked === false &&
         document.getElementById("wall").checked === false &&
-        document.getElementById("pillar").checked === false) {
-            return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+        document.getElementById("pillar").checked === false &&
+        document.getElementById("template").checked === false) {
+            document.getElementById("error").classList.add("errortransition");
+            return document.getElementById("error").innerHTML = "Error: No boxes were selected!";
         }
 
+        document.getElementById("error").classList.remove("errortransition");
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";

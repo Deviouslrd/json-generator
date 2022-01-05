@@ -55,5 +55,5 @@ function test () {
 });*/
 
 function test2 () {
-    console.log(window.__TAURI__.window.availableMonitors())
+    console.log("yes");
 }

@@ -1,0 +1,18 @@
+.bmodellabel {
+    display: inline-block;
+    width: 125px;
+    font-family: minecraft;
+    font-size: 16px;
+    color: white;
+}
+
+.inputdisabled {
+    transition: opacity 0.5s;
+    opacity: 0.6;
+    cursor: default;
+    border-color: rgb(122, 122, 122);
+}
+
+.fade {
+    transition: opacity 0.5s;
+}

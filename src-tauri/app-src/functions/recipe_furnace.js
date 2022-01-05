@@ -1,4 +1,7 @@
-const fs = require('fs');
+let fs = window.__TAURI__.fs;
+
+const observer = new MutationObserver(function(mutationList, observer) { for (const mutation of mutationList) { if (mutation.type === 'childList') document.getElementById("error").classList.add("errortransition"); }});
+observer.observe(document.getElementById("error"), {childList: true});
 
 document.getElementById("recipeForm").onsubmit = form => {
     form.preventDefault();
@@ -24,9 +27,10 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.xp = xp;
     localStorage.cookTime = cookTime;
     localStorage.namespace = itemNamespace;
+    localStorage.checkTemplate = document.getElementById("template").checked;
     
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No Location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
     ingredient = ingredient.toLowerCase().trim().replace(/ +/g, '_');
@@ -41,12 +45,7 @@ document.getElementById("recipeForm").onsubmit = form => {
         ingredient = ingredient.substring(0, ingredient.length - 1);
     }
 
-    if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
-        fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
-            if (err) throw err;
-            console.log('Made the recipe folder structure.');
-        });
-    }
+    fs.createDir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true });
 
     setTimeout(() => {
         const jsonProduct = {
@@ -74,20 +73,24 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\furnace_recipe_template.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made furnace recipe template.');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\furnace_recipe_template.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
-        
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}_furnace.json`, jsonContent, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('Made furnace recipe');
+        fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${result}_furnace.json`}, {}, (err) => {
+            if (err) {
+                document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                throw err;
+            }
         });
-            
+
+        document.getElementById("error").classList.remove("errortransition");
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";

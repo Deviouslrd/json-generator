@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html class="page" onload="onLoad()">
+<html class="page">
 <head>
 <link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
 <body class="transition">
     <div style="text-align: center;">
         <a class="button" onclick="transitionToPage('../index.html')">Home Page</a>
         <a class="button" onclick="transitionToPage('./block_models.html')">Block Models</a>
-        <a class="buttondisabled" onclick="transitionToPage('./item_models.html')">Item Models</a>
+        <a class="buttondisabled">Item Models</a>
         <a class="button" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
         <a class="button" onclick="transitionToPage('./advancement.html')">Advancements</a>
         <a class="button" onclick="transitionToPage('./loot_tables.html')">Loot Tables</a>
@@ -53,7 +54,7 @@
                     <label for="stairs" class="textbold">Stairs</label><br>
                 </div>
 
-                <div style="position: absolute; left: 100px; bottom:357px">
+                <div style="position: absolute; left: 100px; bottom:410px">
                     <input type="checkbox" id="wall">
                     <label for="wall" class="textbold">Walls</label><br>
                     <input type="checkbox" id="pillar">
@@ -69,7 +70,7 @@
             <input type="reset" value="Reset All" class="button">
         </div>
 
-        <p id="errorholder" class="error"></p>
+        <p id="error" class="error"></p>
     </form>
 
     <div>
@@ -78,7 +79,7 @@
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div>
 
-    <script type="text/javascript" src="../functions/item_models.js"></script>
+    <script type="module" src="../functions/item_models.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
     <script type="text/javascript" src="../functions/transition.js"></script>
 </body>

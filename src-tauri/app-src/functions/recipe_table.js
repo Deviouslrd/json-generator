@@ -1,9 +1,4 @@
-const fs = require('fs');
-
-function dropdown (id, parent) {
-    const test = document.getElementById(id).innerHTML;
-    document.getElementById(parent.id).firstElementChild.innerHTML = test;
-}
+let fs = window.__TAURI__.fs;
 
 function shapedMode () {
     document.getElementById("leftTop").classList.remove("craftdisabled");
@@ -66,6 +61,10 @@ function inventoryMode () {
     localStorage.tableMode = "inventory";
 }
 
+document.getElementById("shaped").addEventListener('click', shapedMode, false);
+document.getElementById("shapeless").addEventListener('click', shapelessMode, false);
+document.getElementById("inventory").addEventListener('click', inventoryMode, false);
+
 document.getElementById("recipeForm").onsubmit = form => {
     form.preventDefault();
 
@@ -86,6 +85,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.namespace = itemNamespace;
     localStorage.result = result;
     localStorage.count = count;
+    localStorage.checkTemplate = document.getElementById("template").checked;
 
     modName = modName.toLowerCase().replace(/ +/g, '_');
     result = result.toLowerCase().replace(/ +/g, '_');
@@ -111,18 +111,18 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.centerBottom = centerBottom;
     localStorage.rightBottom = rightBottom;
 
-    leftTop = leftTop.replace(/[\s⠀]/, ' ');
-    centerTop = centerTop.replace(/[\s⠀]/, ' ');
-    rightTop = rightTop.replace(/[\s⠀]/, ' ');
-    leftCenter = leftCenter.replace(/[\s⠀]/, ' ');
-    center = center.replace(/[\s⠀]/, ' ');
-    rightCenter = rightCenter.replace(/[\s⠀]/, ' ');
-    leftBottom = leftBottom.replace(/[\s⠀]/, ' ');
-    centerBottom = centerBottom.replace(/[\s⠀]/, ' ');
-    rightBottom = rightBottom.replace(/[\s⠀]/, ' ');
+    leftTop = leftTop.replace(/[\s.]/, ' ');
+    centerTop = centerTop.replace(/[\s.]/, ' ');
+    rightTop = rightTop.replace(/[\s.]/, ' ');
+    leftCenter = leftCenter.replace(/[\s.]/, ' ');
+    center = center.replace(/[\s.]/, ' ');
+    rightCenter = rightCenter.replace(/[\s.]/, ' ');
+    leftBottom = leftBottom.replace(/[\s.]/, ' ');
+    centerBottom = centerBottom.replace(/[\s.]/, ' ');
+    rightBottom = rightBottom.replace(/[\s.]/, ' ');
 
     let inputString = `${leftTop} ${centerTop} ${rightTop} ${leftCenter} ${center} ${rightCenter} ${leftBottom} ${centerBottom} ${rightBottom}`;
-    inputString = inputString.replace(/[\s⠀]/, ' ');
+    inputString = inputString.replace(/[\s.]/, ' ');
 
     var rInput = document.getElementById("r").value;
     var sInput = document.getElementById("s").value;
@@ -154,16 +154,11 @@ document.getElementById("recipeForm").onsubmit = form => {
     yInput = yInput.toLowerCase().replace(/ +/g, '_');
     zInput = zInput.toLowerCase().replace(/ +/g, '_');
 
-    if (document.getElementById("saveLocation").value === 'No location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
-    if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
-        fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
-            if (err) throw err;
-            console.log('Made the recipe folder structure.');
-        });
-    }
+    fs.createDir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true });
 
     if (document.getElementById("shaped").checked === true) {
         const jsonProduct = {
@@ -220,13 +215,15 @@ document.getElementById("recipeForm").onsubmit = form => {
     
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}.json`, jsonContent, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('Made shaped table recipe');
+        fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${result}.json`}, {}, (err) => {
+            if (err) {
+                document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                throw err;
+            }
         });
 
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";
@@ -283,13 +280,15 @@ document.getElementById("recipeForm").onsubmit = form => {
     
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}.json`, jsonContent, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('Made shapeless table recipe');
+        fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${result}.json`}, {}, (err) => {
+            if (err) {
+                document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                throw err;
+            }
         });
 
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";
@@ -330,13 +329,16 @@ document.getElementById("recipeForm").onsubmit = form => {
     
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${result}.json`, jsonContent, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('Made inventory recipe');
+        fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${result}.json`}, {}, (err) => {
+            if (err) {
+                document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                throw err;
+            }
         });
 
+        document.getElementById("error").classList.remove("errortransition");
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";

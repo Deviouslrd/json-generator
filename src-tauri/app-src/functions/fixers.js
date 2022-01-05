@@ -3,7 +3,7 @@
 
 // This module slices and formats the output correctly for use, removing the need to contain that code in the main function file.
 
-module.exports = function (blockName) {
+export default function (blockName) {
     let blockPara = blockName.toLowerCase();
 
     if (blockPara.indexOf('bricks') >= 0) {
@@ -29,4 +29,4 @@ module.exports = function (blockName) {
     blockPara = blockPara.replace(/\s+/g, ' ').trim().replace(/ +/g, '_');
     
     return blockPara;
-};
+}

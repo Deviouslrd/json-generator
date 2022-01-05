@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html class="page" onload="onLoad()">
+<html class="page">
 <head>
 <link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="stylesheet" href="../assets/styling/block_model_styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
-<script type="text/javascript" src="../functions/save.js"></script>
 <body class="transition">
     <div style="text-align: center;">
         <a class="button" onclick="transitionToPage('../index.html')">Home Page</a>
-        <a class="buttondisabled" onclick="transitionToPage('./block_models.html')">Block Models</a>
+        <a class="buttondisabled">Block Models</a>
         <a class="button" onclick="transitionToPage('./item_models.html')">Item Models</a>
         <a class="button" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
         <a class="button" onclick="transitionToPage('./advancement.html')">Advancements</a>
@@ -58,27 +59,27 @@
 
                 <div name="Top Texture"> <!-- Top Textures (3 & 6 texture variants)-->
                     <label for="topTexture" class="bmodellabel" id="topLabel">Top Texture:</label>
-                    <input type="text" id="topTexture" required="true" class="textinput"><br>
+                    <input type="text" id="topTexture" required="true" class="textinput fade"><br>
                 </div>
 
                 <div name="Side Texture"> <!-- Side Texture (3 texture variant) & North Texture (6 texture variant) -->
                     <label for="sideTexture" class="bmodellabel" id="sideLabel">Side Texture:</label>
-                    <input type="text" id="sideTexture" required="true" class="textinput"><br>
+                    <input type="text" id="sideTexture" required="true" class="textinput fade"><br>
                 </div>
 
                 <div name="East Texture">
                     <label for="eastTexture" class="bmodellabel" id="eastLabel">East Texture:</label>
-                    <input type="text" id="eastTexture" required="true" class="textinput"><br>
+                    <input type="text" id="eastTexture" required="true" class="textinput fade"><br>
                 </div>
 
                 <div name="South Texture">
                     <label for="southTexture" class="bmodellabel" id="southLabel">South Texture:</label>
-                    <input type="text" id="southTexture" required="true" class="textinput"><br>
+                    <input type="text" id="southTexture" required="true" class="textinput fade"><br>
                 </div>
                 
                 <div name="West Texture">
                     <label for="westTexture" class="bmodellabel" id="westLabel">West Texture:</label>
-                    <input type="text" id="westTexture" required="true" class="textinput"><br>
+                    <input type="text" id="westTexture" required="true" class="textinput fade"><br>
                 </div>
             </div>
         </div>
@@ -93,7 +94,7 @@
                 <label for="stairs" class="textbold labelspace">Stairs</label><br>
             </div>
             
-            <div style="position: absolute; left: 100px; bottom:123px">
+            <div style="position: absolute; left: 100px; bottom:185px">
                 <input type="checkbox" id="wall">
                 <label for="wall" class="textbold">Walls</label><br>
                 <input type="checkbox" id="pillar">
@@ -108,18 +109,17 @@
             <input type="reset" value="Reset All" class="button">
         </div>
 
-        <p id="errorholder" class="error"></p>
+        <p id="error" class="error"></p>
     </form>
 
     <div>
         <label for="saveLocation" class="textbold">Save Location:</label>
         <input type="image" class="savebutton" id="savebutton" src='../assets/folder.png' style="vertical-align: bottom;">
-        <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
+        <input disabled type="text" id="saveLocation" class="savelocation" value="No location" style="vertical-align: 1px;">
     </div>
     
     <script type="module" src="../functions/block_models.js"></script>
-    <script type="text/javascript" src="../functions/save.js"></script>
-    <!--<script type="module" src="../functions/savebutton.js"></script>-->
     <script type="text/javascript" src="../functions/transition.js"></script>
+    <script type="text/javascript" src="../functions/save.js"></script>
 </body>
 </html>

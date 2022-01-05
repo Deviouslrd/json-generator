@@ -1,4 +1,8 @@
-import fixers from './fixers.js'
+let fs = window.__TAURI__.fs;
+import fixers from './fixers.js';
+
+const observer = new MutationObserver(function(mutationList, observer) { for (const mutation of mutationList) { if (mutation.type === 'childList') document.getElementById("error").classList.add("errortransition"); }});
+observer.observe(document.getElementById("error"), {childList: true});
 
 document.getElementById("advanceForm").onsubmit = form => {
     form.preventDefault();
@@ -9,8 +13,8 @@ document.getElementById("advanceForm").onsubmit = form => {
     var modName = document.getElementById("modName").value;
     var triggerName = document.getElementById("triggerName").value;
     
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No Location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
     var itemNamespace;
@@ -25,6 +29,7 @@ document.getElementById("advanceForm").onsubmit = form => {
     localStorage.modName = modName;
     localStorage.triggerName = triggerName;
     localStorage.namespace = itemNamespace;
+    localStorage.checkTemplate = document.getElementById("template").checked;
 
     blockName = fixers(blockName);
     triggerName = fixers(triggerName);
@@ -58,16 +63,13 @@ document.getElementById("advanceForm").onsubmit = form => {
     
     const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-    if (!fs.existsSync(`${filepath}\\data\\${modName}\\advancements`)) {
-        fs.mkdir(`${filepath}\\data\\${modName}\\advancements`, { recursive: true }, (err) => {
-            if (err) throw err;
-            console.log('Made the advancements folder.');
-        });
-    }
+    fs.createDir(`${filepath}\\data\\${modName}\\advancements`, { recursive: true });
 
-    fs.writeFile(`${filepath}\\data\\${modName}\\advancements\\${blockName}.json`, jsonContent, 'utf8', (err) => {
-        if (err) throw err;
-        console.log('Made advancement file.');
+    fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\advancements\\${blockName}.json`}, {}, (err) => {
+        if (err) {
+            document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+            throw err;
+        }
     });
 
     if (document.getElementById("template").checked === true) {
@@ -94,14 +96,17 @@ document.getElementById("advanceForm").onsubmit = form => {
 
         const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-        fs.writeFile(`${filepath}\\data\\${modName}\\advancements\\advancement_template.json`, jsonContent, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('Made advancement template file.');
+        fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\advancements\\advancement_template.json`}, {}, (err) => {
+            if (err) {
+                document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                throw err;
+            }
         });
     }
-    
+
+    document.getElementById("error").classList.remove("errortransition");
     document.getElementById("generateBtn").value = "Generated!";
-    document.getElementById("errorholder").innerHTML = "";
+    document.getElementById("error").innerHTML = "";
 
     setTimeout(() => {
         document.getElementById("generateBtn").value ="Generate!";

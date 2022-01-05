@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html class="page" onload="onLoad()">
+<html class="page">
 <head>
 <link rel="stylesheet" href="../assets/styling/styles.css">
+<link rel="shortcut icon" href="#"/>
 </head>
 <body class="transition">
     <div style="text-align: center;">
         <a class="button" onclick="transitionToPage('../index.html')">Home Page</a>
         <a class="button" onclick="transitionToPage('./block_models.html')">Block Models</a>
         <a class="button" onclick="transitionToPage('./item_models.html')">Item Models</a>
-        <a class="buttondisabled" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
+        <a class="buttondisabled">Blockstates</a>
         <a class="button" onclick="transitionToPage('./advancement.html')">Advancements</a>
         <a class="button" onclick="transitionToPage('./loot_tables.html')">Loot Tables</a>
         <div class="dropdown" style="vertical-align: 1px;">
@@ -23,7 +24,7 @@
 
     <h1 class="header1">Minecraft Mod JSON Creation Tool</h1>
     <p id="body" class="text">
-        Create blockstates for the new blocks!
+        Create Blockstates for the new blocks!
     </p>
 
     <form id="blockstateForm">
@@ -54,7 +55,7 @@
                 <label for="stairs" class="textbold">Stairs</label><br>
             </div>
 
-            <div style="position: absolute; left: 100px; bottom:357px">
+            <div style="position: absolute; left: 100px; bottom:410px">
                 <input type="checkbox" id="wall">
                 <label for="wall" class="textbold">Walls</label><br>
                 <input type="checkbox" id="pillar">
@@ -69,7 +70,7 @@
             <input type="reset" value="Reset All" class="button buttonh">
         </div>
 
-        <p id="errorholder" class="error"></p>
+        <p id="error" class="error"></p>
     </form>
 
     <div>
@@ -78,7 +79,7 @@
         <input disabled type="text" id="saveLocation" class="savelocation" value="No location">
     </div><br>
 
-    <script type="text/javascript" src="../functions/blockstates.js"></script>
+    <script type="module" src="../functions/blockstates.js"></script>
     <script type="text/javascript" src="../functions/save.js"></script>
     <script type="text/javascript" src="../functions/transition.js"></script>
 </body>

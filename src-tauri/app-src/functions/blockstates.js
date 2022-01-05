@@ -1,4 +1,8 @@
-//const fixers = require('../functions/fixers.js');
+let fs = window.__TAURI__.fs;
+import fixers from './fixers.js';
+
+const observer = new MutationObserver(function(mutationList, observer) { for (const mutation of mutationList) { if (mutation.type === 'childList') document.getElementById("error").classList.add("errortransition"); }});
+observer.observe(document.getElementById("error"), {childList: true});
 
 document.getElementById("blockstateForm").onsubmit = form => {
     form.preventDefault();
@@ -24,21 +28,17 @@ document.getElementById("blockstateForm").onsubmit = form => {
     localStorage.checkStairs = document.getElementById("stairs").checked;
     localStorage.checkWall = document.getElementById("wall").checked;
     localStorage.checkPillar = document.getElementById("pillar").checked;
+    localStorage.checkTemplate = document.getElementById("template").checked;
     
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No Location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
     textureNamespace = textureNamespace.toLowerCase().trim().split(/ +/).join('_');
-    blockName = blockName.fixers(blockName);
+    blockName = fixers(blockName);
     modName = modName.toLowerCase().trim().split(/ +/).join('_');
 
-    if (!fs.existsSync(`${filepath}\\assets\\${modName}\\blockstates`)) {
-        fs.mkdir(`${filepath}\\assets\\${modName}\\blockstates`, { recursive: true}, (err) => {
-            if (err) throw err;
-            console.log('Made the blockstates folder.');
-        });
-    }
+    fs.createDir(`${filepath}\\assets\\${modName}\\blockstates`, { recursive: true });
 
     setTimeout(() => {
         // Block Creator
@@ -49,9 +49,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made block blockstate file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\blockstates\\${blockName}.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -73,9 +75,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_slab.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made slab blockstate file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\blockstates\\${blockName}_slab.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -167,9 +171,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_stairs.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made stairs blockstate file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\blockstates\\${blockName}_stairs.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -199,9 +205,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_wall.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made wall blockstate file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\blockstates\\${blockName}_wall.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -226,9 +234,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\${blockName}_pillar.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made wall blockstate file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\blockstates\\${blockName}_pillar.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -240,9 +250,11 @@ document.getElementById("blockstateForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\assets\\${modName}\\blockstates\\blockstate_template.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made blockstate template file');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\assets\\${modName}\\blockstates\\blockstate_template.json`}, {}, (err) => {
+                if (err) {
+                    document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                    throw err;
+                }
             });
         }
 
@@ -250,12 +262,15 @@ document.getElementById("blockstateForm").onsubmit = form => {
             document.getElementById("slab").checked === false &&
             document.getElementById("stairs").checked === false &&
             document.getElementById("wall").checked === false &&
-            document.getElementById("pillar").checked === false) {
-                return document.getElementById("errorholder").innerHTML = "Error: No boxes were selected!";
+            document.getElementById("pillar").checked === false &&
+            document.getElementById("template").checked === false) {
+                document.getElementById("error").classList.add("errortransition");
+                return document.getElementById("error").innerHTML = "Error: No boxes were selected!";
         }
-            
+        
+        document.getElementById("error").classList.remove("errortransition");
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";

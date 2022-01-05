@@ -1,4 +1,4 @@
-function onLoad () {
+window.onload = function pageLoad () {
     setTimeout(() => {
         // Input boxes present on nearly all pages
         if (localStorage.blockName && document.getElementById("blockName")) {
@@ -53,6 +53,10 @@ function onLoad () {
 
         if (localStorage.checkPillar === "true" && document.getElementById("pillar")) {
             document.getElementById("pillar").checked = true;
+        }
+
+        if (localStorage.checkTemplate === "true" && document.getElementById("template")) {
+            document.getElementById("template").checked = true;
         }
 
         // Other Boxes
@@ -278,4 +282,30 @@ function onLoad () {
 
     }, 25);
 
-}
+};
+
+document.getElementById("savebutton").addEventListener('click', async () => {
+    let defaultPath = null;
+    let filter = null;
+
+    let filePath = window.__TAURI__.dialog.open({
+        defaultPath,
+        filters: filter
+        ? [
+            {
+            name: "Tauri Example",
+            extensions: filter.split(",").map((f) => f.trim()),
+            },
+        ]
+        : [],
+        directory: true
+    });
+
+    if (await filePath === null) {
+        return document.getElementById("saveLocation").value = localStorage.path;
+    } else {
+        document.getElementById("saveLocation").value = await filePath;
+        localStorage.path = await filePath; 
+    }
+    
+});

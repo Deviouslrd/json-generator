@@ -1,4 +1,7 @@
-const fs = require('fs');
+let fs = window.__TAURI__.fs;
+
+const observer = new MutationObserver(function(mutationList, observer) { for (const mutation of mutationList) { if (mutation.type === 'childList') document.getElementById("error").classList.add("errortransition"); }});
+observer.observe(document.getElementById("error"), {childList: true});
 
 document.getElementById("recipeForm").onsubmit = form => {
     form.preventDefault();
@@ -18,21 +21,17 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.modName = modName;
     localStorage.blockName = ingredient;
     localStorage.namespace = itemNamespace;
+    localStorage.checkTemplate = document.getElementById("template").checked;
 
-    if (document.getElementById("saveLocation").value === 'No Location') {
-        return document.getElementById("errorholder").innerHTML = `Error: No save location given!`;
+    if (document.getElementById("saveLocation").value === 'No Location' || !localStorage.path) {
+        return document.getElementById("error").innerHTML = `Error: No save location given!`;
     }
 
     ingredient = ingredient.toLowerCase().trim().replace(/ +/g, '_');
     modName = modName.toLowerCase().trim().replace(/ +/g, '_');
     itemNamespace = itemNamespace.toLowerCase().trim().replace(/ +/g, '_');
 
-    if (!fs.existsSync(`${filepath}\\data\\${modName}\\recipes`)) {
-        fs.mkdir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true}, (err) => {
-            if (err) throw err;
-            console.log('Made the recipe folder structure.');
-        });
-    }
+    fs.createDir(`${filepath}\\data\\${modName}\\recipes`, { recursive: true });
 
     setTimeout(() => {
         if (document.getElementById("slab").checked === true) {
@@ -54,10 +53,11 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_slab.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made slab table recipe');
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${finalBlock}_slab.json`}, {}, (err) => {
+              if (err) {
+                  document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+                  throw err;
+              }
             });
         }
 
@@ -80,11 +80,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_stairs.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made stair table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${finalBlock}_stairs.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("wall").checked === true) {
@@ -106,11 +107,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_wall.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made wall table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${finalBlock}_wall.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("pillar").checked === true) {
@@ -132,11 +134,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\${finalBlock}_pillar.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made pillar table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\${finalBlock}_pillar.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("chiseled").checked === true) {
@@ -158,11 +161,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\chiseled_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made slab table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\chiseled_${finalBlock}.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("cut").checked === true) {
@@ -184,11 +188,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\cut_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made cut table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\cut_${finalBlock}.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("polished").checked === true) {
@@ -210,11 +215,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\polished_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made polished table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\polished_${finalBlock}.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("mossy").checked === true) {
@@ -232,11 +238,12 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            // Note, when writing to a file, include \\assets\\${modName} or \\data\\${modName} to do it correctly
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\mossy_${finalBlock}.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made mossy table recipe');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\mossy_${finalBlock}.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
 
         if (document.getElementById("template").checked === true) {
@@ -259,14 +266,17 @@ document.getElementById("recipeForm").onsubmit = form => {
             
             const jsonContent = JSON.stringify(jsonProduct, null, 4);
 
-            fs.writeFile(`${filepath}\\data\\${modName}\\recipes\\crafting_table_recipe_template.json`, jsonContent, 'utf8', (err) => {
-                if (err) throw err;
-                console.log('Made the crafting table recipe template.');
-            });
+            fs.writeFile({contents: jsonContent, path: `${filepath}\\data\\${modName}\\recipes\\crafting_table_recipe_template.json`}, {}, (err) => {
+				if (err) {
+					document.getElementById("error").innerHTML = `An error has occured!\nError: ${err}`;                    
+					throw err;
+				}
+			});
         }
-            
+
+        document.getElementById("error").classList.remove("errortransition");
         document.getElementById("generateBtn").value = "Generated!";
-        document.getElementById("errorholder").innerHTML = "";
+        document.getElementById("error").innerHTML = "";
 
         setTimeout(() => {
             document.getElementById("generateBtn").value ="Generate!";
