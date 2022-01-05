@@ -8,7 +8,11 @@ export default function (blockName) {
 
     if (blockPara.indexOf('bricks') >= 0) {
         blockPara = blockPara.replace(/\bbricks\b/g, 'brick');
-    } 
+    }
+
+    if (blockPara.indexOf('tiles') >= 0) {
+        blockPara = blockPara.replace(/\btiles\b/g, 'tile');
+    }
 
     if (blockPara.indexOf('mossy') >= 0) {
         blockPara = blockPara.replace(/\bmossy\b/g, '');
