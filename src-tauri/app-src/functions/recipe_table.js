@@ -12,10 +12,15 @@ function shapedMode () {
     document.getElementById("rightBottom").classList.remove("craftdisabled");
 
     document.getElementById("v").removeAttribute("disabled");
+    document.getElementById("v").classList.remove("inputdisabled");
     document.getElementById("w").removeAttribute("disabled");
+    document.getElementById("w").classList.remove("inputdisabled");
     document.getElementById("x").removeAttribute("disabled");
+    document.getElementById("x").classList.remove("inputdisabled");
     document.getElementById("y").removeAttribute("disabled");
+    document.getElementById("y").classList.remove("inputdisabled");
     document.getElementById("z").removeAttribute("disabled");
+    document.getElementById("z").classList.remove("inputdisabled");
 
     localStorage.tableMode = "shaped";
 }
@@ -32,10 +37,15 @@ function shapelessMode () {
     document.getElementById("rightBottom").classList.add("craftdisabled");
 
     document.getElementById("v").removeAttribute("disabled");
+    document.getElementById("v").classList.remove("inputdisabled");
     document.getElementById("w").removeAttribute("disabled");
+    document.getElementById("w").classList.remove("inputdisabled");
     document.getElementById("x").removeAttribute("disabled");
+    document.getElementById("x").classList.remove("inputdisabled");
     document.getElementById("y").removeAttribute("disabled");
+    document.getElementById("y").classList.remove("inputdisabled");
     document.getElementById("z").removeAttribute("disabled");
+    document.getElementById("z").classList.remove("inputdisabled");
 
     localStorage.tableMode = "shapeless";
 }
@@ -50,13 +60,17 @@ function inventoryMode () {
     document.getElementById("leftBottom").classList.add("craftdisabled");
     document.getElementById("centerBottom").classList.add("craftdisabled");
     document.getElementById("rightBottom").classList.add("craftdisabled");
-    
 
     document.getElementById("v").setAttribute("disabled", "true");
+    document.getElementById("v").classList.add("inputdisabled");
     document.getElementById("w").setAttribute("disabled", "true");
+    document.getElementById("w").classList.add("inputdisabled");
     document.getElementById("x").setAttribute("disabled", "true");
+    document.getElementById("x").classList.add("inputdisabled");
     document.getElementById("y").setAttribute("disabled", "true");
+    document.getElementById("y").classList.add("inputdisabled");
     document.getElementById("z").setAttribute("disabled", "true");
+    document.getElementById("z").classList.add("inputdisabled");
     
     localStorage.tableMode = "inventory";
 }
