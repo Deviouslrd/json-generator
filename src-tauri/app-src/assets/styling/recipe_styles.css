@@ -87,6 +87,7 @@
 
 .clickdrop-content {
     display: none;
+    opacity: 0;
     position: absolute;
     top: 25px;
     background:rgb(214, 214, 214);
@@ -129,6 +130,8 @@ div a.clickdrop-content-alt {
 
 .show {
     display: block;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .craftbutton {
