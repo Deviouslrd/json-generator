@@ -62,12 +62,12 @@
         display: block;
     }
 
-    .dropdown {
+    hover-dropdown {
         position: relative;
         display: inline-block;
     }
 
-    .dropbtn {
+    .hover-drop-button {
         background-color: #3498DB;
         color: white;
         padding: 16px;
@@ -87,8 +87,8 @@
         <a class="button" id="menuButton">Advancements</a>
         <a class="button" id="menuButton">Recipes</a>
         <div class="dropdown buttondisabled">
-            <button class="dropbtn" id="dropBtn">Recipes</button>
-            <div class="dropdown-content">
+            <button class="hover-drop-button" id="hover-drop-button">Recipes</button>
+            <div class="hover-dropdown-content">
                 <a href="recipe_cutter.html">Stonecutter</a>
                 <a href="recipe_furnace.html">Furnace</a>
                 <a href="recipe_table.html">Crafting Table</a>
@@ -192,9 +192,9 @@
             <li class="liststyle"><input type="checkbox" id="wallBlock"><label for="wallBlock">Type3</label></li>
         </ul>
     </div>-->
-    <div class="dropdown">
-        <button id="wallButton" class="dropbtn"><input id="wallType" type="checkbox">Wall Types</button>
-        <div id="dropdown1" class="dropdown-content">
+    <div class="hover-dropdown">
+        <button id="wallButton" class="hover-drop-button"><input id="wallType" type="checkbox">Wall Types</button>
+        <div id="dropdown1" class="hover-dropdown-content">
             <div><input type="checkbox" id="glassPane"><label for="glassPane">Type1</label></div><br>
             <div><input type="checkbox" id="ironBar"><label for="ironBar">Type2</label></div><br>
             <div><input type="checkbox" id="wallBlock"><label for="wallBlock">Type3</label></div>

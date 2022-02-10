@@ -125,18 +125,7 @@ document.getElementById("recipeForm").onsubmit = form => {
     localStorage.centerBottom = centerBottom;
     localStorage.rightBottom = rightBottom;
 
-    leftTop = leftTop.replace(/[\s.]/, ' ');
-    centerTop = centerTop.replace(/[\s.]/, ' ');
-    rightTop = rightTop.replace(/[\s.]/, ' ');
-    leftCenter = leftCenter.replace(/[\s.]/, ' ');
-    center = center.replace(/[\s.]/, ' ');
-    rightCenter = rightCenter.replace(/[\s.]/, ' ');
-    leftBottom = leftBottom.replace(/[\s.]/, ' ');
-    centerBottom = centerBottom.replace(/[\s.]/, ' ');
-    rightBottom = rightBottom.replace(/[\s.]/, ' ');
-
     let inputString = `${leftTop} ${centerTop} ${rightTop} ${leftCenter} ${center} ${rightCenter} ${leftBottom} ${centerBottom} ${rightBottom}`;
-    inputString = inputString.replace(/[\s.]/, ' ');
 
     var rInput = document.getElementById("r").value;
     var sInput = document.getElementById("s").value;

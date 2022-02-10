@@ -14,9 +14,9 @@
         <a class="button" onclick="transitionToPage('./blockstates.html')">Blockstates</a>
         <a class="button" onclick="transitionToPage('./advancement.html')">Advancements</a>
         <a class="button" onclick="transitionToPage('./loot_tables.html')">Loot Tables</a>
-        <div class="dropdown" style="vertical-align: 1px;">
-            <button class="dropbtn" id="dropBtn">Recipes</button>
-            <div class="dropdown-content">
+        <div class="hover-dropdown" style="vertical-align: 1px;">
+            <button class="hover-drop-button" id="hover-drop-button">Recipes</button>
+            <div class="hover-dropdown-content">
                 <a onclick="transitionToPage('./recipe_cutter.html')">Stonecutter</a>
                 <a onclick="transitionToPage('./recipe_furnace.html')">Furnace</a>
                 <a class="buttondisabled">Crafting Table</a>
@@ -61,10 +61,10 @@
         <div id="craftingGrid" class="divspacing">
             <!-- TODO: add animations to the dropdown menus -->
             <div>
-                <div class="clickdropdown" id="dropdownOne">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" id="leftTop"></button>
-                    <div id="dropOne" class="clickdrop-content">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownOne">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" id="leftTop"></button>
+                    <div id="dropOne" class="click-drop-content">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -77,10 +77,10 @@
                     </div>
                 </div>
 
-                <div class="clickdropdown" id="dropdownTwo">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="left: 24px;" id="centerTop"></button>
-                    <div id="dropTwo" class="clickdrop-content" style="left: 24px">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownTwo">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="left: 24px;" id="centerTop"></button>
+                    <div id="dropTwo" class="click-drop-content" style="left: 24px">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -93,10 +93,10 @@
                     </div>
                 </div>
 
-                <div class="clickdropdown" id="dropdownThree">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="left: 48px;" id="rightTop"></button>
-                    <div id="dropThree" class="clickdrop-content" style="left: 48px">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownThree">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="left: 48px;" id="rightTop"></button>
+                    <div id="dropThree" class="click-drop-content" style="left: 48px">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -111,10 +111,10 @@
             </div>
 
             <div>
-                <div class="clickdropdown" id="dropdownFour">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="top: 12px;" id="leftCenter"></button>
-                    <div id="dropFour" class="clickdrop-content" style="top: 37px;">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownFour">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="top: 12px;" id="leftCenter"></button>
+                    <div id="dropFour" class="click-drop-content" style="top: 37px;">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -127,10 +127,10 @@
                     </div>
                 </div>
 
-                <div class="clickdropdown" id="dropdownFive">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="top: 12px; left: 24px;" id="center"></button>
-                    <div id="dropFive" class="clickdrop-content" style="top: 37px; left: 24px;">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownFive">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="top: 12px; left: 24px;" id="center"></button>
+                    <div id="dropFive" class="click-drop-content" style="top: 37px; left: 24px;">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -143,10 +143,10 @@
                     </div>
                 </div>
 
-                <div class="clickdropdown" id="dropdownSix">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="top: 12px; left: 48px;" id="rightCenter"></button>
-                    <div id="dropSix" class="clickdrop-content" style="top: 37px; left: 48px;">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownSix">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="top: 12px; left: 48px;" id="rightCenter"></button>
+                    <div id="dropSix" class="click-drop-content" style="top: 37px; left: 48px;">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -161,10 +161,10 @@
             </div>
 
             <div>
-                <div class="clickdropdown" id="dropdownSeven">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="top: 24px;" id="leftBottom"></button>
-                    <div id="dropSeven" class="clickdrop-content" style="top: 49px;">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownSeven">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="top: 24px;" id="leftBottom"></button>
+                    <div id="dropSeven" class="click-drop-content" style="top: 49px;">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -177,10 +177,10 @@
                     </div>
                 </div>
 
-                <div class="clickdropdown" id="dropdownEight">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn craftbutton fade" style="top: 24px; left: 24px;" id="centerBottom"></button>
-                    <div id="dropEight" class="clickdrop-content" style="top: 49px; left: 24px;">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownEight">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button craftbutton fade" style="top: 24px; left: 24px;" id="centerBottom"></button>
+                    <div id="dropEight" class="click-drop-content" style="top: 49px; left: 24px;">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -193,10 +193,10 @@
                     </div>
                 </div>
 
-                <div class="clickdropdown" id="dropdownNine">
-                    <button type="button" onclick="dropVis(this.id)" class="clickdropbtn fade" style="top: 24px; left: 48px;" id="rightBottom"></button>
-                    <div id="dropNine" class="clickdrop-content" style="top: 49px; left: 48px;">
-                        <a class="clickdrop-content-alt" onclick="dropdown(this.id, this.parentElement)" id="blank">.</a>
+                <div class="click-dropdown" id="dropdownNine">
+                    <button type="button" onclick="dropVis(this.id)" class="click-dropdown-button fade" style="top: 24px; left: 48px;" id="rightBottom"></button>
+                    <div id="dropNine" class="click-drop-content" style="top: 49px; left: 48px;">
+                        <a onclick="dropdown(this.id, this.parentElement)" id="blank"> </a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="R">R</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="S">S</a>
                         <a onclick="dropdown(this.id, this.parentElement)" id="T">T</a>
@@ -267,35 +267,35 @@
         function dropVis(id) {
             if (!document.getElementById(id).classList.contains("craftdisabled")) {
                 document.getElementById(id).nextElementSibling.classList.add("show");
-                document.getElementById(id).classList.add("clickdropbtnselect");
-                if (document.getElementById(id).innerHTML === '.') {
-                    document.getElementById(id).classList.add('clickdropbtn-blank');
-                }
+                document.getElementById(id).classList.add("click-dropdown-button-select");
 
             }
         }
         
         // Close the dropdown if the user clicks outside of it or if the user clicks another dropdown menu - both remove the gray colouration when the button is clicked
-        window.onclick = function(event) {
-            if (event.target.classList.contains('clickdropbtn')) {
-                let dropdown = document.getElementsByClassName("clickdrop-content");
+        // TODO: Add a clause or smth for if the user clicks the currently open dropdown, to close the open one.
 
+        window.onclick = function(event) {
+
+            if (event.target.classList.contains('click-dropdown-button')) {
+                let dropdown = document.getElementsByClassName("click-drop-content");
+                
                 for (let i = 0; i < dropdown.length; i++) {
                     if (dropdown[i].id === event.target.nextElementSibling.id) continue;
 
                     if (dropdown[i].classList.contains("show")) {
                         dropdown[i].classList.remove("show");
                     }
-                    dropdown[i].previousElementSibling.classList.remove("clickdropbtnselect");
+                    dropdown[i].previousElementSibling.classList.remove("click-dropdown-button-select");
                 }
 
-            } else if (!event.target.classList.contains('clickdropbtn')) {
-                let dropdown = document.getElementsByClassName("clickdrop-content");
+            } else if (!event.target.classList.contains('click-dropdown-button')) {
+                let dropdown = document.getElementsByClassName("click-drop-content");
                 for (let i = 0; i < dropdown.length; i++) {
                     if (dropdown[i].classList.contains("show")) {
                         dropdown[i].classList.remove("show")
                     }
-                    dropdown[i].previousElementSibling.classList.remove('clickdropbtnselect', 'clickdropbtn-blank');
+                    dropdown[i].previousElementSibling.classList.remove('click-dropdown-button-select', 'click-drop-button-blank');
                 }
 
             }
@@ -305,13 +305,6 @@
         function dropdown (id, parent) {
             const box = document.getElementById(id).innerHTML;
             document.getElementById(parent.id).previousElementSibling.innerHTML = box;
-
-            if (id === "blank") {
-                document.getElementById(parent.id).previousElementSibling.classList.add("clickdrop-blank");
-                document.getElementById(parent.id).previousElementSibling.classList.remove('clickdropbtn-blank');
-            } else {
-                document.getElementById(parent.id).previousElementSibling.classList.remove("clickdrop-blank", "clickdropbtn-blank");
-            }
             
         }
     </script>

@@ -18,7 +18,7 @@ nav {
     justify-content: center;
 }
 
-.dropbtn {
+.hover-drop-button {
   background-color: rgb(214, 75, 75);
   color: white;
   padding: 16px;
@@ -27,16 +27,16 @@ nav {
   cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.hover-drop-button:hover, .hover-drop-button:focus {
   background-color: #2980B9;
 }
 
-.dropdown {
+.hover-dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-content {
+.hover-dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -45,20 +45,20 @@ nav {
   z-index: 1;
 }
 
-.dropdown-content div {
+.hover-dropdown-content div {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content div:hover {background-color: #ddd}
+.hover-dropdown-content div:hover {background-color: #ddd}
 
 .show {display:block;}
 
 
 
-/*.dropdown:hover .dropdown_menu li {
+/*hover-dropdown:hover .dropdown_menu li {
     display: block;
 }
 
