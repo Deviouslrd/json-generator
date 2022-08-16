@@ -1,5 +1,5 @@
 # JSON-Generator
-Easy-to-use generator to make the JSON files for primarily resource packs, but also can be used for resource packs.
+Easy-to-use generator to make the JSON files primarily for mods, but also can be used for resource packs.
 
 Tauri switch has been abandoned due to the incompleteness of Tauri.
 
