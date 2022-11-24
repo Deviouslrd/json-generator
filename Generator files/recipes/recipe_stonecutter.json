@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "[example_namespace]:[block_name]"
-  },
-  "result": "[example_namespace]:[block_name]",
-  "count": 2
-}
