@@ -1,10 +1,7 @@
 # JSON-Generator
 Easy-to-use generator to make the JSON files primarily for mods, but also can be used for resource packs.
 
-Tauri switch has been abandoned due to the incompleteness of Tauri.
-
-There is a Java rewrite in progress, which will be overall better than the electron version. Development is going slow for it, however (making Java guis is a pain, sorry). Once anything changes, I will mention it here.
-
+A full rewrite is in progress for this app, to improve many of its issues.
 
 If you find any issues, report them on the github here, and Deviouslrd will attend to it!
 
